@@ -1,0 +1,136 @@
+body{
+font-family: 'Raleway', sans-serif;
+
+text-transform: uppercase;
+letter-spacing: .05rem;
+
+
+ 
+
+
+}
+.abby img{
+    background: url(../img/hoy.jpg) no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 127%;
+    margin-top: -720px;
+     z-index: -1;
+
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #000;
+    z-index: 9999;
+    border: 0;
+    line-height: 1.42857143 !important;
+    letter-spacing: .07rem;
+    border-radius: 0;
+   
+  }
+ 
+  .navbar-nav li a:hover{
+    color: #fff;
+    
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    
+  }
+  .jumbotron {
+    background: #26436D;
+    color: #fff;
+    padding: 100px 25px;
+    height: 60px;
+    font-weight: bold;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  footer{
+    background-color: #000;
+    color: #fff;
+    font-family:'Playfair Display';
+letter-spacing: .05rem;
+margin-top: -5px;
+height: 156px;
+}
+.mathy img {
+position:absolute;
+  height:20px;
+  width:260px;
+  z-index: 1;
+
+}
+
+
+.contenedor{
+    height:90%;  
+    width: 90%;
+    margin: auto;
+    margin-top: -10px;
+    padding: 20px 40px;
+     
+}
+.contenedorfltro{
+    display: flex;
+
+}
+.categoria{
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+
+}
+.categoria .categoriaitem{
+    display: block;
+    width: 80%;
+    padding: 5px 0px;
+    margin-bottom:2px;
+    background: #424242;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.listacategoria{
+    width: 84%;
+}
+.categoriaitem.categoriaitem-active{
+    background:  #4C9ED9;
+}
+/*fotos*/
+.listacategoria{
+    width: 84%;
+    display:flex;
+    flex-wrap: wrap;
+
+}
+img{
+    width: 115px;
+    height: 155px;
+}
+.listacategoria  .productoitem{
+    width: 29%;
+    margin-left: 4%;
+    
+}
+.listacategoria .productoitem img{
+    width: 100%;
+
+}
+.listacategoria .productoitem a{
+     display: block;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    text-decoration: none;
+    font-size: 15px;
+    
+
+}

@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+            <!-- Required meta tags -->
+            
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+            <!-- Bootstrap CSS -->
+            
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+            <link rel="stylesheet" type="text/css" href="css/cardQui.css"></link>
+            <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>
+
+            <title>#{formInternacionalización.txtTitulo7}</title>
+    </h:head>
+        <h:body style="background-image: url(img/restaurant-table-720.jpg);">
+            <f:view locale="#{idiomaController.idiomaActual}">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.xhtml">
+                            <img class="logo" src="img/SION CASA DE BANQUETES.png" alt="Logo"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" style="color: #ffffff;" href="index.xhtml">#{formInternacionalización.btnAtras}<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cards.xhtml">#{formInternacionalización.btnMatrimonio}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cardsQuince.xhtml">#{formInternacionalización.btnQuince}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cardsGrados.xhtml">#{formInternacionalización.btnGrados}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cardDespedida.xhtml">#{formInternacionalización.btnSolteros}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="cardsEmpresariales.xhtml">#{formInternacionalización.btnEmpresarial}</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <div class="world">     
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                            <img src="img/mund.png"></img>
+                                        </a>
+                                        <div id="idioma" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                           <h:form>
+                                                <div>
+                                                    <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('en')}" style="color: #000">   
+                                                        <img src="img/eeuu-hoy-en-dia.png">#{formInternacionalización.txtIngles}</img>
+                                                    </h:commandLink> 
+                                                </div>
+                                                <div>
+                                                    <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('es')}" style="color: #000">  
+                                                        <img src="img/espana.png">#{formInternacionalización.txtEspañol}</img>                                                 
+                                                    </h:commandLink>
+                                                </div>
+                                            </h:form>
+                                        </div>
+                                    </li>            
+                                </div>  
+                            </ul> 
+                        </div>
+                    </div>
+                </nav>
+                <div class="container" style="max-width: 80%;">
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <div id="card" class="card mt-5">
+                                <div class="row no-gutters ">
+                                    <div class="col-md-7 text-white bg-dark" style="height: 400px;">
+                                        <div id="card-body" class="card-body">
+                                            <h5 class="card-title">#{formInternacionalización.txtOpcionUno}</h5>
+                                            <p class="card-text">#{formInternacionalización.txtPonqueUno}</p>
+                                            <button style="margin-top: 95px;"><small>#{formInternacionalización.btnCarrito}</small></button>
+                                        </div>
+                                    </div>
+                                  <div class="col-md-5">
+                                    <img src="img/empresa.jpg" class="card-img-top" alt="..."/>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" style="text-align: -webkit-center;">
+                            <div id="card" class="card mb-3 mt-5">
+                                <div class="row no-gutters ">
+                                    <div class="col-md-5">
+                                        <img src="img/empresatres.jpg" class="card-img-top" alt="..."/>
+                                    </div>
+                                    <div class="col-md-7 text-white bg-dark" style="height: 400px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">#{formInternacionalización.txtOpcionDos}</h5>
+                                            <p class="card-text">#{formInternacionalización.txtPonqueDos}</p>
+                                            <button style="margin-top: 48px;"><small>#{formInternacionalización.btnCarrito}</small></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <div id="card" class="card mb-3 mt-5">
+                                <div class="row no-gutters ">
+                                    <div class="col-md-5">
+                                         <img src="img/emmpresacuatro.jpg" class="card-img-top" alt="..."/>
+                                    </div>
+                                    <div class="col-md-7 text-white bg-dark" style="height: 400px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">#{formInternacionalización.txtOpcionTres}</h5>
+                                            <p class="card-text">#{formInternacionalización.txtPonqueShow}</p>
+                                            <button style="margin-top: 45px;"><small>#{formInternacionalización.btnCarrito}</small></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" style="text-align: -webkit-center;">
+                            <div id="card" class="card mb-3 mt-5" >
+                                <div class="row no-gutters ">
+                                    <div class="col-md-7 text-white bg-dark" style="height: 400px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">#{formInternacionalización.txtOpcionCuatro}</h5>
+                                            <p class="card-text">#{formInternacionalización.txtPonquevip}</p>
+                                            <button style="margin-top: 68px;"><small>#{formInternacionalización.btnCarrito}</small></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <img src="img/jum.jpg" class="card-img-top" alt="..."/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Footer-->
+                <footer id="footer" class="pb-4 pt-4">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtPreguntas}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtUbicacion}</a>
+                            </div>        
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtNuestros}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtTerminos}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtPrivacidad}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtProductos}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-4">
+                        <div class="row text-center">
+                            <div class="col-12 col-md-4 ">
+                                <a class="btn-floating btn-fb mx-1"></a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                    <ion-icon name="logo-facebook"></ion-icon>  
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-instagram"></ion-icon> 
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-whatsapp"></ion-icon>  
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-google"></ion-icon>  
+                                </a>
+                            </div> 
+                            <div class="col-12 col-md-4 ">
+                                  <a class="btn-floating btn-fb mx-1"></a>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container text-center mb-3 mt-3">
+                            <div class="list-inline-item">
+                                <a class="btn-floating btn-gplus mx-1">
+                                    <ion-icon class="mr-2" name="call-outline" ></ion-icon>
+                                    <span> 3216780345 / 7689034 </span>
+                                </a>
+                            </div>
+                        </div>
+                  <div class="footer-copyright text-center py-3" style="color:#bdc3c7">WWW.CasadeBanquentesyEventosSION.com</div>
+                    <p class="p">SION, Copyright &copy; 2020</p>
+                </footer>
+                <!--/footer-->
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+            <script src="js/bootstrap.min.js"></script>  
+        </f:view>    
+    </h:body>
+</html>
+

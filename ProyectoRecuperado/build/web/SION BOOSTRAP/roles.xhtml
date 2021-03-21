@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+            <!-- Required meta tags -->
+            
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+            <!-- Bootstrap CSS -->
+   
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display;=swap" rel="stylesheet"/>
+            <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="css/page-footer.css"/>
+            <link rel="stylesheet" type="text/css" href="css/orden.css"/>
+            <link rel="shortcut icon" type="jpg" href="img/logo.jpg"/>
+            <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+            <script src="js/validacionrejistro.js"></script>
+            
+            <title>Sion</title>
+            
+    </h:head>
+    <h:body>
+            <nav class="navbar navbar-expand-lg navbar" style="background: #000;">
+                <div class="container">
+                    <a class="navbar-brand" href="#">SION</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Empleadoc.xhtml">Inicio
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <ion-icon name="logo-facebook"></ion-icon>  Facebook
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <ion-icon name="logo-instagram"></ion-icon> Instagram
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">
+                                    <ion-icon name="logo-whatsapp"></ion-icon>  Whatsappp
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+              <form action="registrar" method="post" class="form-register" onsubmit="return validar();">
+                <div Class="abby">
+                    <img src="img/hoy.jpg"/>
+                </div>
+                    <button type="submit" class="btn btn-outline-secondary" style="background: #000; width: 120px; margin-left: 400px; margin-top: 40px;">Generar </button>
+                    <button type="email" class="btn btn-outline-secondary" style="background: #000; width: 120px; margin-left: 40px; margin-top: 40px;">Consultar</button>
+                    <button type="email" class="btn btn-outline-secondary" style="background: #000; width: 120px; margin-left: 40px; margin-top: 40px;">Cambiar</button>
+                    <button type="email" class="btn btn-outline-secondary" style="background: #000; width: 120px; margin-left: 40px; margin-top: 40px;">Quitar</button>
+                <div class="container" style="border: 1px #fff solid; background-color: rgba(37, 34, 34, 0.8);margin-top: 20px; height: 680px;">
+                  <div class="roww">     
+                    <div class="col-xs-6 " style=" margin-top: -21px;">
+                        <h1> 
+                            <img alt="" src="img/logo.jpg" style="width: 120px; margin-top: 50px; margin-left: 10px;"/> 
+                        </h1>
+                    </div>
+                  </div>
+                    <hr /> 
+                    <h4 style="margin-left:400px; margin-top: -30px;">Datos Personales </h4> 
+                    <div class="row" style="margin-top: 1px; margin-left: 4px;border: 1px #fff solid; width: 1103px;"> 
+                      <div class="col-xs-12"> 
+                        <div class="panel panel-default"> 
+                          <div class="panel-heading"> 
+                              <h4 style="font-size:19px;">Nombre 
+                                  <input type="text" name="" id="nombre" placeholder="Ingresa Nombrecompleto" style="font-size: 16px; width: 270px; margin-left:54px;margin-top: 8px;"/>
+                              </h4>
+                          </div>
+                            <p> Tipo de Documento<br/>
+                                <input type="radio" id="documento" value="Cédula de Ciudadania" style="margin-left: 130px;"/> Cédula de Ciudadania
+                                <input type="radio" name="documento" value="Cédula de extranjeria" style="margin-left: 70px;"/> Cédula de extranjeria
+                                <input type="radio" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Permiso Menor de edad
+                            </p>
+                            <h4 style="font-size: 19px;">Documento 
+                                <input type="text" id="identificacion" placeholder="Número Documento" style="font-size: 16px; width: 260px; margin-left: 11px;margin-top: 8px;"/> direccion
+                                <input  type="text" id="direccion" placeholder="Lugar Residencia" style="font-size: 16px; width: 270px; margin-left: 248px;margin-top: 8px;"/> 
+                            </h4>
+                            <h4 style="font-size: 19px;">Correo 
+                                <input type="email" id="correo" placeholder="correo Personal" style="font-size: 16px; width: 260px; margin-left: 55px;margin-top: 8px;"/> Teléfono
+                                <input  type="text" name="" placeholder="Teléfono contacto" style="font-size: 16px; width: 270px; margin-left: 258px;margin-top: 8px;"/> 
+                            </h4>
+                        </div>
+                      </div>
+                    </div> 
+                    <br/><br/>
+                        <h4 style="margin-left:400px; margin-top: -30px;">Acceso al Sistema </h4>
+                    <div class="row" style="margin-top: 1px; margin-left: 4px;border: 1px #fff solid; width: 1103px;">
+                      <div class="col-xs-12">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 style="font-size: 19px;">Código Rol
+                                <input type="number" name="" style="font-size: 16px; width: 53px; margin-left: 54px;margin-top: 8px;"/>
+                            </h4>
+                                Permisos<br/>
+                                <input type="checkbox" name="documento" value="Cédula de Ciudadania" style="margin-left: 30px;"/>Roles
+                                <input type="checkbox" name="documento" value="Cédula de extranjeria" style="margin-left: 70px;"/> Empleados
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Clientes
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Eventos
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Logistica 
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Cotizacíon
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 240px;"/> Orden de Servicio
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Inventario
+                                <input type="checkbox" name="documento" value="Permiso Menor de edad" style="margin-left: 70px;"/> Productos
+                            <h4 style="font-size: 19px;">Correo Corporativo 
+                                <input type="email" id="correo"  placeholder="correo electronico" style="font-size: 16px; width: 260px; margin-left: 35px;margin-top: 8px;"/> Correo Elctrónico
+                                <input  type="text" id="contraseña" placeholder="Contraseña de acceso" style="font-size: 16px; width: 270px; margin-left: 19px;margin-top: 8px;"/> Contraseña
+                            </h4>
+                          </div>                          
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </form>
+                <footer class="page-footer  special-color-dark pt-4">
+                    <div class="container">
+                        <ul class="list-unstyled list-inline text-center">
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-fb mx-1">
+                                    <ion-icon name="logo-facebook"></ion-icon>  
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-tw mx-1">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-gplus mx-1">
+                                    <ion-icon name="logo-whatsapp"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-gplus mx-1">
+                                    <ion-icon name="phone-portrait-sharp"></ion-icon>3216780345 / 7689034
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                  <div class="footer text-center py-3">WWW.CasadeBanquentesyEventosSION.com</div>
+                </footer>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+

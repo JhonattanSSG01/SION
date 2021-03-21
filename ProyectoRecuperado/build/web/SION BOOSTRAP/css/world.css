@@ -1,0 +1,7 @@
+body{
+	background: url(img/lugar.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: .05rem;
+    font-size: 19px;
+}

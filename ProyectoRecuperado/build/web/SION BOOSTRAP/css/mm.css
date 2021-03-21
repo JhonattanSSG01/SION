@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body{
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  margin-left: 50px;
+  transition: all .2s ease-in-out;
+}
+
+.body-expanded{
+  margin-left: 300px;
+  transition: all .2s ease-in-out;
+  font-family: 'Josefin Slab', serif;
+}
+
+#main-container{
+  color: #ffffff;
+}
+
+#sidemenu{
+  background-color: #434343;
+  color: #ffffff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all .2s ease-in-out;
+}
+
+#sidemenu a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*
+    HEADER
+*/
+
+#sidemenu #header{
+  box-sizing: border-box;
+  border-bottom: solid 1px rgb(23, 23, 23);
+}
+
+#sidemenu #header #title{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
+
+#sidemenu #header #menu-btn{
+  display: inline-block;
+}
+
+#sidemenu #header #menu-btn{
+  cursor: pointer;
+  padding: 13px;
+  width: 50px;
+  box-sizing: border-box;
+  border-bottom: 2px outset;
+}
+
+#sidemenu #header #menu-btn:hover{
+  background-color: rgb(23, 23, 23);
+}
+
+#sidemenu #header #menu-btn .btn-hamburger{
+  background-color: #ffffff;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+}
+
+/*
+    PROFILE
+*/
+
+#sidemenu #profile{
+  border-bottom: solid 1px rgb(23, 23, 23);
+  text-align: center;
+}
+
+#sidemenu #profile #photo{
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#sidemenu #profile #photo img{
+  border-radius: 50%;
+  width: 50%;
+}
+
+#sidemenu #profile #photo,#sidemenu #profile #name{
+  font-size: 24px;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+/*
+  ITEM
+*/
+
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+
+#sidemenu #menu-items .item{
+  width: 300px;
+}
+
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+  
+}
+
+#sidemenu #menu-items .item .icon,#sidemenu #menu-items .item .title{
+  pointer-events: none;
+  cursor: not-allowed;
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#sidemenu #menu-items .item a{
+  display: block;
+}
+
+#sidemenu #menu-items .item a:hover{
+  background-color: rgb(23, 23, 23);
+}
+
+#sidemenu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: 10px;
+  width: 50px;
+}
+
+#sidemenu #menu-items .item .icon img{
+  width: 100%;
+}
+
+#sidemenu #menu-items .item .title{
+  padding: 10px 0;
+}
+
+#sidemenu #menu-items .item.separator{
+  height: 1px;
+  border-bottom: solid 1px rgb(23, 23, 23);
+  margin: 15px 0;
+}
+
+#sidemenu #menu-items .item.separator2{
+  height: 1px;
+  border-bottom: solid 1px rgba(23, 23, 23, .3);
+  margin: 12px 0;
+}
+
+
+.menu-expanded{
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+  overflow-y: scroll;
+}
+
+.menu-expanded::-webkit-scrollbar{
+  width: 8px;
+  background: rgba(23, 23, 23, .5);
+}
+
+.menu-expanded::-webkit-scrollbar-thumb{
+   background: rgba(23, 23, 23, .2);
+   border-radius:  10px;
+   border-right: 2px solid;
+}
+
+.menu-expanded #header #title{
+  display: inline-block;
+  width: cacl(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+}
+
+.menu-expanded #header #title img{
+  height: 38px !important;
+  margin-right: 8px;
+}
+.menu-expanded #header #title h4{
+  width: calc(300px - 50px - 5px);
+  overflow: hidden;
+}
+
+.menu-expanded #profile #photo{
+  width: 200px;
+}
+
+.menu-expanded #profile #name{
+  width: 100%;
+  
+}
+
+.menu-expanded .social-container{  
+  text-align: center;
+}
+
+.menu-expanded .social-container img{  
+  margin-right: 5px;
+  width: 35px;
+}
+
+.menu-collapsed{
+  width: 50px;
+}
+
+.menu-collapsed #header #title{
+  display: none;
+}
+
+.menu-collapsed #header #column{
+  display: none;
+}
+
+.menu-collapsed #menu-items .list{
+  padding: 0;
+}
+
+.menu-collapsed #menu-items #perfil{
+  display: none;
+}
+
+
+.menu-collapsed #profile #name{
+  display: none;
+}
+
+.menu-collapsed .item{
+  width: 100px;
+}
+
+.menu-collapsed .item a{
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.menu-collapsed .social-container{  
+  text-align: center;
+}
+
+.menu-collapsed .social-container img{  
+  margin-top: 5px;
+  width: 25px;
+}

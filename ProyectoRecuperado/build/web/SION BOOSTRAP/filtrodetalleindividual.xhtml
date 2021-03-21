@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
+           <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&family;=Open+Sans&mdp;display=swap" rel="stylesheet"></link>
+        <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
+        <link rel="stylesheet" href="css/dashboard.css"></link>
+
+    <title>Gerente</title>
+    </h:head>
+    <h:body style="color: #000;">
+        <div class="d-flex">
+        <div id="sidebar-container"  style="background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);">
+
+            <div class="logo">
+                <h4 class="text-light font weight-bold">SION</h4>
+            </div>
+            <div class="menu">
+          <a href="dashboardAdmin.xhtml" class="d-block text-light p-3"><i class="icon ion-md-folder mr-2 person-add"></i>Inicio</a> 
+                <a href="reportesAdmin.xhtml" class="d-block text-light p-3"><i class="icon ion-md-folder mr-2 lead"></i>Reportes</a> 
+                <a href="usuarioAdmin.xhtml" class="d-block text-light p-3"><i class="icon ion-md-people mr-2 lead"></i>Registro Clientes</a>
+                <a href="empleadosC.xhtml" class="d-block text-light p-3"><i class="icon ion-md-people mr-2 lead"></i>Registro Empleados</a>
+                <a href="bandejaMsmAdmin.xhtml" class="d-block text-light p-3"><i class="icon ion-md-mail mr-2 lead"></i>Bandeja de mensajes</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="w-100">
+
+              <nav class="navbar navbar-expand-lg navbar" style="background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);">
+                <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <form class="form-inline position-relative my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                  <button class="btn btn-search position-absolute" type="submit"><i class="icon ion-md-search"></i></button>
+                </form>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                   
+                    <li class="nav-item dropdown">
+                      <a style="color: #fff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="img/hombre2.jpg" class="img-fluid rounded-circle avatar mr-2"></img>
+                        Gerente
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Mi perfil</a>
+                        <a class="dropdown-item" href="#">Notificaciones</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="inicioSesion.xhtml">Cerrar sesion</a>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                  
+                </div>
+                      </div>
+              </nav>
+             
+
+              
+              <!--Nombre de usuario -->
+
+
+              <div id="content">
+              
+              <section class="py-4">
+
+              <div class="container">
+                  <f:view>
+
+
+                      <h:form>
+                          <h1><h:outputText value="List"/></h1>
+                          <p:dataTable id="tabla" value="#{detalleIndividualController.consultarDetalleIndividual()}" var="item">
+                              <p:column filterBy="#{item.codDins}">
+                                  <f:facet name="header">
+                                      <h:outputText value="CodDins"/>
+                                  </f:facet>
+                                  <h:outputText value="#{item.codDins}"/>
+                              </p:column>
+                              <p:column filterBy="#{item.codPati.nomPati}">
+                                  <f:facet name="header">
+                                      <h:outputText value="CodPati"/>
+                                  </f:facet>
+                                  <h:outputText value="#{item.codPati.nomPati}"/>
+                              </p:column>
+                              <p:column filterBy="#{item.codSei.nomSei}">
+                                  <f:facet name="header">
+                                      <h:outputText value="CodSei"/>
+                                  </f:facet>
+                                  <h:outputText value="#{item.codSei.nomSei}"/>
+                              </p:column>
+                          </p:dataTable>
+                        <h:commandLink>
+                           <p:graphicImage value="img/excel.jpg" style="width: 50px"/>
+                           <p:dataExporter type="xls" target="tabla" fileName="reporteProfesor"  />
+                        </h:commandLink>
+                      </h:form>
+                  </f:view>
+
+
+              </div>
+              </section>
+
+              
+
+              <!--Tabla central -->
+
+ 
+
+ 
+ 
+             
+              
+            
+ 
+              </div>
+        </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+
+
+    <!---Tabla de las graficas-->
+
+
+
+       </div>
+    </h:body>
+</html>
+
+
+
+
+

@@ -1,0 +1,84 @@
+body{
+        font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: .05rem;
+        font-size: 1.1rem;
+        font-weight: 300;
+        background-color: #000;
+}
+
+#navbar{
+        background: #7abaff;
+}
+
+#navbar a{
+        color: #0056b3;
+}
+
+.world{
+        margin-left: 80px;
+}
+
+.world img{
+        height: 20px;
+}
+
+.world #idioma img{
+        margin: 10px 8px 11px 12px;
+        height: 20px;
+}
+
+.btn-oultine-dark{
+	border:3px solid #fff;
+}
+.btn{
+	border-radius: 8rem;
+	font-weight: 400;
+}
+h1{
+	color: #fff;
+}
+label{
+	color: #fff;
+}
+p{
+	color: #fff;
+	font-weight: bold;
+
+}
+.form-control{
+        border-radius: 8rem;
+        background-color: #000;
+        border:1px solid  #fff;	
+        width: 300px;
+}
+.register-bg{
+	background: url(../img/amar.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+.form-group{
+	padding: -2px -3px;
+}
+footer{
+	background-color: #7abaff;
+	color: #000;
+	font-family:'Playfair Display';
+        letter-spacing: .05rem;
+        margin-top: 84px;
+        height: 156px;
+}
+
+
+
+#la{
+	float: right;
+        margin-right: 510px;
+        margin-top: -37px;
+}
+
+#navbar a:hover{
+        color: #062c33 !important;
+    
+}

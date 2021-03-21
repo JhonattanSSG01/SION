@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+            <!-- Required meta tags -->
+            
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+            <!-- Bootstrap CSS -->
+    
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="css/coti.css"/>
+            <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/> 
+            
+            <title>#{formInternacionalización.txtTitulo3}</title>  
+    </h:head>
+         <h:body style="background-image: url(img/business.jpg);">
+            <f:view locale="#{idiomaController.idiomaActual}">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar">
+                    <div class="container">
+                            <a class="navbar-brand" href="index.xhtml">
+                                <img class="logo" src="img/SION CASA DE BANQUETES.png" alt="Logo"></img>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.xhtml">#{formInternacionalización.btnInicio}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <ion-icon name="logo-facebook"></ion-icon>  Facebook
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <ion-icon name="logo-instagram"></ion-icon> Instagram
+                                    </a>
+                                </li>   
+                                <li class="nav-item">
+                                    <a class="nav-link " href="#">
+                                        <ion-icon name="logo-whatsapp"></ion-icon>  Whatsapp
+                                    </a>
+                                </li>
+                            </ul> 
+                                <ul class="navbar-nav">
+                                    <div class="world">     
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                <img src="img/mund.png"></img>
+                                            </a>
+                                            <div id="idioma" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                               <h:form>
+                                                    <div>
+                                                        <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('en')}" style="color: #000">   
+                                                            <img src="img/eeuu-hoy-en-dia.png">#{formInternacionalización.txtIngles}</img>
+                                                        </h:commandLink> 
+                                                    </div>
+                                                    <div>
+                                                        <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('es')}" style="color: #000">  
+                                                            <img src="img/espana.png">#{formInternacionalización.txtEspañol}</img>                                                 
+                                                        </h:commandLink>
+                                                    </div>
+                                                </h:form>
+                                            </div>
+                                        </li>            
+                                    </div>    
+                                </ul>    
+                              
+                        </div>
+                    </div>
+                </nav>       
+                    <div class="panel-footer">
+                        <button class="btn btn-lg " style="color: #fff;"></button>
+                    </div>
+                <div class="container" style="border: 1px #fff solid; background-color: rgba(37, 34, 34, 0.6);margin-bottom: 20px;" >
+                    <div class="roww">      
+                        <div class="col-xs-6 " style=" margin-top: -21px;">
+                            <h1> 
+                                <img alt="" src="img/SION CASA DE BANQUETES.png" style="width: 120px; margin-top: 50px; margin-left: 10px;"/> 
+                            </h1>
+                        </div>
+                        <div class="col-xs-12" style="border: 1px #fff solid;">
+                            <th>
+                                <h4>#{formInternacionalización.txtTituloServicios}</h4>
+                            </th>   
+                        </div>
+                    </div>  
+                  <hr/>
+                    <pre></pre>
+                <table class="table table-bordered" style="margin-top:-50px;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center; color: #fff;">
+                                <h4>#{formInternacionalización.txtTituloCantidad}</h4>
+                            </th>
+                            <th style="text-align: center; color: #fff;">
+                                <h4>#{formInternacionalización.txtTituloArticulo}</h4>
+                            </th>
+                            <th style="text-align: center; color: #fff;">
+                                <h4>#{formInternacionalización.txtPrecio}</h4>
+                            </th>
+                            <th style="text-align: center; color: #fff;">
+                                <h4>#{formInternacionalización.txtTotal}</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad"  valuename="cantp1" style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleUno}" size="34" readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="2.000" name="valp1" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo"  name="totp1" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp2"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleDos}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="43.000" name="valp2"  readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo"  name="totp2" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp3"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleTres}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="23.000" name="valp3" readonly="" style="width: 73px;"/>             
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo" name="totp3" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp4"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleCuatro}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="7.000" name="valp4" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo"  name="totp4" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp5"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleCinco}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="4.000" name="valp5" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo" name="totp5" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp6"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleSeis}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="11.000" name="valp6" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo" name="totp6" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp7"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleSiete}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="8.000" name="valp7" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo"  name="totp7" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp8"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleOcho}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="5.000" name="valp8" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo" name="totp8" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp9"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleNueve}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="350.000" name="valp9" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo"  name="totp9" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; color: #fff">
+                                <input  type="text" class="texto-cantidad" name="cantp10"  style="width: 50px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" class="texto-item"  value="#{formInternacionalización.vleDiez}"  readonly="" style="width: 228px;"/>
+                            </td>
+                            <td class=" text-center ">
+                                <input  type="text" value="750.000" name="valp10" readonly="" style="width: 73px;"/>
+                            </td>
+                            <td style="text-align: center;color: #fff;">
+                                <input  type="text" class="totales-articulo" name="totp10" readonly="" style="width: 53px;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;color: #fff;">Sub Total</td>
+                            <td style="text-align: right;color: #fff;">
+                                <input type="text" name="txtsub"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;color: #fff;">IVA 19%</td>
+                            <td style="text-align: right;color: #fff;">
+                                <input type="text" name="txtiva"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;color: #fff;">Total</td>
+                            <td style="text-align: right;color: #fff;">
+                                 <input type="text" name="txttotal"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;color: #fff;">Total</td>
+                            <td style="text-align: right;color: #fff;">
+                                <h:commandButton  value="Calcular" ></h:commandButton>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                </div>
+                
+                 <!--Footer-->
+                <footer id="footer" class="pb-4 pt-4">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12 col-lg">
+                                <a href="#">Preguntas Frecuentes</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">Ubicación</a>
+                            </div>        
+                            <div class="col-12 col-lg">
+                                <a href="#">Nuestros Clientes</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#"> Términos y Condiciones</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#"> Privacidad</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#"> Productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-4">
+                        <div class="row text-center">
+                            <div class="col-12 col-md-4 ">
+                                <a class="btn-floating btn-fb mx-1"></a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                    <ion-icon name="logo-facebook"></ion-icon>  
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-instagram"></ion-icon> 
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-whatsapp"></ion-icon>  
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-google"></ion-icon>  
+                                </a>
+                            </div> 
+                            <div class="col-12 col-md-4 ">
+                                  <a class="btn-floating btn-fb mx-1"></a>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container text-center mb-3 mt-3">
+                            <div class="list-inline-item">
+                                <a class="btn-floating btn-gplus mx-1">
+                                    <ion-icon class="mr-2" name="call-outline" ></ion-icon>
+                                    <span> 3216780345 / 7689034 </span>
+                                </a>
+                            </div>
+                        </div>
+                  <div class="footer-copyright text-center py-3" style="color:#bdc3c7">WWW.CasadeBanquentesyEventosSION.com</div>
+                    <p class="p">SION, Copyright &copy; 2020</p>
+                </footer>
+                <!--/footer-->
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+        </f:view>
+    </h:body>
+</html>
+

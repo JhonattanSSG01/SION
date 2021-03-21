@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body{
+    font-family: 'Josefin Slab', serif;
+    text-transform: capitalize;
+    letter-spacing: .05rem;
+    background-image: url(/img/restaurant-table-720.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+
+}
+.logo{
+    max-height: 90px !important;
+    align-items: center;
+}
+#navbar{
+    font-size: larger;
+    background-color: #232526 !important;
+}
+
+#navbar a{
+    color: #bdc3c7;
+}
+#navbar .nav-link{
+    font-size: 18px;
+}
+
+.world{
+    margin-left: 80px;
+    text-align: right;
+}
+
+.world img{
+    height: 25px;
+}
+
+.world #idioma img{
+    margin: 10px 10px;
+    height: 20px;
+}
+
+.world{
+    color: #000;
+}
+
+.form-register{
+        width: 400px;
+        height: 390px;
+        background: rgba(0,0,0,0.6);
+        padding: 10px 20px;
+        box-sizing: border-box;
+        margin-top: 40px;
+        margin-left: 100px;
+
+}
+h4{
+        color: #fff;
+        text-align: center;
+}
+
+h2{
+        color:#fff;
+        text-align: center;
+        margin: 0;
+        font-size: 22px;
+        margin-bottom: 18px; 
+}
+input, textarea{
+        width: 80%;
+        margin-left: 40px;
+        padding: 7px;
+        box-sizing: 17px;
+        background-color: #fff;
+        border :none;
+        border-bottom: solid #000 1rem;
+        color: #000;
+
+}
+textarea{
+        min-height: 100px;
+        max-height: 200px;
+}
+#boton{
+        width: 40%;
+        height: 10%;
+        border-bottom: none;
+        background-color: #717181;
+        color: #fff;
+        font-size:15px;
+}
+#boton:hover{
+        background-color: #000;
+}
+iframe{
+        margin-top: -20px;
+        height: 200px;
+        margin-left: 50px;
+        width: 1100px;
+
+}
+
+#footer{
+    background-color: #232526;
+}
+#footer a{
+    color:#bdc3c7;
+}
+#footer p{
+    text-align: center;
+    color: #bdc3c7;
+    height: 5px;
+    
+}
+
+#navbar a:hover{
+        color: #062c33 !important;
+    
+}

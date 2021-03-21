@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b3bd996-8727-4b0a-a442-0056361eea54">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="codEve" class="java.lang.Integer"/>
+	<field name="fecEve" class="java.util.Date"/>
+	<field name="horEve" class="java.util.Date"/>
+	<field name="tipEve" class="java.lang.String"/>
+	<field name="invEve" class="java.lang.Integer"/>
+	<field name="codCli" class="java.lang.Integer"/>
+	<field name="codDee" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="149" splitType="Stretch">
+			<rectangle>
+				<reportElement x="12" y="10" width="533" height="128" forecolor="#FFFFFF" uuid="20f87876-f69a-4793-9e34-814e3848cbeb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="53" y="28" width="340" height="110" forecolor="#990033" backcolor="#CCCCCC" uuid="8307f5b4-4ecd-4107-8887-e91802d08e12"/>
+				<textElement textAlignment="Center">
+					<font fontName="Mistral" size="36" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[REPORTES DE EVENTOS SION]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="408" y="10" width="86" height="128" uuid="deec2863-4ab4-4534-8c49-dddb78b00243"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\final\\web\\SION BOOSTRAP\\img\\CELE.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="4c6f3fa5-4036-493a-8e4a-a4c49e3e2d27"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="79" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="872e8b4f-df0c-468d-9309-4c0cb517a1e4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="158" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="c9214086-d89c-45f4-a142-f6899454ec70"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="237" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="e48c858b-e6a5-4109-a413-39384bd40887"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Tipo Evento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="4632adcb-6ec6-4827-8eda-c7d86c9a5764"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Invitados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="395" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="21b4194d-5f75-43d5-a067-8a90d617db9c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="474" y="0" width="79" height="22" forecolor="#FFFFFF" backcolor="#990000" uuid="40ff6739-a5ce-4f7e-8f33-33d088cfbf0d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Microsoft PhagsPa" size="13" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="87" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="79" height="20" uuid="372c22bb-267b-4586-8c2c-6f9a7f81a613"/>
+				<textFieldExpression><![CDATA[$F{codEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="0" width="79" height="20" uuid="7b5db403-5b3a-4a85-9b7c-b9c82e64b376"/>
+				<textFieldExpression><![CDATA[$F{fecEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="79" height="20" uuid="1617555e-412d-456b-b7ac-f773e1e1222a"/>
+				<textFieldExpression><![CDATA[$F{horEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="79" height="20" uuid="a9c5faa2-98c8-4af9-9686-a3a61c17fa13"/>
+				<textFieldExpression><![CDATA[$F{tipEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="79" height="20" uuid="7739729f-5e34-4a18-9d06-79b3ec3a3406"/>
+				<textFieldExpression><![CDATA[$F{invEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="79" height="20" uuid="421b5d68-52db-4c58-820d-d375ce6d28e2"/>
+				<textFieldExpression><![CDATA[$F{codCli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="79" height="20" uuid="31a3b307-9f86-413c-9f76-ada7271601fe"/>
+				<textFieldExpression><![CDATA[$F{codDee}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

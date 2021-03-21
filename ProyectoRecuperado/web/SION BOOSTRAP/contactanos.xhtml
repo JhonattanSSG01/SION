@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+            <!-- Required meta tags -->
+            
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+            <!-- Bootstrap CSS -->
+   
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="css/contacto.css"/>
+            <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>
+  
+            <title>#{formInternacionalización.txtTitulo16}</title>
+    </h:head>
+        <h:body style="background-image: url(img/restaurant-table-720.jpg);">
+            <f:view locale="#{idiomaController.idiomaActual}">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar">          
+                    <div class="container">
+                        <a class="navbar-brand" href="index.xhtml">
+                            <img class="logo" src="img/SION CASA DE BANQUETES.png" alt="Logo"/>
+                        </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav m-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.xhtml">#{formInternacionalización.btnAtras}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#"><ion-icon name="logo-facebook"></ion-icon>  Facebook</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="#"><ion-icon name="logo-instagram"></ion-icon>    Instagram</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link " href="#"><ion-icon name="logo-whatsapp"></ion-icon>    Whatsapp</a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav">
+                                    <div class="world">     
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                                <img src="img/mund.png"></img>
+                                            </a>
+                                            <div id="idioma" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                               <h:form>
+                                                    <div>
+                                                        <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('en')}" style="color: #000">   
+                                                            <img src="img/eeuu-hoy-en-dia.png">#{formInternacionalización.txtIngles}</img>
+                                                        </h:commandLink> 
+                                                    </div>
+                                                    <div>
+                                                        <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('es')}" style="color: #000">  
+                                                            <img src="img/espana.png">#{formInternacionalización.txtEspañol}</img>                                                 
+                                                        </h:commandLink>
+                                                    </div>
+                                                </h:form>
+                                            </div>
+                                        </li>            
+                                    </div>  
+                                </ul> 
+                            </div>
+                        </div>
+                    </nav>   
+                    <div class="panel-footer">
+                        <button class="btn btn-lg pl-3" style="color: #fff;"></button>
+                    </div>
+                    <section id="nosotros" >
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col col-12 col-lg-6 pl-0 pr-0" style="height: 100%;">
+                                    <video loop="true" autoplay="autoplay" controls="" width="100%" height="100%">
+                                        <source src="Videos/Mi película.mp4" type="video/mp4"/>
+                                    </video>
+                                </div>
+                                <div class="col col-12 col-lg-6 pt-5 ">
+                                    <h3 class="pl-2 pr-2">#{formInternacionalización.txtMision}</h3>
+                                    <p class="pb-4 pl-4 pr-4">#{formInternacionalización.txtDesMision}</p>
+                                    <h3 class="pt-2 pl-2 pr-2 ">#{formInternacionalización.txtVision}</h3>
+                                    <p class="pl-4 pr-4">#{formInternacionalización.txtDesVision}</p>
+                                    <button style="margin: 50px 0px 0px 20px; " href="#" data-toggle="modal" data-target="#Modalcontacto">#{formInternacionalización.btnContacto}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>   
+                    <div id="maps" style="margin:  30px 0px 10px;; text-align: center;" >
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.7690662597834!2d-74.10489038599229!3d4.809669396507268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4748fa9c0fa17d6a!2sParque%20Municipal%20Cota!5e0!3m2!1ses!2sco!4v1586910251348!5m2!1ses!2sco"></iframe>
+                    </div>
+                    <!--Footer-->
+                <footer id="footer" class="pb-4 pt-4">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtPreguntas}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtUbicacion}</a>
+                            </div>        
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtNuestros}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtTerminos}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtPrivacidad}</a>
+                            </div>
+                            <div class="col-12 col-lg">
+                                <a href="#">#{formInternacionalización.txtProductos}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-4">
+                        <div class="row text-center">
+                            <div class="col-12 col-md-4 ">
+                                <a class="btn-floating btn-fb mx-1"></a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                    <ion-icon name="logo-facebook"></ion-icon>  
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-instagram"></ion-icon> 
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-whatsapp"></ion-icon>  
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-1 ">
+                                <a class="btn-floating btn-fb mx-1">
+                                  <ion-icon name="logo-google"></ion-icon>  
+                                </a>
+                            </div> 
+                            <div class="col-12 col-md-4 ">
+                                  <a class="btn-floating btn-fb mx-1"></a>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container text-center mb-3 mt-3">
+                            <div class="list-inline-item">
+                                <a class="btn-floating btn-gplus mx-1">
+                                    <ion-icon class="mr-2" name="call-outline" ></ion-icon>
+                                    <span> 3216780345 / 7689034 </span>
+                                </a>
+                            </div>
+                        </div>
+                  <div class="footer-copyright text-center py-3" style="color:#bdc3c7">WWW.CasadeBanquentesyEventosSION.com</div>
+                    <p class="p">SION, Copyright &copy; 2020</p>
+                </footer>
+                <!--/footer-->
+
+                <!--Modal-->
+                <div class="modal fade" id="Modalcontacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-uppercase" id="exampleModalCenterTitle">#{formInternacionalización.txtContacta}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="from-row">
+                                  <div class="from-group col ">
+                                        <div class="col mb-3">
+                                            <input type="text"  class="form-control" placeholder="#{formInternacionalización.lblNombreCon}"/>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <input type="email" class="form-control" placeholder="#{formInternacionalización.lblCorreoCon}"/>
+                                        </div>
+                                        <div class="col mb-3">
+                                            <input type="text" class="form-control" placeholder="#{formInternacionalización.lblTelefono}"/>
+                                        </div>
+                                        <div class="col">
+                                            <textarea type="text" class="form-control" placeholder="#{formInternacionalización.lblDescripcion}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <!--alerta-->
+                            <div class="modal-body">
+                                <form>
+                                    <div class="from-row">
+                                      <div class="from-group col ">
+                                        <div class="alert alert-danger text-uppercase" role="alert">
+                                          #{formInternacionalización.txtMensaje}
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+
+                            <!--/alerta-->
+                          </div>
+                            <div class="modal-footer">
+                                <button type="reset" class="btn btn-secondary">#{formInternacionalización.btnLimpiar}</button>
+                                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">#{formInternacionalización.btnEnviar}</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!--/Modal-->
+
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            
+            </f:view>
+        </h:body>
+</html>
+

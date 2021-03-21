@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body{
+    font-family: 'Josefin Slab', serif;
+    text-transform: capitalize;
+
+}
+
+.btn{
+    background-color: #990000;
+    color: #ffffff;
+    border: 1px solid #990000;
+}
+.btn:hover{
+    background-color: transparent;
+    color: #990000;
+    border: 1px solid #990000;
+}
+.text-navbar{
+    background-color: #232526 !important;
+     font-size: larger;
+    /*background: #F0F2F0;  /* fallback for old browsers */
+   /* background: -webkit-linear-gradient(to right, #F0F2F0, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+   /* background: linear-gradient(to right, #F0F2F0, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.logo{
+    max-height: 90px !important;
+    align-items: center;
+}
+#navbar{
+    font-size: larger;
+    background-color: #232526 !important;
+}
+
+#navbar a{
+    color: #bdc3c7;
+}
+#navbar .nav-link{
+    font-size: 18px;
+}
+
+.world{
+    margin-left: 80px;
+    text-align: right;
+}
+
+.world img{
+    height: 25px;
+}
+
+.world #idioma img{
+    margin: 10px 10px;
+    height: 20px;
+}
+
+.world{
+    color: #000;
+}
+
+#carouselExampleCaptions{
+    position: relative;
+    z-index: 0;   
+}
+#carouselExampleCaptions .carousel-caption {
+    position: absolute;
+  z-index: 1;
+  max-width: 100%;
+  vertical-align: unset;
+  top: 0;
+  bottom: 0;
+  left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.45)
+}
+.carousel-item h5{
+    font-size: 22px;
+    margin-bottom: -12.5rem;
+    font-weight: 800;
+    line-height: 27.2;
+    text-transform: uppercase;
+    text-align: center;
+}
+.carousel-item p{
+    font-size: 20px;
+    text-transform: none;
+   text-align: center;
+   padding: 0 20% 0 20%;
+}
+.text-sigfimi{
+    color: #ad0d0d !important;
+}
+.text-sigfimi:hover{
+    color: #bdc3c7 !important;
+}
+
+.carousel-item img{
+    object-fit: cover;
+}
+.card{
+    height: 380px;
+}
+.card p{
+    text-align: justify;
+}
+#speakers h4, h6{
+    font-weight: 600;
+}
+#speakers p{
+    text-transform: none;
+}
+
+#footer{
+    background-color: #232526;
+}
+#footer a{
+    color:#bdc3c7;
+}
+#footer p{
+    text-align: center;
+    color: #bdc3c7;
+    height: 5px;
+    
+}
+
+#h12{
+    font-weight: bold;
+    margin: 0;
+}
+#p{
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        margin: 20px 0 30px;
+
+}
+
+#span{
+    font-size: 12px;
+}
+#a{
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+#header a:hover{
+	color: #434343 !important;
+	font-weight: 600;
+ 
+}

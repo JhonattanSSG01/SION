@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body{
+    font-family: 'Josefin Slab', serif;
+    text-transform: capitalize;
+    letter-spacing: .05rem;
+    background-image: url(/img/restaurant-table-720.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+
+}
+
+.logo{
+    max-height: 90px !important;
+    align-items: center;
+}
+#navbar{
+    font-size: larger;
+    background-color: #232526 !important;
+}
+
+#navbar a{
+    color: #bdc3c7;
+}
+#navbar .nav-link{
+    font-size: 18px;
+}
+
+.world{
+    margin-left: 80px;
+    text-align: right;
+}
+
+.world img{
+    height: 25px;
+}
+
+.world #idioma img{
+    margin: 10px 10px;
+    height: 20px;
+}
+
+.world{
+    color: #000;
+    height: 20px;
+}
+.card{
+    width: 580px;
+    margin: 10px;
+    flex-shrink: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .5);
+}
+.card p{
+    text-transform: none;
+    text-align: justify;
+}
+.card-detail{
+    margin: 20px 40px;
+    padding: 15px;
+    margin-top: -60px;
+    text-align: center;
+    position: relative;
+}
+.card-header{
+	text-transform: uppercase;
+}
+.card-body{
+	text-align: right;
+}
+.card-body button{
+	border-radius: 20px;
+	padding: 5px;
+	border: 1px solid #ad0d0d;
+	background-color: #ad0d0d;
+	color: #BDC3C7;
+	box-shadow: 4px 8px 10px rgba(0, 0, 0, .5);
+}
+.card-body button:hover{
+	border: 1px solid #ad0d0d;
+	background-color: transparent;
+	color: #BDC3C7;
+}
+.card-img-top{
+height: 220px;
+margin-left: 1px;
+object-fit: cover;
+
+}
+#footer{
+	margin-top: 3%;
+	background-color: #232526;
+}
+#footer a{
+	color:#bdc3c7;
+}
+#footer p{
+	text-align: center;
+	color: #bdc3c7;
+	height: 5px;
+	
+}
+
+#navbar a:hover{
+	color: #434343 !important;
+	font-weight: 600;
+ 
+}

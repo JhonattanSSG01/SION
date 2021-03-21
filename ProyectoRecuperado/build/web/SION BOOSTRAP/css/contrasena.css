@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body { 
+    margin: 0;
+    font-family: 'Josefin Slab', serif;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 1008px;
+}
+
+.logo{
+    max-height: 90px !important;
+}
+
+.card-title{
+	font-weight: 600;
+	font-size: 30px;
+}
+
+form{
+	margin: auto;
+}
+	
+form .btn{
+	background: #bdc3c7;
+	color: white;
+}
+	
+form .btn:hover{
+	font-weight: 600;
+	color: white;
+}
+	
+form .text{
+	color: rgba(0, 0, 0, 0.45);
+}
+	
+	
+form .text a{
+	color: #434343;
+}
+	
+.card{
+	width: 700px;
+	align-items: center;
+	margin: auto;
+	border: 1px solid #05434E;
+}
+
+form .text a:hover{
+    text-decoration: none;
+    color: #434343 !important;
+    font-weight: 600;
+   
+}
+
+@media screen and (max-width: 380px){
+.card-body .card-title{
+			padding: 2px;
+			font-size: 18px;
+}
+}

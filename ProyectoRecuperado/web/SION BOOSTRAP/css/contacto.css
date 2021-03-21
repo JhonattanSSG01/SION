@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body{
+    font-family: 'Josefin Slab', serif;
+    letter-spacing: .05rem;
+    background-image: url(/img/restaurant-table-720.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+
+}
+.logo{
+    max-height: 90px !important;
+    align-items: center;
+}
+#navbar{
+    font-size: larger;
+    background-color: #232526 !important;
+}
+
+#navbar a{
+    color: #bdc3c7;
+}
+#navbar .nav-link{
+    font-size: 18px;
+}
+
+.world{
+    margin-left: 80px;
+    text-align: right;
+}
+
+.world img{
+    height: 25px;
+}
+
+.world #idioma img{
+    margin: 10px 10px;
+    height: 20px;
+}
+
+.world{
+    color: #000;
+} 
+
+#nosotros{
+    margin: 0px 5px 0px 5px;
+    background: rgba(0,0,0,0.6);
+    color: #fff !important;
+}
+#nosotros button{
+    border-radius: 20px;
+    border: 1px solid #ad0d0d;
+    background: transparent;
+    color:  #BDC3C7;
+    font-size: 30px;
+}
+#nosotros button:hover{
+    border: 1px solid #ad0d0d;
+    background: #ad0d0d;
+    color:  #000000;
+}
+
+h3{
+    text-transform: uppercase;
+    color:  #BDC3C7;
+}
+p{
+    font-size: 20px;
+    text-align: justify;
+    color:  #BDC3C7;
+}
+h2{
+    color:#fff;
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    margin-bottom: 18px; 
+}
+
+#nosotros .row{
+    height: 538px;
+}
+
+iframe{
+    height: 200px;
+    margin-left: 50px;
+    width: 85%;
+
+}
+
+#footer{
+    background-color: #232526;
+}
+#footer a{
+    color:#bdc3c7;
+}
+#footer p{
+    text-align: center;
+    color: #bdc3c7;
+    height: 5px;
+    
+}
+#navbar a:hover{
+	color: #434343 !important;
+	font-weight: 600;
+ 
+}

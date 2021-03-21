@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+
+:root {
+
+  --primary:  #3A6073;
+  --accent-color: #243B55;
+    --light: #ffffff;
+    --grey: #efefef;
+    --color-three: #0083B0;
+    --border-color: #D8D8D8;
+
+
+}
+
+body {
+
+
+    letter-spacing: .05rem;
+    overflow: hidden;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 300;
+    color: var(--grey);
+}
+
+a:hover {text-decoration: none;}
+
+.bg-primary {background-color: var(--primary) !important;}
+.bg-light {background-color: var(--light) !important;}
+.bg-mix {background: linear-gradient(180deg, var(--light)50%, var(--grey )0);}
+.bg-grey {background-color: var(--grey) !important;}
+
+.btn {
+    border: 0;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color:var(--primary);
+}
+
+.dropdown-menu{
+    left: 80px;
+}
+
+
+#dropdown{
+    left: 210px;
+}
+
+#sidebar-container {
+
+    min-height: 100vh;
+
+}
+
+#sidebar-container .logo {
+    padding: .875rem 1.25rem;
+
+}
+
+.btn-search {
+    right: 5px;
+}
+
+.avatar {
+    max-width: 35px;
+}
+
+#content {
+    /*background-image: url(../img/adminn.jpg);
+    background-size: 100% 100%;
+    object-fit: cover;*/
+    background-color: #eef2f3;
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+
+}
+
+.card-body i{
+    font-size: 20px;
+}
+
+.stat {
+    border-right: 1px solid var(--primary);
+    
+}
+
+#color{
+    color: #434343;
+}
+
+#menu-items li a.active{
+	background: #333;
+	cursor: none;
+	pointer-events: none;
+}
+
+/*----------  Home Styles  ----------*/
+
+.tile-container{
+	text-align: center;
+	padding: 20px 25px;
+}
+.tile{
+	height: 200px;
+	width: 200px;
+	margin: 10px;
+	display: inline-block;
+	text-decoration: none;
+	color: var(--accent-color);
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	user-select: none;
+	transition: all .2s ease-in-out;
+	background-color: #ffffff;
+        
+}
+.tile:hover{
+	text-decoration: none;
+	border-color: var(--border-color);
+        border-radius: 6px;
+        box-shadow: 8px 15px 15px rgba(0, 0, 0, .3);
+}
+.tile:focus,
+.tile:active{
+	outline: none;
+}
+.tile-tittle{
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	height: 40px;
+	line-height: 40px;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	border-bottom: 1px solid var(--border-color);
+	transition: all .2s ease-in-out;
+}
+.tile:hover .tile-tittle{
+	color: #FFF;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+	border-color: var(--color-three);
+	background-color: var(--color-three);
+}
+.tile-icon{
+	width: 100%;
+        height: 160px;
+	box-sizing: border-box;
+	padding-top: 22px;
+        transition: all .2s ease-in-out;
+}
+
+.tile-icon:hover{ 
+       transform: translate3d(-3px, -3px, -8px);     
+}
+
+
+.tile-icon > i{
+	font-size: 75px;
+}
+.tile-icon > p{
+        margin-top: 8px;
+	line-height: 35px;
+}
+.tile:hover .tile-icon > i,
+.tile:hover .tile-icon > p{
+	color: var(--color-three);
+}
+
+.page-header{
+    padding: 30px 20px 60px;
+}
+
+.page-nav-tabs{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+}
+
+.page-nav-tabs li{
+    margin: 10px 35px;
+}
+
+.page-nav-tabs li a{
+   color: var(--accent-color);
+   min-width: 350px;
+   text-align: center;
+   font-size: 25px;
+   display: block;
+   width: auto;
+   border-bottom: 2px solid transparent;
+   transition: all .3s ease-in-out;
+   font-weight: bold;
+}
+
+.page-nav-tabs li, .page-nav-tabs li a{
+    height: 50px;
+   line-height: 50px;
+}
+
+.page-nav-tabs li a.active{
+	color: var(--color-three);
+}
+.page-nav-tabs li a:hover{
+	text-decoration: none;
+	color: var(--color-three);
+	border-bottom: 2px solid var(--color-three);
+}
+
+.edit{
+    background: rgba(18, 142, 190, .3) !important;
+    transition: all .2s ease-in-out !important;
+}
+
+.edit:hover{
+    background: rgba(18, 142, 190, .5) !important;
+    transition: all .2s ease-in-out !important;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, .3) !important;
+}
+
+.delete{
+    background: rgba(163, 22, 22, .3) !important;
+    transition: all .2s ease-in-out !important;
+}
+
+.delete:hover{
+    background: rgba(163, 22, 22, .5) !important;
+    transition: all .2s ease-in-out !important;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, .3) !important;
+}
