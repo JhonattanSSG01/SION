@@ -114,7 +114,7 @@ public class usuarioRolController implements Serializable {
     public String preActualizarUsuarioRol(UsuarioRol usuarioRol){
         cliente = clienteFacade.consultarClienteID(usuarioRol.getCodUsu());
         this.usuarioRol = usuarioRol;
-        return "actualizarUsuarioRol";
+        return "usuario-edit";
     }
     
     public void actualizarUsuarioRol(){

@@ -178,7 +178,7 @@
 			<!-- Content -->
 			<div class="full-box tile-container">
 
-				<a href="client-new.html" class="tile">
+				<a href="cliente.xhtml" class="tile">
 					<div class="tile-tittle">Clientes</div>
 					<div class="tile-icon">
 						<i class="fas fa-users fa-fw"></i>
@@ -186,7 +186,7 @@
 					</div>
 				</a>
 
-				<a href="item-list.html" class="tile">
+				<a href="empleado.xhtml" class="tile">
 					<div class="tile-tittle">Empleados</div>
 					<div class="tile-icon">
 						<i class="far fa-address-card fa-fw"></i>
@@ -194,7 +194,7 @@
 					</div>
 				</a>
 
-				<a href="reservation-list.html" class="tile">
+				<a href="permiso.xhtml" class="tile">
 					<div class="tile-tittle">Permisos</div>
 					<div class="tile-icon">
 						<i class="fas fa-clipboard-check fa-fw"></i>
@@ -202,7 +202,7 @@
 					</div>
 				</a>
 
-				<a href="user-list.html" class="tile">
+				<a href="rol.xhtml" class="tile">
 					<div class="tile-tittle">Roles</div>
 					<div class="tile-icon">
 						<i class="fas fa-clipboard-list fa-fw"></i>
@@ -262,47 +262,47 @@
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
                                     <h1 class="mb-3"><h:outputText value="Agregar Usuario"/></h1>
                                         <h:panelGrid>
-                                           <div class="col-5">
-                                                <h:outputLabel class="form-label" value="Identificación" for="docUsu" /> 
-                                                <h:inputText class="form-control" id="docUsu" value="#{usuarioRolController.usuarioRol.docUsu}"  title="DocUsu" required="true"/>
-                                           </div>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Identificación" for="docUsu" /> 
+                                                 <h:inputText class="form-control" id="docUsu" value="#{usuarioRolController.usuarioRol.docUsu}"  title="DocUsu" required="true"/>
+                                            </div>
                                             <div class="col-md-6">
                                                 <h:outputLabel class="form-label" value="Nombre Completo" for="nomcUsu" />
                                                 <h:inputText class="form-control" id="nomcUsu" value="#{usuarioRolController.usuarioRol.nomcUsu}" title="NomcUsu" required="true"/>
-                                           </div>
-                                           <div class="col-md-6">
-                                                <h:outputLabel class="form-label" value="Telefono/Celular:" for="telCli" />
-                                                <h:inputText class="form-control" id="telCli" value="#{usuarioRolController.cliente.telCli}" title="TelCli" required="true"/>
-                                           </div>
-                                           <div class="col-md-6">
-                                                <h:outputLabel class="form-label" value="Direccion" for="dirCli" />
-                                                <h:inputText class="form-control" id="DirCli" value="#{usuarioRolController.cliente.dirCli}" title="DirCli" required="true"/>
-                                           </div>
-                                           <div class="col-md-6">
-                                                <h:outputLabel class="form-label" value="Correo Electronico" for="corUsu" />
-                                                <h:inputText class="form-control" id="corUsu" value="#{usuarioRolController.usuarioRol.corUsu}" title="CorUsu" required="true"/>
-                                           </div>
-                                           <div class="col-md-6">
-                                                <h:outputLabel class="form-label" value="Contraseña:" for="conUsu" />
-                                                <h:inputSecret class="form-control" id="conUsu" value="#{usuarioRolController.usuarioRol.conUsu}" title="ConUsu" required="true"/>
-                                           </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Telefono/Celular:" for="telCli" />
+                                                 <h:inputText class="form-control" id="telCli" value="#{usuarioRolController.cliente.telCli}" title="TelCli" required="true"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Direccion" for="dirCli" />
+                                                 <h:inputText class="form-control" id="DirCli" value="#{usuarioRolController.cliente.dirCli}" title="DirCli" required="true"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Correo Electronico" for="corUsu" />
+                                                 <h:inputText class="form-control" id="corUsu" value="#{usuarioRolController.usuarioRol.corUsu}" title="CorUsu" required="true"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Contraseña:" for="conUsu" />
+                                                 <h:inputSecret class="form-control" id="conUsu" value="#{usuarioRolController.usuarioRol.conUsu}" title="ConUsu" required="true"/>
+                                            </div>
                                             <div class="col-12">
                                                 <div class="form-check">
                                                   <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
                                                   <label class="form-check-label" for="invalidCheck">
                                                     Estas de acuerdo con los terminos y condiciones!!
                                                   </label>
-                                                  <div class="invalid-feedback MT-3">
+                                                  <div class="invalid-feedback mt-3">
                                                     Debes estar de acuerdo antes de guardar.
                                                   </div>
                                                 </div>
                                             </div>
-                                            <div class="col"  style="text-align: -webkit-center">
-                                                <button type="reset" class="btn btn-raised btn-secondary btn-sm mt-5"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
-                                                <h:commandButton class="btn btn-dark mt-5" value="Guardar" action="#{usuarioRolController.registrarUsuarioRol(1)}"></h:commandButton>
+                                            <div class="mt-5" style="display: inline-block">
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{usuarioRolController.registrarUsuarioRol(1)}"></h:commandButton>
+                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
                                             </div>
                                         </h:panelGrid>   
-                               </h:form>
+                                </h:form>
                            </f:view>
                     </div>
               </div>
@@ -310,43 +310,13 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
 
 
     <!---Tabla de las graficas-->
-
-
-    <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'bar',
-
-            // The data for our dataset
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
-                datasets: [{
-                    label: 'Grafica de datos 2021',
-                    backgroundColor: [
-                      '#6f0000',
-                      '#93291E',
-                      '#3b8d99',
-                      '#2C5364'
-
-                      ],
-
-                      maxBarThickness: 45,
-
-                    borderColor: 'rgb(255, 99, 132)',
-                    data: [75, 58, 88, 70]
-                }]
-            },
-            // Configuration options go here
-            options: {}
-            });
-    </script>
     
     <Script>
         const btn = document.querySelector('#menu-btn');

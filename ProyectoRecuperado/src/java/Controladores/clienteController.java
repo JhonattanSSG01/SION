@@ -67,14 +67,14 @@ public class clienteController implements Serializable {
     
     public String preActualizarCliente(Cliente cliente){
         this.cliente = cliente;
-        return "actualizarCliente";
+        return "usuario-edit";
     }
     
     public String actualizarCliente(){
         cliente.setCodUsu(usuarioRolFacade.find(this.usuarioRol.getCodUsu()));
         clienteFacade.edit(this.cliente);
         cliente = new Cliente();
-        return "registroCliente";
+        return "cliente";
     }
     
     public void eliminarCliente(Cliente cliente){
