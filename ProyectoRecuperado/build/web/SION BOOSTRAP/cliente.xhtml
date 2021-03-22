@@ -2,14 +2,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
         <link rel="stylesheet" href="css/6.css"></link>
         <link href="css/7.css" rel="stylesheet" type="text/css"></link>
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
-      
+        <link href="css/iconss.css" rel="stylesheet" type="text/css"/>
+        
     <title>Dashboard Gerente</title>
     </h:head>
     <h:body style="color: #000;">
@@ -235,68 +237,51 @@
                     </div>
                 </div>
               </section>
-
-              <!--Tabla de la derecha de las ultimas notificaciones-->
-
-
-              <section>
-                <div class="container">    
-                    <div class="row" style="place-content: center">
-                        <div class="col-lg-10 my-3">
-                            <div class="card rounded-0">
-                                <div class="card-header bg-light">
-                                  <h6 class="font-weight-bold mb-0">Eventos de los ultimos meses</h6>
-                                </div>
-                                <div class="card-body">
-                                  <canvas id="myChart" width="300" height="150"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="card">
-                            <h5 class="card-header text-uppercase">Labores Internas</h5>
-                            <div class="row">
-                                <div class="col-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-uppercase">Productos</h5>
-                                        <p class="card-text text-justify">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-uppercase">Proveedores</h5>
-                                        <p class="card-text text-justify">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-uppercase">Usuarios</h5>
-                                        <p class="card-text text-justify">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-uppercase">Eventos</h5>
-                                        <p class="card-text text-justify">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Ingresar</a>
-                                    </div>
-                                </div>  
-                                <div class="card-body" style="text-align: end">
-                                    <a href="#menu-btn" class="card-link text-muted m-3">Más información</a>
-                                </div>
-                            </div>                         
-                        </div>
-                    </div>               
-                </section>    
- 
- 
-             
               
-            
-              
+              <div class="container" style="max-width: 85%">
+                  <!-- Page header -->
+			<div class="full-box page-header">
+				<h3 class="text-left">
+					<i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CLIENTE
+				</h3>
+				<p class="text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+				</p>
+			</div>
+
+			<div class="container-fluid">
+				<ul class="full-box list-unstyled page-nav-tabs">
+					<li>
+						<a class="active" href="client-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CLIENTE</a>
+					</li>
+					<li>
+						<a href="client-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE CLIENTES</a>
+					</li>
+					<li>
+						<a href="client-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR CLIENTE</a>
+					</li>
+				</ul>	
+			</div>
+                  
+                        <f:view>
+                            <h:form class="container mb-4" style="background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%); width:1000px; height: 300px;"> 
+                                 <h1 class="mb-3"><h:outputText value="Crear Cliente"/></h1>
+                                 <h:panelGrid columns="2" style="margin-left: 290px;">
+                                     <h:outputLabel value="Tel_Cli:" for="telCli" />
+                                     <h:inputText id="telCli" value="#{clienteController.cliente.telCli}" title="TelCli" required="true" requiredMessage="El telefono es requerido."/>
+                                     <h:outputLabel value="Dir_Cli:" for="dirCli" />
+                                     <h:inputText id="dirCli" value="#{clienteController.cliente.dirCli}" title="DirCli" required="true" requiredMessage="La direccion es requerida."/>
+                                     <h:outputLabel value="Cod_Usu:" for="codUsu" />
+                                     <h:selectOneMenu id="codUsu" value="#{clienteController.usuarioRol.codRol}" title="CodUsu" >
+                                         <!-- TODO: update below reference to list of available items-->
+                                         <f:selectItems value="#{usuarioRolController.consultarUsuarioRol()}" var="usuarioRol" itemValue="#{usuarioRol.codUsu}" itemLabel="#{usuarioRol.nomcUsu}"/>
+                                     </h:selectOneMenu><br></br><br></br><br></br>
+                                     <h:commandButton style="width: 100px; margin-left: 45px;" class="btn btn-secondary" value="Registrar" action="#{clienteController.registroCliente()}"></h:commandButton>
+                                     <h:commandButton style="width: 100px; margin-top: -70px" class="btn btn-dark" value="Actualizar" action="#{clienteController.actualizarCliente()}"></h:commandButton>
+                                 </h:panelGrid>
+                             </h:form>
+                         </f:view>
+              </div>
               </div>
         </div>
     </div>

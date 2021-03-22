@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota&display=swap');
+
+
+:root {
+
+  --primary:  #3A6073;
+    --light: #ffffff;
+    --grey: #efefef;
+
+
+}
+
+body {
+
+    letter-spacing: .05rem;
+    overflow: hidden;
+    font-family: 'Bellota', cursive;
+    font-weight: 300;
+    color: var(--primary);
+    scroll-behavior: smooth;
+}
+
+a:hover {text-decoration: none;}
+
+.bg-primary {background-color: var(--primary) !important;}
+.bg-light {background-color: var(--light) !important;}
+.bg-mix {background: linear-gradient(180deg, var(--light)50%, var(--grey )0);}
+.bg-grey {background-color: var(--grey) !important;}
+
+.btn {
+    border: 0;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color:var(--primary);
+}
+
+.navbar{
+    background-color: rgb(35, 35, 31);
+    height: 52px;
+}
+
+#button{
+    background-color: rgb(35, 35, 31);
+    color: #fff;
+}
+
+#container {
+    text-align: center;
+    font-size: 150px;
+}
+
+#sidebar-container {
+
+    min-height: 100vh;
+
+}
+
+#sidebar-container .logo {
+    padding: .875rem 1.25rem;
+
+}
+
+#sidebar-container .menu {
+
+    width: 15rem;
+}
+
+#column{
+    place-content: center;
+}
+
+.navbar-nav a{
+    color: #fff;
+    font-size: larger;
+}
+
+.navbar-nav a:hover{
+    color: #ED213A;
+}
+
+.world img{
+        height: 20px;
+}
+
+.world #idioma img{
+        margin: 10px 8px 11px 12px;
+        height: 20px;
+}
+
+.btn-search {
+    right: 5px;
+}
+
+#search-space{
+    width: 40%;
+}
+
+#search{
+    border-radius: 25px; 
+    width: 100%;
+}
+
+#search:hover{
+    border: 2px solid #ED213A;  
+}
+
+.avatar {
+    max-width: 35px;
+    height: 25px;
+    object-fit: cover;
+}
+
+#content {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+    background-color: rgba(55, 55, 55, .2);
+}
+
+#content::-webkit-scrollbar{
+    width: 10px;
+    background-color: rgba(215, 215, 215, .2);
+}
+
+#content::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(85, 85, 85, .6);
+    border-right: 2px solid #fff; 
+}
+
+#content::-webkit-scrollbar-track:hover,
+#content::-webkit-scrollbar-track:active {
+  background: rgba(95, 95, 95, .4);
+}
+
+.stat {
+    border-right: 2px solid var(--primary);
+}
