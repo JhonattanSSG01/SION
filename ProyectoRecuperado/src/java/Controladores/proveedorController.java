@@ -61,10 +61,10 @@ public class proveedorController implements Serializable {
     
     public String preActualizarProveedor(Proveedor proveedor){
         this.proveedor = proveedor;
-        return "actualizarProveedor";
+        return "proveedor-edit";
     }
     
-    public void actualizarProveedor(){
+    public String actualizarProveedor(){
         try{
             proveedorFacade.edit(this.proveedor);
             proveedor = new Proveedor();
@@ -73,6 +73,7 @@ public class proveedorController implements Serializable {
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el proveedor','error')");
         }
         
+        return "proveedor-list";
     }
     
     public void eliminarProveedor(Proveedor proveedor) { 

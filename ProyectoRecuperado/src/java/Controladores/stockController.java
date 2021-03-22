@@ -62,11 +62,11 @@ public class stockController implements Serializable {
     
     public String preActualizarStock(Stock stock){
          this.stock = stock;
-         return "actualizarStock";
+         return "stock-edit";
     }
     
      
-   public void actualizarStock(){
+   public String actualizarStock(){
        try{
            stockFacade.edit(this.stock);
             stock = new Stock();
@@ -75,6 +75,7 @@ public class stockController implements Serializable {
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el stock','error')");
         }
         
+       return "stock-list";
    }
     
    public void eliminarStock(Stock stock){

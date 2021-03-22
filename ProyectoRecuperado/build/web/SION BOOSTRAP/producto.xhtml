@@ -238,7 +238,7 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR PROVEEDOR
+					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR PRODUCTO MENAJE
                                 </h3>
 				<p class="text-justify">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
@@ -249,13 +249,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="proveedor-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Proveedores</a>
+                                                <a class="text-uppercase" href="producto-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Productos</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Proveedor</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Producto</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="proveedor-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Proveedor</a>
+						<a class="text-uppercase" href="producto-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Producto</a>
 					</li>
 				</ul>	
 			</div>
@@ -263,20 +263,21 @@
              
                             <f:view>
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Proveedor"/></h1>
+                                    <h1 class="mb-3"><h:outputText value="Agregar Producto"/></h1>
                                         <h:panelGrid>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Nombre Proveedor" for="NomPro" />
-                                                 <h:inputText class="form-control" id="NomPro" value="#{proveedorController.proveedor.nomPro}" title="NomPro" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Nombre Producto" for="NomPto" />
+                                                 <h:inputText class="form-control" id="NomPto" value="#{productoMenajeController.productoMenaje.nomProd}" title="NomPto" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Telefono/Celular" for="TelPro" />
-                                                 <h:inputText class="form-control" id="TelPro" value="#{proveedorController.proveedor.telPro}" title="TelPro" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Valor" for="ValPto" />
+                                                 <h:inputText class="form-control" id="ValPto" value="#{productoMenajeController.productoMenaje.valProd}" title="ValPto" required="true"/>
                                             </div>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Direccion" for="DirPro" />
-                                                 <h:inputText class="form-control" id="DirPro" value="#{proveedorController.proveedor.dirPro}" title="DirPro" required="true"/>
-                                            </div>
+                                            <h:outputLabel class="form-label" value="Proveedor" for="ProPto" />
+                                            <h:selectOneMenu class="form-control" id="ProPto" value="#{productoMenajeController.productoMenaje.codPro}" title="ProPto" >
+                                                <!-- TODO: update below reference to list of available items-->
+                                                <f:selectItems value="#{productoMenajeController.consultarProductoMenaje()}" var="producto" itemValue="#{producto.codPro}" itemLabel="#{producto.codPro.nomPro}"/>
+                                            </h:selectOneMenu>
                                             <div class="col-12">
                                                 <div class="form-check">
                                                   <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
@@ -289,7 +290,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{proveedorController.registrarProveedor()}"></h:commandButton>
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{productoMenajeController.registrarProductoMenaje()}"></h:commandButton>
                                                 <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
                                             </div>
                                         </h:panelGrid>   

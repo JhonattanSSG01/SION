@@ -4,7 +4,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
@@ -159,8 +160,8 @@
 
 
               <div id="content">
-                  
-              <section class="py-4">
+              
+                  <section class="py-4">
 
               <div class="container">
 
@@ -177,7 +178,7 @@
               </div>
               </section>
               
-             <!--Tabla central -->
+              <!--Tabla central -->
 
               <section id="container" class="bg-mix py-3">
                 <div class="container">
@@ -238,8 +239,8 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR PROVEEDOR
-                                </h3>
+					<i class="fas fa-search"></i> &nbsp; CONSULTAR INFORMACION
+				</h3>
 				<p class="text-justify">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
 				</p>
@@ -249,65 +250,56 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="proveedor-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Proveedores</a>
+                                                <a class="text-uppercase" href="inventario-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Informacion</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Proveedor</a>
+                                                <a class="text-uppercase" href="inventario.xhtml"><i class="fas fa-user-plus"></i> &nbsp; Agregar Informacion</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="proveedor-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Proveedor</a>
+						<a class="active text-uppercase" href="#"><i class="fas fa-search"></i> &nbsp; Consultar Informacion</a>
 					</li>
 				</ul>	
 			</div>
                   </section>
-             
-                            <f:view>
-                                <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Proveedor"/></h1>
-                                        <h:panelGrid>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Nombre Proveedor" for="NomPro" />
-                                                 <h:inputText class="form-control" id="NomPro" value="#{proveedorController.proveedor.nomPro}" title="NomPro" required="true"/>
-                                            </div>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Telefono/Celular" for="TelPro" />
-                                                 <h:inputText class="form-control" id="TelPro" value="#{proveedorController.proveedor.telPro}" title="TelPro" required="true"/>
-                                            </div>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Direccion" for="DirPro" />
-                                                 <h:inputText class="form-control" id="DirPro" value="#{proveedorController.proveedor.dirPro}" title="DirPro" required="true"/>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
-                                                  <label class="form-check-label" for="invalidCheck">
-                                                    Estas de acuerdo con los terminos y condiciones!!
-                                                  </label>
-                                                  <div class="invalid-feedback mt-3">
-                                                    Debes estar de acuerdo antes de guardar.
-                                                  </div>
-                                                </div>
-                                            </div>
-                                            <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{proveedorController.registrarProveedor()}"></h:commandButton>
-                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
-                                            </div>
-                                        </h:panelGrid>   
-                                </h:form>
-                           </f:view>
-                    </div>
-              </div>
-        </div>
+              
+              <div class="container text-justify" style="max-width: 90%">   
+                   <f:view>
+                      <h:form>
+                          <h1><h:outputText class="text-uppercase" value="Consultar Informacion"/></h1>
+                          <p:dataTable id="tabla" var="inventario" rows="5" paginator="true" paginatorPosition="bottom"  rowsPerPageTemplate="5,10,15,20" scrollable="true" value="#{inventarioController.consultarInventario()}">
+                              <p:column filterBy="#{inventario.codSto.catpSto}" filterPosition="top">
+                                    <f:facet name="header">
+                                        <h:outputText value="Categoria del Stock"/>
+                                    </f:facet>
+                                    <h:outputText value="#{inventario.codSto.catpSto}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Encargado"/>
+                                    </f:facet>
+                                    <h:outputText value="#{inventario.encInv}"/>
+                                </p:column>
+                            </p:dataTable>
+                            <div class="row">
+                               <div class="col-lg-3 offset-5 mt-4" >
+                                   <h:commandLink class="btn btn-success w-100 align-self-center"><i class="far fa-file-excel mr-2"></i><span>Descargar Excel</span>
+                                      <p:dataExporter type="xls" target="tabla" fileName="reporteProfesor"/>
+                                  </h:commandLink>
+                              </div>  
+                            </div>
+                      </h:form>
+                  </f:view>
+                </div>    
+                </div>   
+             </div>
+           </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
 
-
-    <!---Tabla de las graficas-->
     
     <Script>
         const btn = document.querySelector('#menu-btn');
@@ -319,28 +311,7 @@
           document.querySelector('body').classList.toggle('body-expanded');
       });
     </Script>
-    
-    <script>
-        (function () {
-  'use strict';
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation');
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add('was-validated');
-      }, false);
-    });
-})();
-    </script>
 
 
     </h:body>

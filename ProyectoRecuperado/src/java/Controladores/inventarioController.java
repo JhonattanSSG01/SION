@@ -77,10 +77,10 @@ public class inventarioController implements Serializable {
     
     public String preActualizarInventario(Inventario inventario){
         this.inventario = inventario;
-        return "actualizarInventario";
+        return "inventario-edit";
     }
     
-    public void actualizarInventario(){
+    public String actualizarInventario(){
         try{ 
             inventario.setCodSto(stockFacade.find(this.stock.getCodSto()));
             inventarioFacade.edit(this.inventario);
@@ -90,6 +90,7 @@ public class inventarioController implements Serializable {
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el registro en el inventario','error')");
         }
         
+        return "inventario-list";
     }
     
     public void eliminarInventario(Inventario inventario){

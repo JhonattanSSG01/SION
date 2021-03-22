@@ -76,10 +76,10 @@ public class productoMenajeController implements Serializable {
     
     public String preActualizarProductoMenaje(ProductoMenaje productoMenaje){
         this.productoMenaje = productoMenaje;
-        return "actualizarProductoMenaje";
+        return "producto-edit";
     }
     
-    public void actualizarProveedor(){
+    public String actualizarProveedor(){
         try{
             productoMenaje.setCodPro(proveedorFacade.find(this.proveedor.getCodPro()));
             productoMenajeFacade.edit(this.productoMenaje);
@@ -89,6 +89,7 @@ public class productoMenajeController implements Serializable {
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el producto','error')");
         }
         
+        return "producto-list";
     }
     
     public void eliminarProductoMenaje(ProductoMenaje productoMenaje) { 
