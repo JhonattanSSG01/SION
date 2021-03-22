@@ -238,8 +238,8 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR ORDEN DE SERVICIO
-                                </h3>
+					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR EVENTO
+				</h3>
 				<p class="text-justify">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
 				</p>
@@ -249,13 +249,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="orden-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Ordenes</a>
+                                                <a class="text-uppercase" href="evento-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Eventos</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Orden</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Evento</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="orden-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Orden</a>
+						<a class="text-uppercase" href="evento-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Evento</a>
 					</li>
 				</ul>	
 			</div>
@@ -263,24 +263,33 @@
              
                             <f:view>
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Orden"/></h1>
+                                    <h1 class="mb-3"><h:outputText value="Actualizar Evento"/></h1>
                                         <h:panelGrid>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Fecha" for="FchOrd" />
-                                                 <h:inputText class="form-control" id="FchOrd" value="#{ordenDeServicioController.ordenDeServicio.fecOse}" title="FchOrd" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Fecha" for="FchEve" />
+                                                 <h:inputText class="form-control" id="FchEve" value="#{eventoController.evento.fecEve}" title="FchEve" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Abono del Total" for="AbnOrd" />
-                                                 <h:inputText class="form-control" id="AbnOrd" value="#{ordenDeServicioController.ordenDeServicio.aboOse}" title="AbnOrd" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Hora" for="HorEve" />
+                                                 <h:inputText class="form-control" id="HorEve" value="#{eventoController.evento.horEve}" title="HorEve" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Saldo Total" for="TotOrd" />
-                                                 <h:inputText class="form-control" id="TotOrd" value="#{ordenDeServicioController.ordenDeServicio.salOse}" title="TotOrd" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Tipo de Evento" for="TipEve" />
+                                                 <h:inputText class="form-control" id="TipEve" value="#{eventoController.evento.tipEve}" title="TipEve" required="true"/>
                                             </div>
-                                            <h:outputLabel class="form-label" value="Tipo de evento" for="TipEve" />
-                                            <h:selectOneMenu class="form-control" id="TipEve" value="#{ordenDeServicioController.ordenDeServicio.codEve}" title="TipEve" >
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Invitados" for="InvEve" />
+                                                 <h:inputText class="form-control" id="InvEve" value="#{eventoController.evento.invEve}" title="InvEve" required="true"/>
+                                            </div>
+                                            <h:outputLabel class="form-label" value="Cliente" for="codUsu" />
+                                            <h:selectOneMenu class="form-control" id="codUsu" value="#{eventoController.evento.codCli}" title="CodUsu" >
                                                 <!-- TODO: update below reference to list of available items-->
-                                                <f:selectItems value="#{ordenDeServicioController.consultarOrdenDeServicios()}" var="orden" itemValue="#{orden.codEve}" itemLabel="#{orden.codEve.tipEve}"/>
+                                                <f:selectItems value="#{eventoController.consultarEventos()}" var="cliente" itemValue="#{cliente.codCli}" itemLabel="#{cliente.codCli.codUsu.nomcUsu}"/>
+                                            </h:selectOneMenu>
+                                            <h:outputLabel class="form-label" value="Empleado" for="codEmp" />
+                                            <h:selectOneMenu class="form-control" id="codEmp" value="#{eventoController.evento.codCli}" title="CodUsu" >
+                                                <!-- TODO: update below reference to list of available items-->
+                                                <f:selectItems value="#{eventoController.consultarEventos()}" var="empleado" itemValue="#{empleado.codDee}" itemLabel="#{empleado.codDee.codEmp.codUsu.nomcUsu}"/>
                                             </h:selectOneMenu>
                                             <div class="col-12">
                                                 <div class="form-check">
@@ -294,7 +303,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{ordenDeServicioController.registroOrdenDeServicio()}"></h:commandButton>
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{eventoController.actualizarEvento()}"></h:commandButton>
                                                 <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
                                             </div>
                                         </h:panelGrid>   

@@ -66,14 +66,14 @@ public class ordenDeServicioController implements Serializable {
     
     public String preActualizarOrdenDeServicio(OrdenDeServicio ordenDeServicio){
         this.ordenDeServicio = ordenDeServicio;
-        return "actualizarOrdenDeServicio";
+        return "orden-edit";
     }
     
     public String actualizarOrdenDeServicio(){
         ordenDeServicio.setCodEve(eventoFacade.find(this.evento.getCodEve()));
         ordenDeServicioFacade.edit(this.ordenDeServicio);
         ordenDeServicio = new OrdenDeServicio();
-        return "registroOrdenDeServicio";
+        return "orden";
     }
     
     public void eliminarOrdenDeServicio(OrdenDeServicio ordenDeServicio){

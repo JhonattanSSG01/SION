@@ -263,7 +263,7 @@
              
                             <f:view>
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Orden"/></h1>
+                                    <h1 class="mb-3"><h:outputText value="Actualizar Orden"/></h1>
                                         <h:panelGrid>
                                             <div class="col-md-6">
                                                  <h:outputLabel class="form-label" value="Fecha" for="FchOrd" />
@@ -294,7 +294,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{ordenDeServicioController.registroOrdenDeServicio()}"></h:commandButton>
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{ordenDeServicioController.actualizarOrdenDeServicio()}"></h:commandButton>
                                                 <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
                                             </div>
                                         </h:panelGrid>   

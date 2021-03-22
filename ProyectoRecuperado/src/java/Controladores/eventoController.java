@@ -82,7 +82,7 @@ public class eventoController implements Serializable {
     
     public String preActualizarEvento(Evento evento){
         this.evento = evento;
-        return "actualizarEvento";
+        return "evento-edit";
     }
     
     public String actualizarEvento(){
@@ -90,7 +90,7 @@ public class eventoController implements Serializable {
         evento.setCodDee(detalleTipoEventoFacade.find(this.detalleTipoEvento.getCodDee()));
         eventoFacade.edit(this.evento);
         evento = new Evento();
-        return "listaEvento";
+        return "evento-list";
     }
     
     public void eliminarEvento(Evento evento){
