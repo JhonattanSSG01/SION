@@ -159,7 +159,7 @@
 
 
               <div id="content">
-                  
+              
               <section class="py-4">
 
               <div class="container">
@@ -177,7 +177,7 @@
               </div>
               </section>
               
-             <!--Tabla central -->
+              <!--Tabla central -->
 
               <section id="container" class="bg-mix py-3">
                 <div class="container">
@@ -238,7 +238,7 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR SERVICIO INDIVIDUAL
+					<i class="fas fa-clipboard-list"></i> &nbsp; LISTA DE SERVICIOs-PAQUETE TODO INLUIDO
 				</h3>
 				<p class="text-justify">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
@@ -249,55 +249,53 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="servicioIndividual-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Servicios</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Paquetes</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Servicio</a>
+                                                <a class="text-uppercase" href="paquete.xhtml"><i class="fas fa-user-plus"></i> &nbsp; Agregar Paquete</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="servicioIndividual-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Servicio</a>
+						<a class="text-uppercase" href="paquete-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Paquete</a>
 					</li>
 				</ul>	
 			</div>
                   </section>
-             
-                            <f:view>
-                                <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Servicio"/></h1>
-                                        <h:panelGrid>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Nombre del Servicio" for="NomSei" />
-                                                 <h:inputText class="form-control" id="NomSei" value="#{servicioIndividualController.servicioIndividual.nomSei}" title="NomSei" required="true"/>
-                                            </div>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Descripcion" for="DesSei" />
-                                                 <h:inputText class="form-control" id="DesSei" value="#{servicioIndividualController.servicioIndividual.desSei}" title="DesSei" required="true"/>
-                                            </div>
-                                            <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Valor" for="ValSei" />
-                                                 <h:inputText class="form-control" id="ValSei" value="#{servicioIndividualController.servicioIndividual.valSei}" title="ValSei" required="true"/>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
-                                                  <label class="form-check-label" for="invalidCheck">
-                                                    Estas de acuerdo con los terminos y condiciones!!
-                                                  </label>
-                                                  <div class="invalid-feedback mt-3">
-                                                    Debes estar de acuerdo antes de guardar.
-                                                  </div>
-                                                </div>
-                                            </div>
-                                            <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{servicioIndividualController.registrarServicioIndividual()}"></h:commandButton>
-                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
-                                            </div>
-                                        </h:panelGrid>   
-                                </h:form>
-                           </f:view>
-                    </div>
-              </div>
-        </div>
+                  
+                    <f:view>       
+                        <h:form class="table table-striped table-hover table-dark container text-justify" style="color: #fff; padding: 25px 20px; display: grid;">
+                          <h1 class="mb-3 text-center text-uppercase"><h:outputText value="Lista de Paquetes"/></h1>
+                          <h:dataTable class=" mr-0 text-center" value="#{paqueteTodoIncluidoController.consultarPaqueteTodoIncluido()}" var="paquete">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Nombre Servicio"/>
+                                    </f:facet>
+                                    <h:outputText value="#{paquete.nomPati}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Descripcion"/>
+                                    </f:facet>
+                                    <h:outputText value="#{paquete.despati}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Valor"/>
+                                    </f:facet>
+                                    <h:outputText value="#{paquete.valPati}"/>
+                                </h:column> 
+                                <h:column a:style="display: flex;">
+                                    <f:facet name="header">
+                                        <h:outputText value="Estado"/>
+                                    </f:facet>
+                                    <h:commandButton class="btn btn-outline-info mr-1"  value="Editar" action="#{paqueteTodoIncluidoController.preActualizarPaquetTodoIncluido(paqueteTodoIncluido)}"></h:commandButton>
+                                    <h:commandButton class="btn btn-outline-danger ml-1"  value="Eliminar" action="#{paqueteTodoIncluidoController.eliminarPaqueteTodoIncluido(paqueteTodoIncluido)}"></h:commandButton>
+                                </h:column>
+                            </h:dataTable> 
+                        </h:form>
+                    </f:view> 
+                </div>   
+             </div>
+           </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -306,8 +304,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
 
-
-    <!---Tabla de las graficas-->
     
     <Script>
         const btn = document.querySelector('#menu-btn');
@@ -319,28 +315,7 @@
           document.querySelector('body').classList.toggle('body-expanded');
       });
     </Script>
-    
-    <script>
-        (function () {
-  'use strict';
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation');
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add('was-validated');
-      }, false);
-    });
-})();
-    </script>
 
 
     </h:body>

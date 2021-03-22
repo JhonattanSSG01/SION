@@ -52,13 +52,13 @@ public class paqueteTodoIncluidoController implements Serializable {
     
     public String preActualizarPaquetTodoIncluido(PaqueteTodoIncluido paqueteTodoIncluido){
         this.paqueteTodoIncluido = paqueteTodoIncluido;
-        return "actualizarPaqueteTodoIncluido";
+        return "paquete-edit";
     }
      
     public String actualizarPaqueteTodoIncluido(){
        paqueteTodoIncluidoFacade.edit(this.paqueteTodoIncluido);
        paqueteTodoIncluido = new PaqueteTodoIncluido();
-       return "registroPaqueteTodoIncluido";
+       return "paquete";
     }
     
     public void eliminarPaqueteTodoIncluido(PaqueteTodoIncluido paqueteTodoIncluido){

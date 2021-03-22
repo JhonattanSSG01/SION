@@ -238,7 +238,7 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR SERVICIO INDIVIDUAL
+					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR SERVICIO-PAQUETE TODO INLUIDO
 				</h3>
 				<p class="text-justify">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
@@ -249,13 +249,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="servicioIndividual-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Servicios</a>
+                                                <a class="text-uppercase" href="paquete-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Paquetes</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Servicio</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Paquete</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="servicioIndividual-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Servicio</a>
+						<a class="text-uppercase" href="paquete-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Paquete</a>
 					</li>
 				</ul>	
 			</div>
@@ -263,19 +263,19 @@
              
                             <f:view>
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Servicio"/></h1>
+                                    <h1 class="mb-3"><h:outputText value="Actualizar Paquete"/></h1>
                                         <h:panelGrid>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Nombre del Servicio" for="NomSei" />
-                                                 <h:inputText class="form-control" id="NomSei" value="#{servicioIndividualController.servicioIndividual.nomSei}" title="NomSei" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Nombre del Servicio" for="NomPat" />
+                                                 <h:inputText class="form-control" id="NomPat" value="#{paqueteTodoIncluidoController.paqueteTodoIncluido.nomPati}" title="NomPat" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Descripcion" for="DesSei" />
-                                                 <h:inputText class="form-control" id="DesSei" value="#{servicioIndividualController.servicioIndividual.desSei}" title="DesSei" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Descripcion" for="DesPat" />
+                                                 <h:inputText class="form-control" id="DesPat" value="#{paqueteTodoIncluidoController.paqueteTodoIncluido.despati}" title="DesPat" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Valor" for="ValSei" />
-                                                 <h:inputText class="form-control" id="ValSei" value="#{servicioIndividualController.servicioIndividual.valSei}" title="ValSei" required="true"/>
+                                                 <h:outputLabel class="form-label" value="Valor" for="ValPat" />
+                                                 <h:inputText class="form-control" id="ValPat" value="#{paqueteTodoIncluidoController.paqueteTodoIncluido.valPati}" title="ValPat" required="true"/>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-check">
@@ -289,7 +289,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{servicioIndividualController.registrarServicioIndividual()}"></h:commandButton>
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{paqueteTodoIncluidoController.actualizarPaqueteTodoIncluido()}"></h:commandButton>
                                                 <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
                                             </div>
                                         </h:panelGrid>   

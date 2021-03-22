@@ -61,10 +61,10 @@ public class servicioIndividualController implements Serializable {
     
     public String preActualizarServicioIndividual(ServicioIndividual servicioIndividual){
          this.servicioIndividual = servicioIndividual;
-         return "actualizarServicioIndividual";
+         return "servicioIndividual-edit";
     }
     
-    public void actualizarServicioIndividual(){
+    public String actualizarServicioIndividual(){
         try{
             servicioIndividualFacade.edit(this.servicioIndividual);
             servicioIndividual = new ServicioIndividual();
@@ -73,6 +73,7 @@ public class servicioIndividualController implements Serializable {
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el servicio','error')");
         }
         
+        return "servicioIndividual";
     }
     
     public void eliminarServicioIndividual (ServicioIndividual servicioIndividual){
