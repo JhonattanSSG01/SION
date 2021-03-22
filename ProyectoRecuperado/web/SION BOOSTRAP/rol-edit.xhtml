@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
+        <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
+        <link rel="stylesheet" href="css/6.css"></link>
+        <link href="css/7.css" rel="stylesheet" type="text/css"></link>
+        <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/iconss.css" rel="stylesheet" type="text/css"/>
+        
+    <title>Dashboard | Usuarios</title>
+    </h:head>
+    <h:body style="color: #000;">
+        <div id="sidemenu" class="menu-collapsed">
+            
+      <!--HEADER-->
+
+        <div id="header">
+            <div class="row">
+                <div class="col-9">
+                    <div id="title"><img class="mr-2" src="img/SION CASA DE BANQUETES.png" alt="Logo" width="20"/><span>GERENTE</span></div>
+                </div>
+                <div class="col-3">
+                    <div id="menu-btn">
+                        <div class="btn-hamburger"></div>
+                        <div class="btn-hamburger"></div>
+                        <div class="btn-hamburger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!--PROFILE-->
+
+        <div id="profile">
+            <div id="photo"><img src="img/men.jpg" alt="fotoPerfil" height="150"/></div>
+
+            <div id="name">
+                <span>
+                    <a id="a" href="dashboardAdmin.xhtml">
+                        <i class="far fa-user" style="font-size: 20px"></i>
+                        <span>Andrés Peréz Cordova</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+      <!--ITEMS-->
+
+        <div id="menu-items">
+            
+                <ul class="p-0">
+                    <c:forEach items="#{usuarioRolController.consultarPermiso()}" var="per">
+                        <li class="item active" style="list-style: none">  
+                                <c:if test="#{per.codPer == 1 || per.codPer == 2 || per.codPer == 3 || per.codPer == 4 || per.codPer == 17}">
+                                    <a id="a" href="#{per.urlper}">
+                                        <div class="icon"><i class="#{per.icoper} ml-2"></i></div>
+                                        <div class="title"><span class="text-uppercase">#{per.nomforPer}</span></div>
+                                    </a>
+                                    <ul class="list">
+                                        <c:forEach items="#{usuarioRolController.consultarPermisoPadre(per.codPer)}" var="subPer">
+                                            <c:forEach items="#{usuarioRolController.consultarPermiso()}" var="PerPdr">
+                                                <c:if test="#{subPer.codPer eq PerPdr.codPer}">
+                                                    <li class="list">
+                                                        <a id="a" href="#{subPer.urlper}">
+                                                            <div class="icon"><i class="#{subPer.icoper} ml-2"></i></div>
+                                                            <div class="title"><span>#{subPer.nomforPer}</span></div>
+                                                        </a>
+                                                    </li>
+                                                </c:if>    
+                                            </c:forEach>
+                                        </c:forEach>
+                                    </ul>
+                                </c:if>    
+                            </li>
+                    </c:forEach>
+                </ul>      
+        </div>
+            
+                            <div class="social-container">
+                                <a  href="" class="social" >
+                                    <i id="face" class="fab fa-facebook"></i>
+                                </a>
+                                <a  href="" class="social">
+                                    <i id="wats" class="fab fa-whatsapp"></i>    
+                                </a>
+                                <a  href="" class="social">
+                                    <i id="link" class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="" class="social">
+                                    <i id="goo" class="fab fa-google"></i>
+                                </a>
+                            </div>
+      
+    </div>
+        <div class="d-flex">
+        <div class="w-100">
+            <nav class="navbar navbar-expand-lg navbar">
+                <div class="container" style="max-width: 95%">
+                    <div class="col-7">
+                        <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                     </div>
+                        <div class="col-3">
+                            <div id="column" class="navbar-nav ml-auto">
+                                <a style="color: #fff;" >
+                                    <img src="img/men.jpg" class="img-fluid rounded-circle avatar mr-2" alt="fotoPerfil"></img>
+                                  Gerente
+                                </a> 
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                              <ul class="navbar-nav">
+                                  <div class="world">     
+                                      <li class="nav-item dropdown">
+                                          <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                              <img src="img/mund.png"></img>
+                                          </a>
+                                          <div id="idioma" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                             <h:form>
+                                                  <div>
+                                                      <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('en')}" style="color: #000">   
+                                                          <img src="img/eeuu-hoy-en-dia.png">#{formInternacionalización.txtIngles}</img>
+                                                      </h:commandLink> 
+                                                  </div>
+                                                  <div>
+                                                      <h:commandLink class="dropdown-item" action="#{idiomaController.CambiarIdioma('es')}" style="color: #000">  
+                                                          <img src="img/espana.png">#{formInternacionalización.txtEspañol}</img>                                                 
+                                                      </h:commandLink>
+                                                  </div>
+                                              </h:form>
+                                          </div>
+                                      </li>            
+                                  </div>  
+                              </ul> 
+                          </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="navbar-nav pt-2">
+                                <a href="inicioSesion.xhtml" >
+                                    <i class="fas fa-power-off"></i>
+                                </a> 
+                            </div>
+                        </div>
+                    </div>
+                  
+            </nav>
+
+              
+              <!--Nombre de usuario -->
+
+
+              <div id="content">
+                  
+              <section class="py-4">
+
+              <div class="container">
+
+              <div  class="row">
+
+              <div class="col-lg-9">
+                <h1 class="font-weight-bold mb-0">Gerente</h1>
+               <h1 class="font-weight-bold mb-0">Bienvenido Miguel Castañeda</h1>
+               
+              
+              </div>
+
+              </div>
+              </div>
+              </section>
+              
+             <!--Tabla central -->
+
+              <section id="container" class="bg-mix py-3">
+                <div class="container">
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                    <div class="mx-auto">
+                                        <h5 class="text-muted">ultimo ingreso mensual</h5>
+                                        <h2 class="font-weight-bold">17.000.000</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> 50.50%</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                    <div class="mx-auto">
+                                        <h5 class="text-muted">Nuevas cotizaciones </h5>
+                                        <h2 class="font-weight-bold">15</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                                    <div class="mx-auto">
+                                        <h5 class="text-muted">clientes</h5>
+                                        <h2 class="font-weight-bold">126</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles</h5>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-3 col-md-6 d-flex my-3">
+                                    <div class="mx-auto">
+                                        <h5 class="text-muted">Empleados</h5>
+                                        <h2 class="font-weight-bold">326</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row" style="place-content: center">
+                                  <div class="col-lg col-md-6 d-flex stat my-3">
+                                    <div class="mx-auto">
+                                        <h5 class="text-muted">Eventos realizados en el mes</h5>
+                                        <h2 class="font-weight-bold">15</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>                                    
+                                    </div>
+                                    </div>
+                                    <div class="col-lg col-md-6 d-flex my-3">
+                                        <div class="mx-auto">
+                                            <h5 class="text-muted">Eventos en proceso</h5>
+                                            <h2 class="font-weight-bold">15</h2>
+                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        </div>
+                                    </div>  
+                                </div>                          
+                        </div>
+                    </div>
+                </div>
+              </section>
+                  
+                  <section>
+                      <div class="full-box page-header mt-5">
+                          <div class="container-lg" style="max-width: 90%">
+				<h3 class="text-left">
+					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR ROL
+				</h3>
+				<p class="text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+				</p>
+                            </div>
+			</div>
+
+			<div class="container-fluid">
+				<ul class="full-box list-unstyled page-nav-tabs mt-5">
+					<li>
+                                                <a class="text-uppercase" href="rol-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Roles</a>
+					</li>
+                                        <li>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Rol</a>
+					</li>
+					<li>
+						<a class="text-uppercase" href="rol-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Rol</a>
+					</li>
+				</ul>	
+			</div>
+                  </section>
+             
+                            <f:view>
+                                <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
+                                    <h1 class="mb-3"><h:outputText value="Actualizar Rol"/></h1>
+                                        <h:panelGrid>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Nombre" for="Nomrol" />
+                                                 <h:inputText class="form-control" id="Nomrol" value="#{rolController.rol.nomRol}" title="Nomrol" required="true"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <h:outputLabel class="form-label" value="Descripcion" for="DesRol" />
+                                                 <h:inputText class="form-control" id="DesRol" value="#{rolController.rol.desRol}" title="DesRol" required="true"/>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
+                                                  <label class="form-check-label" for="invalidCheck">
+                                                    Estas de acuerdo con los terminos y condiciones!!
+                                                  </label>
+                                                  <div class="invalid-feedback mt-3">
+                                                    Debes estar de acuerdo antes de guardar.
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5" style="display: inline-block">
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{rolController.actualizarRol()}"></h:commandButton>
+                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
+                                            </div>
+                                        </h:panelGrid>   
+                                </h:form>
+                           </f:view>
+                    </div>
+              </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+
+
+    <!---Tabla de las graficas-->
+    
+    <Script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+          menu.classList.toggle("menu-expanded");
+          menu.classList.toggle("menu-collapsed");
+
+          document.querySelector('body').classList.toggle('body-expanded');
+      });
+    </Script>
+    
+    <script>
+        (function () {
+  'use strict';
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      }, false);
+    });
+})();
+    </script>
+
+
+    </h:body>
+</html>

@@ -61,7 +61,7 @@ public class rolController implements Serializable {
      
     public String preActualizarRol(Rol rol){
         this.rol = rol;
-        return "actualizarRol";
+        return "rol-edit";
     }
       
     public void actualizarRol(){

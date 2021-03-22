@@ -61,7 +61,7 @@ public class permisoRolController implements Serializable {
     
     public String preActualizarPermisoRol(PermisoRol permisoRol){
         this.permisoRol = permisoRol;
-        return "actualizarPermisoRol";
+        return "permiso-edit";
     }
      
     public void actualizarPermisoRol(){

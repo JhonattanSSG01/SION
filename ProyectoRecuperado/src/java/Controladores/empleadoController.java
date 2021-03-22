@@ -76,7 +76,7 @@ public class empleadoController implements Serializable {
     
     public String preActualizarEmpleado(Empleado empleado){
         this.empleado = empleado;
-        return "actualizarEmpleado";
+        return "empleado-edit";
     }
     
     public void actualizarEmpleado(){
