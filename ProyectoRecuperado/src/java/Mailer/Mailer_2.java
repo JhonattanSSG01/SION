@@ -25,8 +25,8 @@ import javax.mail.internet.MimeMultipart;
 public class Mailer_2 {
      public static void content(String nombre, String direccion, String telefono, String documento, String correo, String contraseña) throws UnsupportedEncodingException, MessagingException{
         
-        final String user = "mimillos66@gmail.com";
-        final String pass = "3208132840";
+        final String user = "mimillo****@gmail.com";
+        final String pass = "*******";
         
         Properties propertie = new Properties();
         propertie.setProperty("mail.smtp.host", "smtp.gmail.com");
