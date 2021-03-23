@@ -12,9 +12,9 @@
             <!-- Bootstrap CSS -->
    
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-            <link rel="stylesheet" type="text/css" href="css/contacto.css"/>
             <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>
-  
+            <link href="css/contactanos.css" rel="stylesheet" type="text/css"/>
+            
             <title>#{formInternacionalización.txtTitulo16}</title>
     </h:head>
         <h:body style="background-image: url(img/restaurant-table-720.jpg);">
@@ -75,8 +75,8 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col col-12 col-lg-6 pl-0 pr-0" style="height: 100%;">
-                                    <video loop="true" autoplay="autoplay" controls="" width="100%" height="100%">
-                                        <source src="Videos/Mi película.mp4" type="video/mp4"/>
+                                    <video id="source" loop="true" autoplay="autoplay" controls="" width="100%" height="100%">
+                                        <source src="Videos/Mi película.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                                 <div class="col col-12 col-lg-6 pt-5 ">
@@ -84,7 +84,9 @@
                                     <p class="pb-4 pl-4 pr-4">#{formInternacionalización.txtDesMision}</p>
                                     <h3 class="pt-2 pl-2 pr-2 ">#{formInternacionalización.txtVision}</h3>
                                     <p class="pl-4 pr-4">#{formInternacionalización.txtDesVision}</p>
-                                    <button style="margin: 50px 0px 0px 20px; " href="#" data-toggle="modal" data-target="#Modalcontacto">#{formInternacionalización.btnContacto}</button>
+                                    <div class="button mt-5">
+                                       <a class="p-2" href="contactenos_form.xhtml" >#{formInternacionalización.btnContacto}</a> 
+                                    </div>  
                                 </div>
                             </div>
                         </div>
@@ -158,60 +160,7 @@
                     <p class="p">SION, Copyright &copy; 2020</p>
                 </footer>
                 <!--/footer-->
-
-                <!--Modal-->
-                <div class="modal fade" id="Modalcontacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title text-uppercase" id="exampleModalCenterTitle">#{formInternacionalización.txtContacta}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="from-row">
-                                  <div class="from-group col ">
-                                        <div class="col mb-3">
-                                            <input type="text"  class="form-control" placeholder="#{formInternacionalización.lblNombreCon}"/>
-                                        </div>
-                                        <div class="col mb-3">
-                                            <input type="email" class="form-control" placeholder="#{formInternacionalización.lblCorreoCon}"/>
-                                        </div>
-                                        <div class="col mb-3">
-                                            <input type="text" class="form-control" placeholder="#{formInternacionalización.lblTelefono}"/>
-                                        </div>
-                                        <div class="col">
-                                            <textarea type="text" class="form-control" placeholder="#{formInternacionalización.lblDescripcion}"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            
-                            <!--alerta-->
-                            <div class="modal-body">
-                                <form>
-                                    <div class="from-row">
-                                      <div class="from-group col ">
-                                        <div class="alert alert-danger text-uppercase" role="alert">
-                                          #{formInternacionalización.txtMensaje}
-                                        </div>
-                                      </div>
-                                    </div>
-                                </form>
-
-                            <!--/alerta-->
-                          </div>
-                            <div class="modal-footer">
-                                <button type="reset" class="btn btn-secondary">#{formInternacionalización.btnLimpiar}</button>
-                                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">#{formInternacionalización.btnEnviar}</button>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!--/Modal-->
+ 
 
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

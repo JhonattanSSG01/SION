@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
             <!-- Required meta tags -->
             
@@ -12,9 +13,9 @@
             <!-- Bootstrap CSS -->
    
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="css/contactanos.css"/>
             <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>
-            <link href="css/contactanos.css" rel="stylesheet" type="text/css"/>
-            
+  
             <title>#{formInternacionalización.txtTitulo16}</title>
     </h:head>
         <h:body style="background-image: url(img/restaurant-table-720.jpg);">
@@ -30,7 +31,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav m-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.xhtml">#{formInternacionalización.btnAtras}</a>
+                                        <a class="nav-link" href="contactanos.xhtml">#{formInternacionalización.btnAtras}</a>
                                     </li>
                                     <li class="nav-item">
                                       <a class="nav-link" href="#"><ion-icon name="logo-facebook"></ion-icon>  Facebook</a>
@@ -73,27 +74,64 @@
                     </div>
                     <section id="nosotros" >
                         <div class="container-fluid">
-                            <div class="row">
-                                <div class="col col-12 col-lg-6 pl-0 pr-0" style="height: 100%;">
-                                    <video id="source" loop="true" autoplay="autoplay" controls="" width="100%" height="100%">
-                                        <source src="Videos/Mi película.mp4" type="video/mp4" />
-                                    </video>
-                                </div>
+                            <div class="row">                               
                                 <div class="col col-12 col-lg-6 pt-5 ">
                                     <h3 class="pl-2 pr-2">#{formInternacionalización.txtMision}</h3>
                                     <p class="pb-4 pl-4 pr-4">#{formInternacionalización.txtDesMision}</p>
                                     <h3 class="pt-2 pl-2 pr-2 ">#{formInternacionalización.txtVision}</h3>
                                     <p class="pl-4 pr-4">#{formInternacionalización.txtDesVision}</p>
-                                    <div class="button mt-5">
+                                    <div class="button_2 mt-5">
                                        <a class="p-2" href="contactenos_form.xhtml" >#{formInternacionalización.btnContacto}</a> 
-                                    </div>  
+                                    </div> 
+                                </div>
+                                <div class="col col-12 col-lg-6 pl-0 pr-0" style="height: 100%;">
+                                    <video loop="true" autoplay="autoplay" controls="" width="100%" height="100%">
+                                        <source src="Videos/Mi película.mp4" type="video/mp4"/>
+                                    </video>
                                 </div>
                             </div>
                         </div>
-                    </section>   
-                    <div id="maps" style="margin:  30px 0px 10px;; text-align: center;" >
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.7690662597834!2d-74.10489038599229!3d4.809669396507268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4748fa9c0fa17d6a!2sParque%20Municipal%20Cota!5e0!3m2!1ses!2sco!4v1586910251348!5m2!1ses!2sco"></iframe>
-                    </div>
+                    </section>  
+                
+                        <div class="container mt-4 mb-4 p-4" style="background-color: rgba(215, 215, 215, .8); max-width: 40%">
+                            <h:form>
+                                <div class="from-row">
+                                    <h1 class="mb-3 text-center text-uppercase"><h:outputText value="#{formInternacionalización.txtContacta}"/></h1>
+                                    <div class="from-group col">
+                                        <div class="row">
+                                            <div class="col-md-6 form-floating mb-3">
+                                                <h:inputText class="form-control" id="Input1" value="#{contactenosController.nombre}" a:placeholder="#{formInternacionalización.lblNombreCon}"/>
+                                                <label for="Input1">Nombre Completo</label>
+                                            </div>
+                                            <div class="col-md-6 form-floating mb-3">
+                                                <h:inputText class="form-control" id="Input2" a:placeholder="#{formInternacionalización.lblTelefono}"/>
+                                                <label for="Input2">Telefono o Celular</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                             <h:inputText class="form-control" id="Input3" a:placeholder="#{formInternacionalización.lblCorreoCon}"/>
+                                             <label for="Input3">Correo Electronico</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <h:inputTextarea class="form-control" value="#{contactenosController.descripcion}" a:placeholder="#{formInternacionalización.lblDescripcion}" id="floatingTextarea2" style="height: 100px"></h:inputTextarea>
+                                            <label for="floatingTextarea2">Comentarios</label>
+                                        </div>
+                                        <div class="from-row">
+                                            <div class="from-group col ">
+                                              <div class="alert alert-danger text-uppercase" role="alert">
+                                                #{formInternacionalización.txtMensaje}
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="reset" class="btn btn-secondary">#{formInternacionalización.btnLimpiar}</button>
+                                            <h:commandButton class="btn btn-outline-danger" value="#{formInternacionalización.btnEnviar}" action="#{contactenosController.enviarCorreo()}"></h:commandButton>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                
                     <!--Footer-->
                 <footer id="footer" class="pb-4 pt-4">
                     <div class="container">
@@ -160,7 +198,7 @@
                     <p class="p">SION, Copyright &copy; 2020</p>
                 </footer>
                 <!--/footer-->
- 
+
 
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
