@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                
+                <h:commandButton  actionListener="#{reporteController.PDF(actionEvent)}" value="Reporte PDF"></h:commandButton> 
+                <h:dataTable value="#{reporteController.listaEvento}" var="evento">
+                
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="codEve"></h:outputText>
+                       </f:facet>
+                        <h:outputText value="#{evento.codEve}"></h:outputText>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="fecEve"></h:outputText>
+                       </f:facet>
+                        <h:outputText value="#{evento.fecEve}"></h:outputText>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="horEve"></h:outputText>
+                       </f:facet>
+                        <h:outputText value="#{evento.horEve}"></h:outputText>
+                    </h:column>
+                    
+                     <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="tipEve"></h:outputText>
+                       </f:facet>
+                         <h:outputText value="#{evento.tipEve}"></h:outputText>
+                    </h:column>
+                    
+                     <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="invEve"></h:outputText>
+                       </f:facet>
+                         <h:outputText value="#{evento.invEve}"></h:outputText>
+                    </h:column>
+              
+               </h:dataTable>
+            </h:form>
+            <h:form>
+                <h:commandButton action="#{reportesController.listaEvento}" value="probar"/>
+                
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

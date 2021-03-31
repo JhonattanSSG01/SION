@@ -7,21 +7,23 @@
 
 /* global swal */
 
-function Mensajee(titulo, texto, icono){
-    swal({
-  title: titulo,
-  text: texto,
-  icon: icono,
-  buttons: true,
-  dangerMode: true
-})
-.then((willDelete) => {
-  if (willDelete) {
-    swal("Poof  T\372 registro ha sido eliminado por completo", {
-      icon: "success"
-    });
+function Mensajes(){
+  swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonClass: "btn-danger",
+  confirmButtonText: "Yes, delete it!",
+  cancelButtonText: "No, cancel plx!",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm) {
+  if (isConfirm) {
+    swal("Deleted!", "Your imaginary file has been deleted.", "success");
   } else {
-    swal('T\372 registro ha sido salvado');
+    swal("Cancelled", "Your imaginary file is safe :)", "error");
   }
 });
 }
