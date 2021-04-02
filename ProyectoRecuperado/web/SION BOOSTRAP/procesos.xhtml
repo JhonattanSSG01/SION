@@ -13,9 +13,10 @@
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/iconss.css" rel="stylesheet" type="text/css"/>
         
-    <title>Dashboard | Usuarios</title>
+    <title>Dashboard | Procesos</title>
     </h:head>
     <h:body style="color: #000;">
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -104,7 +105,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -168,10 +169,10 @@
 			<!-- Page header -->
 			<div class="full-box page-header">
 				<h3 class="text-left">
-					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
-				</h3>
+                                    <i class="fab fa-dashcube fa-fw"></i> &nbsp; #{formInternacionalización.txtPro}
+                                </h3>
 				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
+					#{formInternacionalización.txtSubPro}
 				</p>
 			</div>
 			
@@ -179,34 +180,34 @@
 			<div class="full-box tile-container">
 
 				<a href="orden.xhtml" class="tile">
-					<div class="tile-tittle">Orden Servicio</div>
+					<div class="tile-tittle">#{formInternacionalización.btnProOrd}</div>
 					<div class="tile-icon">
 						<i class="fas fa-receipt fa-fw"></i>
-						<p>6 registrados</p>
+						<p>#{formInternacionalización.btnSubOrdPro}</p>
 					</div>
 				</a>
 
 				<a href="evento.xhtml" class="tile">
-					<div class="tile-tittle">Eventos</div>
+					<div class="tile-tittle">#{formInternacionalización.btnProEve}</div>
 					<div class="tile-icon">
 						<i class="fas fa-cocktail fa-fw"></i>
-						<p>12 Registrados</p>
+						<p>#{formInternacionalización.btnSubProEve}</p>
 					</div>
 				</a>
 
-				<a href="company.html" class="tile">
-					<div class="tile-tittle">Reportes</div>
+				<a href="reportes.xhtml" class="tile">
+					<div class="tile-tittle">#{formInternacionalización.btnUsuRepor}</div>
 					<div class="tile-icon">
 						<i class="fas fa-print fa-fw"></i>
-						<p>4 Descargados</p>
+						<p>#{formInternacionalización.btnSubUsuRepor}</p>
 					</div>
 				</a>
                             
-                                <a href="company.html" class="tile">
-					<div class="tile-tittle">Archivos</div>
+                                <a href="archivos.xhtml" class="tile">
+					<div class="tile-tittle">#{formInternacionalización.btnUsuArc}</div>
 					<div class="tile-icon">
 						<i class="fas fa-paste fa-fw"></i>
-						<p>6 Actuaizados</p>
+						<p>#{formInternacionalización.btnSubUsuArc}</p>
 					</div>
 				</a>
 				
@@ -217,6 +218,7 @@
           </div>
         </div>
     </div>
+   </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

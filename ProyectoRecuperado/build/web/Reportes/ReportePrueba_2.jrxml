@@ -1,29 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD JasperReport//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-
-<jasperReport name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-    <background>
-        <band/>
-    </background>
-    <title>
-        <band height="79"/>
-    </title>
-    <pageHeader>
-        <band height="35"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="61"/>
-    </columnHeader>
-    <detail>
-        <band height="125"/>
-    </detail>
-    <columnFooter>
-        <band height="45"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="54"/>
-    </pageFooter>
-    <summary>
-        <band height="42"/>
-    </summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb614946-4249-410f-ab45-c949c20e60dc">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="fecEve" class="java.util.Date"/>
+	<field name="horEve" class="java.sql.Time"/>
+	<field name="tipEve" class="java.lang.String"/>
+	<field name="invEve" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="100" uuid="06d08ba5-9cdd-4cc2-bf0c-bb7d69af7552"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="13" y="11" width="358" height="77" forecolor="#9E2828" backcolor="#FFFFFF" uuid="9f01d4e2-5ba1-4c31-ba7d-d3cffed85896"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="26" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[CASA DE BANQUETES Y EVENTOS SION]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" isUsingCache="false">
+				<reportElement mode="Transparent" x="381" y="0" width="174" height="100" uuid="4c4c6418-9932-43f1-aab9-e10d2945efe2"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\SION CASA DE BANQUETES.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="138" height="20" forecolor="#BEB2B2" backcolor="#AC3D3D" uuid="ffb811d5-ec98-4f17-9090-d58f6b8da37f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="15" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="138" y="0" width="141" height="20" forecolor="#BEB2B2" backcolor="#AC3D3D" uuid="459af75c-0892-4b4d-9fc0-287394a6218c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="15" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="279" y="0" width="138" height="20" forecolor="#BEB2B2" backcolor="#AC3D3D" uuid="1db21c13-fe06-4c52-86d9-3c81753082a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="15" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tipo De Evento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="417" y="0" width="138" height="20" forecolor="#BEB2B2" backcolor="#AC3D3D" uuid="4fbe14dc-8de4-4881-920e-aa7b8164b10a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="15" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Invitados]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="72c95a57-2217-4111-a9ab-8a687e817e69"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="141" height="20" uuid="c7d12493-12a0-48fb-b5b5-50255e93a7e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="20" uuid="051e7c2e-b37c-4216-8fec-ea52b42c0d58"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipEve}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="20" uuid="bb22ac4f-1336-47bf-a963-8f83b7a1c7ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invEve}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
 </jasperReport>

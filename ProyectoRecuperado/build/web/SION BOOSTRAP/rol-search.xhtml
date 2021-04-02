@@ -14,9 +14,10 @@
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/iconss.css" rel="stylesheet" type="text/css"/>
         
-    <title>Dashboard | Usuarios</title>
+    <title>Dashboard | Roles</title>
     </h:head>
     <h:body style="color: #000;">
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -105,7 +106,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -187,46 +188,46 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">ultimo ingreso mensual</h5>
-                                        <h2 class="font-weight-bold">17.000.000</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> 50.50%</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenRol1}</h5>
+                                        <h2 class="font-weight-bold">4</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Nuevas cotizaciones </h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenRol2}</h5>
+                                        <h2 class="font-weight-bold">2</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">clientes</h5>
-                                        <h2 class="font-weight-bold">126</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenRol3}</h5>
+                                        <h2 class="font-weight-bold">6</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                                  <div class="col-lg-3 col-md-6 d-flex my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Empleados</h5>
-                                        <h2 class="font-weight-bold">326</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenRol4}</h5>
+                                        <h2 class="font-weight-bold">1</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                             </div>
                                 <div class="row" style="place-content: center">
                                   <div class="col-lg col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Eventos realizados en el mes</h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>                                    
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenRol5}</h5>
+                                        <h2 class="font-weight-bold">3</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>                                    
                                     </div>
                                     </div>
                                     <div class="col-lg col-md-6 d-flex my-3">
                                         <div class="mx-auto">
-                                            <h5 class="text-muted">Eventos en proceso</h5>
-                                            <h2 class="font-weight-bold">15</h2>
-                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                            <h5 class="text-muted">#{formInternacionalización.txtGerenRol6}</h5>
+                                            <h2 class="font-weight-bold">10</h2>
+                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                         </div>
                                     </div>  
                                 </div>                          
@@ -239,10 +240,10 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-search"></i> &nbsp; CONSULTAR ROL
+					<i class="fas fa-search"></i> &nbsp; #{formInternacionalización.btnSearchRol}
 				</h3>
 				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+					#{formInternacionalización.txtSearchSubRol}
 				</p>
                             </div>
 			</div>
@@ -250,13 +251,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="rol-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Roles</a>
+                                                <a class="text-uppercase" href="rol-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; #{formInternacionalización.txtAgreRol}</a>
 					</li>
                                         <li>
-                                                <a class="text-uppercase" href="rol.xhtml"><i class="fas fa-user-plus"></i> &nbsp; Agregar Rol</a>
+                                                <a class="text-uppercase" href="rol.xhtml"><i class="fas fa-user-plus"></i> &nbsp; #{formInternacionalización.btnListRol}</a>
 					</li>
 					<li>
-						<a class="active text-uppercase" href="#"><i class="fas fa-search"></i> &nbsp; Consultar Roles</a>
+						<a class="active text-uppercase" href="#"><i class="fas fa-search"></i> &nbsp; #{formInternacionalización.btnSearchRol}</a>
 					</li>
 				</ul>	
 			</div>
@@ -265,24 +266,24 @@
               <div class="container text-justify" style="max-width: 90%">   
                    <f:view>
                       <h:form>
-                          <h1><h:outputText class="text-uppercase" value="Consultar Roles"/></h1>
+                          <h1><h:outputText class="text-uppercase" value="#{formInternacionalización.btnSearchRol}"/></h1>
                             <p:dataTable id="tabla" var="rol" paginatorPosition="bottom" scrollable="true" value="#{rolController.consultarRol()}">
                                 <p:column filterBy="#{rol.nomRol}" filterPosition="top">
                                     <f:facet name="header">
-                                        <h:outputText value="Nombre"/>
+                                        <h:outputText value="#{formInternacionalización.txtNombRol}"/>
                                     </f:facet>
                                     <h:outputText value="#{rol.nomRol}"/>
                                 </p:column>
                                 <p:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Descripcion"/>
+                                        <h:outputText value="#{formInternacionalización.txtDirRol}"/>
                                     </f:facet>
                                     <h:outputText value="#{rol.desRol}"/>
                                 </p:column>
                             </p:dataTable>
                             <div class="row">
                                <div class="col-lg-3 offset-5 mt-4" >
-                                   <h:commandLink class="btn btn-success w-100 align-self-center"><i class="far fa-file-excel mr-2"></i><span>Descargar Excel</span>
+                                   <h:commandLink class="btn btn-success w-100 align-self-center"><i class="far fa-file-excel mr-2"></i><span>#{formInternacionalización.btnExcel}</span>
                                       <p:dataExporter type="xls" target="tabla" fileName="reporteProfesor"/>
                                   </h:commandLink>
                               </div>  
@@ -293,6 +294,7 @@
                 </div>   
              </div>
            </div>
+         </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

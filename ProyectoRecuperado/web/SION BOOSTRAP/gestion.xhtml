@@ -16,6 +16,7 @@
     <title>Dashboard | Usuarios</title>
     </h:head>
     <h:body style="color: #000;">
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -104,7 +105,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -168,10 +169,10 @@
 			<!-- Page header -->
 			<div class="full-box page-header">
 				<h3 class="text-left">
-					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
+                                    <i class="fab fa-dashcube fa-fw"></i> &nbsp; #{formInternacionalización.txtGes}
 				</h3>
 				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
+					#{formInternacionalización.txtSubGes}
 				</p>
 			</div>
 			
@@ -179,34 +180,34 @@
 			<div class="full-box tile-container">
 
                                  <a href="correosDetallados.xhtml" class="tile">
-					<div class="tile-tittle">Correos Elec...</div>
+					<div class="tile-tittle">#{formInternacionalización.btnGesCor}</div>
 					<div class="tile-icon">
 						<i class="fas fa-envelope-open-text fa-fw"></i>
-						<p>6 registrados</p>
+						<p>#{formInternacionalización.btnSubGesCor}</p>
 					</div>
 				</a>
                             
                                 <a href="graficos.xhtml" class="tile">
-					<div class="tile-tittle">Graficos</div>
+					<div class="tile-tittle">#{formInternacionalización.btnGraCor}</div>
 					<div class="tile-icon">
 						<i class="fas fa-chart-pie fa-fw"></i>
-						<p>6 registrados</p>
+						<p>#{formInternacionalización.btnSubGraCor}</p>
 					</div>
 				</a>
 
-				<a href="reportes.html" class="tile">
-					<div class="tile-tittle">Reportes</div>
+				<a href="reportes.xhtml" class="tile">
+					<div class="tile-tittle">#{formInternacionalización.btnUsuRepor}</div>
 					<div class="tile-icon">
 						<i class="fas fa-print fa-fw"></i>
-						<p>4 Descargados</p>
+						<p>#{formInternacionalización.btnSubUsuRepor}</p>
 					</div>
 				</a>
                             
-                                <a href="archivos.html" class="tile">
-					<div class="tile-tittle">Archivos</div>
+                                <a href="archivos.xhtml" class="tile">
+					<div class="tile-tittle">#{formInternacionalización.btnUsuArc}</div>
 					<div class="tile-icon">
 						<i class="fas fa-paste fa-fw"></i>
-						<p>6 Actuaizados</p>
+						<p>#{formInternacionalización.btnSubUsuArc}</p>
 					</div>
 				</a>
 				
@@ -217,6 +218,7 @@
           </div>
         </div>
     </div>
+  </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
@@ -18,6 +19,7 @@
     </h:head>
     <h:body style="color: #000;">
         <script>#{mensajeController.mensaje}</script>
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -106,7 +108,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -167,12 +169,12 @@
                     <div  class="row">
                         <div class="col-12 p-0">
                             <div class="card">
-                              <div class="card-header">
-                                Infromación Detallada
+                              <div class="card-header text-uppercase">
+                                #{formInternacionalización.txtCor}
                               </div>
                               <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title">#{formInternacionalización.txtSubCor}</h5>
+                                <p class="card-text">#{formInternacionalización.txtSubCorSub}</p>
                               </div>
                             </div>
 
@@ -189,31 +191,16 @@
                                 </ol>
                                 <div class="carousel-inner" id="carousel-img">
                                     <div class="carousel-item active">
-                                        <img src="img/info.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false" id="carousel-img"/>
-                                        <div class="carousel-caption col-10  col-lg-8 d-md-block text-center text-md-center">
-                                            <h5>#{formInternacionalización.txtSubtitulo}</h5>
-                                        </div>
+                                        <img src="img/married.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false" id="carousel-img"/>
                                     </div>
                                     <div class="carousel-item ">
-                                        <img src="img/server.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false" id="carousel-img"/>
-                                        <div class="carousel-caption col-10  col-lg-8 d-md-block text-center text-md-center">
-                                            <h5>#{formInternacionalización.txtTitulodos}</h5>
-                                            <p>#{formInternacionalización.txtParrafodos}</p>
-                                        </div>
+                                        <img src="img/eventosSociales.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false" id="carousel-img"/>
                                     </div>
                                     <div class="carousel-item ">
-                                        <img src="img/writer.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false"/>
-                                        <div class="carousel-caption col-10  col-lg-8 d-md-block text-center text-md-center">
-                                            <h5>#{formInternacionalización.txtTitulotres}</h5>
-                                            <p>#{formInternacionalización.txtParrafotres}</p>
-                                        </div>
+                                        <img src="img/copas.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false"/>
                                     </div>
                                     <div class="carousel-item ">
-                                        <img src="img/PC.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false"/>
-                                        <div class="carousel-caption col-10  col-lg-8 d-md-block text-center text-md-center">
-                                            <h5>#{formInternacionalización.txtTitulocuatro}</h5>
-                                            <p>#{formInternacionalización.txtParrafocuatro}</p>
-                                        </div>
+                                        <img src="img/gastronomy.jpg" class="d-block w-100" alt="..." height="580px" data-pause="false"/>
                                     </div>
                                 </div>
                                     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -228,17 +215,17 @@
                                   </div>
                                   <div class="col-7">
                                     <section id="supplier" class="text-center pt-4 mb-4">
-                                        <h2>Nuestra Infromación</h2>
-                                        <p class="mb-2 text-muted">Informa a los usuarios sobre cambios, mantenimiento o descuentos sobre el fucionamiewnto de la web</p>
+                                        <h2>#{formInternacionalización.txtFormTitCor}</h2>
+                                        <p class="mb-2 text-muted">#{formInternacionalización.txtFormSubCor}</p>
                                         <div class="separator"></div>
                                         <div class="container">
                                           <div class="row">
                                             <div class="col">
                                               <nav>
                                                 <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                                                  <a class="nav-item nav-link active" id="nav-InfoImportante-tab" data-toggle="tab" href="#nav-InfoImportante" role="tab" aria-controls="nav-InfoImportante" aria-selected="true">Información Importante</a>
-                                                  <a class="nav-item nav-link" id="nav-Manteni-tab" data-toggle="tab" href="#nav-Manteni " role="tab" aria-controls="nav-Manteni " aria-selected="false">Mantenimiento</a>
-                                                  <a class="nav-item nav-link" id="nav-Of-tab" data-toggle="tab" href="#nav-Of" role="tab" aria-controls="nav-Of" aria-selected="false">Ofertas y Descuentos</a>
+                                                  <a class="nav-item nav-link active" id="nav-InfoImportante-tab" data-toggle="tab" href="#nav-InfoImportante" role="tab" aria-controls="nav-InfoImportante" aria-selected="true">#{formInternacionalización.txtInfoCor}</a>
+                                                  <a class="nav-item nav-link" id="nav-Manteni-tab" data-toggle="tab" href="#nav-Manteni " role="tab" aria-controls="nav-Manteni " aria-selected="false">#{formInternacionalización.txtManCor}</a>
+                                                  <a class="nav-item nav-link" id="nav-Of-tab" data-toggle="tab" href="#nav-Of" role="tab" aria-controls="nav-Of" aria-selected="false">#{formInternacionalización.txtOfeCor}</a>
                                                 </div>
                                               </nav>
                                               <div class="tab-content" id="nav-tabContent">
@@ -255,17 +242,17 @@
                                                                     <div class="from-group col">
                                                                         <div class="row">
                                                                             <div class="col-md-12 form-floating mb-3">
-                                                                                <h:inputText class="form-control" id="Input1" value="#{correoMasivosController.titulo}" a:placeholder="Ingrese el Titulo"/>
-                                                                                <label for="Input1">Titulo Detallado</label>
+                                                                                <h:inputText class="form-control" id="Input1" value="#{correoMasivosController.titulo}" a:placeholder="#{formInternacionalización.lblInfoCor}"/>
+                                                                                <label for="Input1">#{formInternacionalización.txtInfoForm}</label>
                                                                             </div>
                                                                             <div class="col-md-12 form-floating">
-                                                                                <h:inputTextarea class="form-control" value="#{correoMasivosController.descripcion}" a:placeholder="Ingrese comentarios para informar a los usuarios" id="floatingTextarea2" style="height: 100px"></h:inputTextarea>
-                                                                                <label for="floatingTextarea2">Comentario a informar</label>
+                                                                                <h:inputTextarea class="form-control" value="#{correoMasivosController.descripcion}" a:placeholder="#{formInternacionalización.lblInfoCorCon}" id="floatingTextarea2" style="height: 100px"></h:inputTextarea>
+                                                                                <label for="floatingTextarea2">#{formInternacionalización.txtConForm}</label>
                                                                             </div>
                                                                             <div class="from-row">
                                                                                 <div class="from-group col">
                                                                                   <div class="alert alert-info text-uppercase m-4" role="alert">
-                                                                                    PRONTO TUS CLIENTES SE INFORMARÁN SOBRE LO PLANTEADO!!!
+                                                                                    #{formInternacionalización.txtMenCor}
                                                                                   </div>
                                                                                 </div>
                                                                             </div>
@@ -292,23 +279,23 @@
                                                                     <div class="from-group col">
                                                                         <div class="row">
                                                                             <div class="col-md-12 form-floating mb-3">
-                                                                                <h:inputText class="form-control" id="Input3" value="#{correoMasivosController.titulo1}" a:placeholder="Ingrese el Titulo"/>
-                                                                                <label for="Input3">Titulo Detallado</label>
+                                                                                <h:inputText class="form-control" id="Input1" value="#{correoMasivosController.titulo}" a:placeholder="#{formInternacionalización.lblInfoCor}"/>
+                                                                                <label for="Input1">#{formInternacionalización.txtInfoForm}</label>
                                                                             </div>
                                                                             <div class="col-md-12 form-floating">
-                                                                                <h:inputTextarea class="form-control" value="#{correoMasivosController.descripcion1}" a:placeholder="Ingrese comentarios para informar a los usuarios" id="floatingTextarea4" style="height: 100px"></h:inputTextarea>
-                                                                                <label for="floatingTextarea4">Comentario a informar</label>
+                                                                                <h:inputTextarea class="form-control" value="#{correoMasivosController.descripcion}" a:placeholder="#{formInternacionalización.lblInfoCorCon}" id="floatingTextarea2" style="height: 100px"></h:inputTextarea>
+                                                                                <label for="floatingTextarea2">#{formInternacionalización.txtConForm}</label>
                                                                             </div>
                                                                             <div class="from-row">
                                                                                 <div class="from-group col">
                                                                                   <div class="alert alert-info text-uppercase m-4" role="alert">
-                                                                                    PRONTO TUS CLIENTES SE INFORMARÁN SOBRE LO PLANTEADO!!!
+                                                                                    #{formInternacionalización.txtMenCor}
                                                                                   </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="footer">
                                                                                 <button type="reset" class="btn btn-secondary mr-2">#{formInternacionalización.btnLimpiar}</button>
-                                                                                <h:commandButton class="btn btn-outline-info" value="#{formInternacionalización.btnEnviar}" action="#{correoMasivosController.enviarCorreo_1()}"></h:commandButton>
+                                                                                <h:commandButton class="btn btn-outline-info" value="#{formInternacionalización.btnEnviar}" action="#{correoMasivosController.enviarCorreo()}"></h:commandButton>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -335,23 +322,23 @@
                                                                     <div class="from-group col">
                                                                         <div class="row">
                                                                             <div class="col-md-12 form-floating mb-3">
-                                                                                <h:inputText class="form-control" id="Input5" value="#{correoMasivosController.titulo2}" a:placeholder="Ingrese el Titulo"/>
-                                                                                <label for="Input5">Titulo Detallado</label>
+                                                                                <h:inputText class="form-control" id="Input1" value="#{correoMasivosController.titulo}" a:placeholder="#{formInternacionalización.lblInfoCor}"/>
+                                                                                <label for="Input1">#{formInternacionalización.txtInfoForm}</label>
                                                                             </div>
                                                                             <div class="col-md-12 form-floating">
-                                                                                <h:inputTextarea class="form-control" value="#{correoMasivosController.descripcion2}" a:placeholder="Ingrese comentarios para informar a los usuarios" id="floatingTextarea6" style="height: 100px"></h:inputTextarea>
-                                                                                <label for="floatingTextarea6">Comentario a informar</label>
+                                                                                <h:inputTextarea class="form-control" value="#{correoMasivosController.descripcion}" a:placeholder="#{formInternacionalización.lblInfoCorCon}" id="floatingTextarea2" style="height: 100px"></h:inputTextarea>
+                                                                                <label for="floatingTextarea2">#{formInternacionalización.txtConForm}</label>
                                                                             </div>
                                                                             <div class="from-row">
                                                                                 <div class="from-group col">
                                                                                   <div class="alert alert-info text-uppercase m-4" role="alert">
-                                                                                    PRONTO TUS CLIENTES SE INFORMARÁN SOBRE LO PLANTEADO!!!
+                                                                                    #{formInternacionalización.txtMenCor}
                                                                                   </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="footer">
                                                                                 <button type="reset" class="btn btn-secondary mr-2">#{formInternacionalización.btnLimpiar}</button>
-                                                                                <h:commandButton class="btn btn-outline-info" value="#{formInternacionalización.btnEnviar}" action="#{correoMasivosController.enviarCorreo_2()}"></h:commandButton>
+                                                                                <h:commandButton class="btn btn-outline-info" value="#{formInternacionalización.btnEnviar}" action="#{correoMasivosController.enviarCorreo()}"></h:commandButton>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -375,6 +362,7 @@
               </div>
         </div>
     </div>
+  </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

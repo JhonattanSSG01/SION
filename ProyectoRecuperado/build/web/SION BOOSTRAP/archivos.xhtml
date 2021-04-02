@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
@@ -14,6 +15,7 @@
     <title>Dashboard Gerente</title>
     </h:head>
     <h:body style="color: #000;">
+       <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -102,7 +104,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -165,8 +167,8 @@
               <div  class="row">
 
               <div class="col-lg-9">
-                <h1 class="font-weight-bold mb-0">Archivos Excel</h1>
-               <h4 class="mb-0 text-muted">Puedes escoger la tabla a ingresar datos en la Base de Datos</h4>         
+                <h1 class="font-weight-bold mb-0">#{formInternacionalización.txtArc}</h1>
+               <h4 class="mb-0 text-muted">#{formInternacionalización.txtSubArc}</h4>         
               </div>
 
 
@@ -180,18 +182,18 @@
                     <div class="col mt-3">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Seleccionar archivo</button>  
+                          <h5 class="card-title">#{formInternacionalización.txtCardArc1}</h5>
+                          <p class="card-text">#{formInternacionalización.txtCardSubArc1}</p>  
+                            <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">#{formInternacionalización.btnArc}</button>  
                             <div class="collapse" id="collapseExample">
                                 <div class="card card-body mt-3">
                                     <h:form enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="inputGroupFile04" class="form-label">Archivo Excel</label>
+                                            <label for="inputGroupFile04" class="form-label">#{formInternacionalización.txtArc1}</label>
                                         </div>
                                         <div class="input-group">                                    
-                                            <h:inputFile class="form-control p-1" id="inputGroupFile04" a:aria-describedby="inputGroupFileAddon04" value="#{archivosExcel.file}"/>
-                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon04" value="Subir Archivo" action="#{archivosExcel.upload()}"/>
+                                            <h:inputFile class="form-control p-1" id="inputGroupFile01" a:aria-describedby="inputGroupFileAddon01" value="#{archivosExcel.file}"/>
+                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon01" value="#{formInternacionalización.btnUp}" action="#{archivosExcel.upload()}"/>
                                         </div>
                                     </h:form>
                                 </div>
@@ -202,18 +204,18 @@
                     <div class="col mt-3">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">Seleccionar archivo</button>  
+                          <h5 class="card-title">#{formInternacionalización.txtCardArc2}</h5>
+                          <p class="card-text">#{formInternacionalización.txtCardSubArc2}.</p>
+                            <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">#{formInternacionalización.btnArc}</button>  
                             <div class="collapse" id="collapseExample1">
                                 <div class="card card-body mt-3">
                                     <h:form enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="inputGroupFile04" class="form-label">Archivo Excel</label>
+                                            <label for="inputGroupFile04" class="form-label">#{formInternacionalización.txtArc1}</label>
                                         </div>
                                         <div class="input-group">                                    
-                                            <h:inputFile class="form-control p-1" id="inputGroupFile04" a:aria-describedby="inputGroupFileAddon04" value="#{archivosExcel.file}"/>
-                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon04" value="Subir Archivo" action="#{archivosExcel.upload()}"/>
+                                            <h:inputFile class="form-control p-1" id="inputGroupFile02" a:aria-describedby="inputGroupFileAddon02" value="#{archivosExcel.file}"/>
+                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon02" value="#{formInternacionalización.btnUp}" action="#{archivosExcel.upload()}"/>
                                         </div>
                                     </h:form>
                                 </div>
@@ -224,18 +226,18 @@
                     <div class="col mt-3">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content This content is a little bit longer.</p>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">Seleccionar archivo</button>  
+                          <h5 class="card-title">#{formInternacionalización.txtCardArc3}</h5>
+                          <p class="card-text">#{formInternacionalización.txtCardSubArc3}</p>
+                            <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">#{formInternacionalización.btnArc}</button>  
                             <div class="collapse" id="collapseExample2">
                                 <div class="card card-body mt-3">
                                     <h:form enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="inputGroupFile04" class="form-label">Archivo Excel</label>
+                                            <label for="inputGroupFile04" class="form-label">#{formInternacionalización.txtArc1}</label>
                                         </div>
                                         <div class="input-group">                                    
-                                            <h:inputFile class="form-control p-1" id="inputGroupFile04" a:aria-describedby="inputGroupFileAddon04" value="#{archivosExcel.file}"/>
-                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon04" value="Subir Archivo" action="#{archivosExcel.upload()}"/>
+                                            <h:inputFile class="form-control p-1" id="inputGroupFile03" a:aria-describedby="inputGroupFileAddon03" value="#{archivosExcel.file}"/>
+                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon03" value="#{formInternacionalización.btnUp}" action="#{archivosExcel.upload()}"/>
                                         </div>
                                     </h:form>
                                 </div>
@@ -246,18 +248,18 @@
                     <div class="col mt-3">
                       <div class="card">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">Seleccionar archivo</button>  
+                          <h5 class="card-title">#{formInternacionalización.txtCardArc4}</h5>
+                          <p class="card-text">#{formInternacionalización.txtCardSubArc4}</p>
+                            <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">#{formInternacionalización.btnArc}</button>  
                             <div class="collapse" id="collapseExample3">
                                 <div class="card card-body mt-3">
                                     <h:form enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="inputGroupFile04" class="form-label">Archivo Excel</label>
+                                            <label for="inputGroupFile04" class="form-label">#{formInternacionalización.txtArc1}</label>
                                         </div>
                                         <div class="input-group">                                    
                                             <h:inputFile class="form-control p-1" id="inputGroupFile04" a:aria-describedby="inputGroupFileAddon04" value="#{archivosExcel.file}"/>
-                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon04" value="Subir Archivo" action="#{archivosExcel.upload()}"/>
+                                            <h:commandButton class="btn btn-outline-dark" id="inputGroupFileAddon04" value="#{formInternacionalización.btnUp}" action="#{archivosExcel.upload()}"/>
                                         </div>
                                     </h:form>
                                 </div>
@@ -270,6 +272,7 @@
             </div>
         </div>
     </div>
+  </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

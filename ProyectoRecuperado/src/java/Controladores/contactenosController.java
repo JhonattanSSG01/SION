@@ -29,6 +29,7 @@ public class contactenosController implements Serializable {
     
     
     String nombre="";
+    String correo="";
     String descripcion="";
     
     @Inject
@@ -42,6 +43,15 @@ public class contactenosController implements Serializable {
         this.nombre = nombre;
     }
 
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    
     public String getDescripcion() {
         return descripcion;
     }
@@ -51,9 +61,9 @@ public class contactenosController implements Serializable {
     }
     
     public void enviarCorreo() throws UnsupportedEncodingException, MessagingException{
-        Mailer.content(mensajeEstilo(), descripcion);
+    Mailer.content(nombre, correo, mensajeEstilo());
        try{   
-            mensajesController.setMensaje("Mensaje('Bienbenido!!','Pronto sabrás de nosotros')");
+            mensajesController.setMensaje("Mensaje('Bienvenido!!','Pronto sabrás de nosotros')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Verifique los campos e intente de nuevo','error')");
         }
@@ -81,16 +91,21 @@ public class contactenosController implements Serializable {
                                 + "<div class=\"row\">"
                                     + "<div class=\"col-12\" style=\"margin: 30px 20px 10px; color: #52718f; text-align: justify;\">"
                                         + "<h2 style=\"color: #c54040; margin: 0 0 7px; text-transform: uppercase; \">"					
-                                                + nombre
+                                                + descripcion
                                          + "</h2>"
-                                           + "<p style=\"margin: 2px; font-size: 15px; \"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus id, esse totam sit voluptate molestiae impedit corrupti porro ab eius praesentium et, debitis ratione quisquam! Et iusto omnis eligendi corrupti?" + "</p>"
+                                           + "<p style=\"margin: 2px; font-size: 15px; \"> Hola!! es un honor tenerte con nosotros, gracias por ponerte en contacto con Casa Banquetes y Eventos SION. Te damos la bienvenida a este maravilloso sitio donde vas a encontarr las mejores ofertas y diseños para tu gran día. Te invitamos a que revise nuestra página y conozcas la información detallada, te esperamos!!!" + "</p>"
                                                + "<ul style=\"font-size: 15px;  margin: 10px 0; \">"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
+                                                       +  "<h2> Te ofrecemos diferentes servicios para la ocación especial" + "<h2>"
+                                                       +  "<li>Servicio de Catering." + "</li>"
+                                                       +  "<li>Maquillaje Profesional." + "</li>"
+                                                       +  "<li>Ajuar de acuerdo a la ocación." + "</li>"
+                                                       +  "<li>Sonido Profesional." + "</li>"
+                                                       +  "<li>Silleteria y decoración." + "</li>"
+                                                       +  "<li>y mucho más." + "</li>"
                                                + "</ul>"
+                                                + "<div style=\"width: 100%; text-align: center; margin-top:40px;\">"
+                                                   + "<a style=\"text-decoration: none; border-radius: 5px; padding: 11px 23px; color: white; background-color: #c56040;\" href=\"#\">Ir a la página" + "</a>"
+                                               + "</div>"
                                            + "<p style=\"color: #cf7373; font-size: 12px; text-align: center; margin: 20px 0 0; \">SION - Casa De Banquetes 2021" + "</p>"
                                     + "</div>"
                                 + "</div>"

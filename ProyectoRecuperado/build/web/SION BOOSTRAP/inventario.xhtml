@@ -16,10 +16,11 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/funcionMensaje.js" type="text/javascript"></script>
         
-    <title>Dashboard | Usuarios</title>
+    <title>Dashboard | Inventario</title>
     </h:head>
     <h:body style="color: #000;">
         <script>#{mensajeController.mensaje}</script>
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -108,7 +109,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -190,48 +191,41 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">ultimo ingreso mensual</h5>
-                                        <h2 class="font-weight-bold">17.000.000</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> 50.50%</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenInv1}</h5>
+                                        <h2 class="font-weight-bold">24</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i>#{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Nuevas cotizaciones </h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenInv2}</h5>
+                                        <h2 class="font-weight-bold">2</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">clientes</h5>
-                                        <h2 class="font-weight-bold">126</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenInv3}</h5>
+                                        <h2 class="font-weight-bold">4</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                                  <div class="col-lg-3 col-md-6 d-flex my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Empleados</h5>
-                                        <h2 class="font-weight-bold">326</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenInv4}</h5>
+                                        <h2 class="font-weight-bold">#{formInternacionalización.txtGerenInvSub4}</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                             </div>
                                 <div class="row" style="place-content: center">
-                                  <div class="col-lg col-md-6 d-flex stat my-3">
+                                  <div class="col-lg col-md-6 d-flex my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Eventos realizados en el mes</h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>                                    
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenInv5}</h5>
+                                        <h2 class="font-weight-bold">12</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>                                    
                                     </div>
                                     </div>
-                                    <div class="col-lg col-md-6 d-flex my-3">
-                                        <div class="mx-auto">
-                                            <h5 class="text-muted">Eventos en proceso</h5>
-                                            <h2 class="font-weight-bold">15</h2>
-                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
-                                        </div>
-                                    </div>  
                                 </div>                          
                         </div>
                     </div>
@@ -242,10 +236,10 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR INFORMACION AL INVENTARIO
+					<i class="fas fa-user-plus"></i> &nbsp; #{formInternacionalización.txtAgreInv}
                                 </h3>
 				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+					#{formInternacionalización.txtAgreInvSub}
 				</p>
                             </div>
 			</div>
@@ -253,13 +247,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="inventario-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Informacion</a>
+                                                <a class="text-uppercase" href="inventario-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; #{formInternacionalización.btnListInv}</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Informacion</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp;#{formInternacionalización.txtAgreInv1}</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="inventario-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Informacion</a>
+						<a class="text-uppercase" href="inventario-search.xhtml"><i class="fas fa-search"></i> &nbsp; #{formInternacionalización.btnSearchInv}</a>
 					</li>
 				</ul>	
 			</div>
@@ -267,13 +261,13 @@
              
                             <f:view>
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Informacion"/></h1>
+                                    <h1 class="mb-3"><h:outputText value="#{formInternacionalización.txtAgreInv1}"/></h1>
                                         <h:panelGrid>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Encargado" for="EncInv" />
+                                                 <h:outputLabel class="form-label" value="#{formInternacionalización.txtEncInv}" for="EncInv" />
                                                  <h:inputText class="form-control" id="EncInv" value="#{inventarioController.inventario.encInv}" title="EncInv" required="true"/>
                                             </div>
-                                            <h:outputLabel class="form-label" value="Categoria de Stock" for="StoInv" />
+                                            <h:outputLabel class="form-label" value="#{formInternacionalización.txtstoInv}" for="StoInv" />
                                             <h:selectOneMenu class="form-control" id="StoInv" value="#{inventarioController.inventario.codSto}" title="StoInv" >
                                                 <!-- TODO: update below reference to list of available items-->
                                                 <f:selectItems value="#{inventarioController.consultarInventario()}" var="inventario" itemValue="#{inventario.codSto}" itemLabel="#{inventario.codSto.catpSto}"/>
@@ -282,16 +276,16 @@
                                                 <div class="form-check">
                                                   <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
                                                   <label class="form-check-label" for="invalidCheck">
-                                                    Estas de acuerdo con los terminos y condiciones!!
+                                                    #{formInternacionalización.txtTerm}
                                                   </label>
                                                   <div class="invalid-feedback mt-3">
-                                                    Debes estar de acuerdo antes de guardar.
+                                                    #{formInternacionalización.txtTermSub}
                                                   </div>
                                                 </div>
                                             </div>
                                             <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{inventarioController.registrarInventario()}"></h:commandButton>
-                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="#{formInternacionalización.btnSave}" action="#{inventarioController.registrarInventario()}"></h:commandButton>
+                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>#{formInternacionalización.btnClean}</button>   
                                             </div>
                                         </h:panelGrid>   
                                 </h:form>
@@ -299,6 +293,7 @@
                     </div>
               </div>
         </div>
+    </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

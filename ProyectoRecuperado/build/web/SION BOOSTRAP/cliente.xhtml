@@ -20,6 +20,7 @@
     </h:head>
     <script>#{mensajeController.mensaje}</script>
     <h:body style="color: #000;">
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -108,7 +109,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="#{formInternacionalización.btnBusc}" aria-label="Buscar"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -192,48 +193,41 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">ultimo ingreso mensual</h5>
-                                        <h2 class="font-weight-bold">17.000.000</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> 50.50%</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenUsu1}</h5>
+                                        <h2 class="font-weight-bold">10</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Nuevas cotizaciones </h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenUsu2}</h5>
+                                        <h2 class="font-weight-bold">8</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i>#{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">clientes</h5>
-                                        <h2 class="font-weight-bold">126</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenUsu3}</h5>
+                                        <h2 class="font-weight-bold">6</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                                  <div class="col-lg-3 col-md-6 d-flex my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Empleados</h5>
-                                        <h2 class="font-weight-bold">326</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenUsu4}</h5>
+                                        <h2 class="font-weight-bold">12</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>
                                     </div>
                                 </div>
                             </div>
                                 <div class="row" style="place-content: center">
-                                  <div class="col-lg col-md-6 d-flex stat my-3">
+                                  <div class="col-lg col-md-12 d-flex my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Eventos realizados en el mes</h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>                                    
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenUsu5}</h5>
+                                        <h2 class="font-weight-bold">2</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtUsuSub}</h5>                                    
                                     </div>
                                     </div>
-                                    <div class="col-lg col-md-6 d-flex my-3">
-                                        <div class="mx-auto">
-                                            <h5 class="text-muted">Eventos en proceso</h5>
-                                            <h2 class="font-weight-bold">15</h2>
-                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
-                                        </div>
-                                    </div>  
                                 </div>                          
                         </div>
                     </div>
@@ -244,10 +238,10 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-clipboard-list"></i> &nbsp; LISTA DE CLIENTES
+					<i class="fas fa-clipboard-list"></i> &nbsp; #{formInternacionalización.btnListCli}
 				</h3>
 				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+					#{formInternacionalización.txtListSubCli}
 				</p>
                             </div>
 			</div>
@@ -255,10 +249,10 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Clientes</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-clipboard-list"></i> &nbsp; #{formInternacionalización.btnListCli}</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="cliente-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Cliente</a>
+						<a class="text-uppercase" href="cliente-search.xhtml"><i class="fas fa-search"></i> &nbsp; #{formInternacionalización.tnSearchCli}</a>
 					</li>
 				</ul>	
 			</div>
@@ -267,38 +261,38 @@
                             
                     <f:view>       
                         <h:form class="table table-striped table-hover table-dark container text-justify" style="color: #fff; padding: 25px 20px; display: grid;">
-                          <h1 class="mb-3 text-center text-uppercase"><h:outputText value="Lista de Clientes"/></h1>
+                          <h1 class="mb-3 text-center text-uppercase"><h:outputText value="#{formInternacionalización.btnListCli}"/></h1>
                           <h:dataTable class=" mr-0 text-center" value="#{clienteController.consultarClientes()}" var="cliente">
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Identificacion"/>
+                                        <h:outputText value="#{formInternacionalización.txtIdUsu}"/>
                                     </f:facet>
                                     <h:outputText value="#{cliente.codUsu.docUsu}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Nombre Completo"/>
+                                        <h:outputText value="#{formInternacionalización.txtNomUsu}"/>
                                     </f:facet>
                                     <h:outputText value="#{cliente.codUsu.nomcUsu}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Telefono/Celular"/>
+                                        <h:outputText value="#{formInternacionalización.txtNomTeleUsu}"/>
                                     </f:facet>
                                     <h:outputText value="#{cliente.telCli}"/>
                                 </h:column>
                               <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Direccion"/>
+                                        <h:outputText value="#{formInternacionalización.txtDirUsu}"/>
                                     </f:facet>
                                     <h:outputText value="#{cliente.dirCli}"/>
                                 </h:column>
                                 <h:column a:style="display: flex;">
                                     <f:facet name="header">
-                                        <h:outputText value="Estado"/>
+                                        <h:outputText value="#{formInternacionalización.lstUsu4}"/>
                                     </f:facet>
-                                    <h:commandButton class="btn btn-outline-info mr-1"  value="Editar" action="#{clienteController.preActualizarCliente(cliente)}"></h:commandButton>
-                                    <h:commandButton class="btn btn-outline-danger ml-1"  value="Eliminar" action="#{clienteController.eliminarCliente(cliente)}"></h:commandButton>
+                                    <h:commandButton class="btn btn-outline-info mr-1"  value="#{formInternacionalización.btnListEdit}" action="#{clienteController.preActualizarCliente(cliente)}"></h:commandButton>
+                                    <h:commandButton class="btn btn-outline-danger ml-1"  value="#{formInternacionalización.btnListDelete}" action="#{clienteController.eliminarCliente(cliente)}"></h:commandButton>
                                 </h:column>
                             </h:dataTable> 
                         </h:form>
@@ -307,6 +301,7 @@
                     </div>
               </div>
         </div>
+       </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -46,11 +46,12 @@ public class usuarioRolController implements Serializable {
     String Correo="";
     String Contraseña="";
     
+    private UsuarioRol LogueadoUsuario;
     private Rol rolUsuario;
     private Cliente cliente;
     private Rol rol;
     private UsuarioRol usuarioRol;
-    private UsuarioRol usuarioLogin;
+    
     @EJB
     PermisoRolFacade permisoRolFacade; 
     @EJB
@@ -68,7 +69,7 @@ public class usuarioRolController implements Serializable {
         cliente = new Cliente();
         rol = new Rol();
         usuarioRol = new UsuarioRol();
-        usuarioLogin = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuarioRolSignIn");
+        LogueadoUsuario = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuarioLogueado");
     }
 
     public String getNombre() {
@@ -222,6 +223,10 @@ public class usuarioRolController implements Serializable {
         return permisoRolFacade.permisoPadre(CodPdr);
     }
     
+    public void cerraSesion(){
+        LogueadoUsuario = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuarioLogueado");
+    }
+    
     public String signIn(){
         String redireccion="";
         UsuarioRol usuarioRolSignIn = new UsuarioRol();
@@ -246,10 +251,12 @@ public class usuarioRolController implements Serializable {
             }
                 else{
                     System.out.println("Usuario y/o contraseña incorrectas");
+                    
                 }
             
         }catch(Exception e){
             System.out.println("Error: " + e);
+            mensajesController.setMensaje("Mensaje('Error','Ha habido un error, verifique los datos e intentelo de nuevo','error')");
         }
         return redireccion;
     }

@@ -16,10 +16,11 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="js/funcionMensaje.js" type="text/javascript"></script>
         
-    <title>Dashboard | Usuarios</title>
+    <title>Dashboard | Paquete</title>
     </h:head>
     <h:body style="color: #000;">
         <script>#{mensajeController.mensaje}</script>
+        <f:view locale="#{idiomaController.idiomaActual}">
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -108,7 +109,7 @@
                 <div class="container" style="max-width: 95%">
                     <div class="col-7">
                         <form id="search-space" class="form-inline position-relative my-2 my-lg-0">
-                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="" aria-label="#{formInternacionalización.btnBusc}"></input>
                             <button class="btn btn-search position-absolute text-muted" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                      </div>
@@ -190,46 +191,46 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">ultimo ingreso mensual</h5>
-                                        <h2 class="font-weight-bold">17.000.000</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> 50.50%</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenPqt1}</h5>
+                                        <h2 class="font-weight-bold">5</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Nuevas cotizaciones </h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenPqt2}</h5>
+                                        <h2 class="font-weight-bold">6</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">clientes</h5>
-                                        <h2 class="font-weight-bold">126</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenPqt3}</h5>
+                                        <h2 class="font-weight-bold">8</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                                  <div class="col-lg-3 col-md-6 d-flex my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Empleados</h5>
-                                        <h2 class="font-weight-bold">326</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenPqt4}</h5>
+                                        <h2 class="font-weight-bold">10</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                     </div>
                                 </div>
                             </div>
                                 <div class="row" style="place-content: center">
                                   <div class="col-lg col-md-6 d-flex stat my-3">
                                     <div class="mx-auto">
-                                        <h5 class="text-muted">Eventos realizados en el mes</h5>
-                                        <h2 class="font-weight-bold">15</h2>
-                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>                                    
+                                        <h5 class="text-muted">#{formInternacionalización.txtGerenPqt5}</h5>
+                                        <h2 class="font-weight-bold">18</h2>
+                                        <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>                                    
                                     </div>
                                     </div>
                                     <div class="col-lg col-md-6 d-flex my-3">
                                         <div class="mx-auto">
-                                            <h5 class="text-muted">Eventos en proceso</h5>
-                                            <h2 class="font-weight-bold">15</h2>
-                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> Mas detalles...</h5>
+                                            <h5 class="text-muted">#{formInternacionalización.txtGerenPqt6}</h5>
+                                            <h2 class="font-weight-bold">5</h2>
+                                            <h5 class="text-success"><i class="fas fa-info-circle"></i> #{formInternacionalización.txtPerSub}</h5>
                                         </div>
                                     </div>  
                                 </div>                          
@@ -242,10 +243,10 @@
                       <div class="full-box page-header mt-5">
                           <div class="container-lg" style="max-width: 90%">
 				<h3 class="text-left">
-					<i class="fas fa-user-plus"></i> &nbsp; AGREGAR SERVICIO-PAQUETE TODO INLUIDO
+					<i class="fas fa-user-plus"></i> &nbsp; #{formInternacionalización.txtAgrePqt}
 				</h3>
 				<p class="text-justify">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+					#{formInternacionalización.txtAgrePqtSub}
 				</p>
                             </div>
 			</div>
@@ -253,13 +254,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs mt-5">
 					<li>
-                                                <a class="text-uppercase" href="paquete-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; Lista de Paquetes</a>
+                                                <a class="text-uppercase" href="paquete-list.xhtml"><i class="fas fa-clipboard-list"></i> &nbsp; #{formInternacionalización.btnListPqt}</a>
 					</li>
                                         <li>
-                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; Agregar Paquete</a>
+                                                <a class="active text-uppercase" href="#"><i class="fas fa-user-plus"></i> &nbsp; #{formInternacionalización.txtAgrePqt1}</a>
 					</li>
 					<li>
-						<a class="text-uppercase" href="paquete-search.xhtml"><i class="fas fa-search"></i> &nbsp; Consultar Paquete</a>
+						<a class="text-uppercase" href="paquete-search.xhtml"><i class="fas fa-search"></i> &nbsp; #{formInternacionalización.btnSearchPqt}</a>
 					</li>
 				</ul>	
 			</div>
@@ -267,34 +268,34 @@
              
                             <f:view>
                                 <h:form class="container needs-validation" a:novalidate="" style="background-color: rgba(180, 180, 180, .3); max-width: 60%; padding: 15px; text-align: -webkit-center;">
-                                    <h1 class="mb-3"><h:outputText value="Agregar Paquete"/></h1>
+                                    <h1 class="mb-3"><h:outputText value="#{formInternacionalización.txtAgrePqt1}e"/></h1>
                                         <h:panelGrid>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Nombre del Servicio" for="NomPat" />
+                                                 <h:outputLabel class="form-label" value="#{formInternacionalización.txtNombPqt}" for="NomPat" />
                                                  <h:inputText class="form-control" id="NomPat" value="#{paqueteTodoIncluidoController.paqueteTodoIncluido.nomPati}" title="NomPat" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Descripcion" for="DesPat" />
+                                                 <h:outputLabel class="form-label" value="#{formInternacionalización.txtDirPqt}" for="DesPat" />
                                                  <h:inputText class="form-control" id="DesPat" value="#{paqueteTodoIncluidoController.paqueteTodoIncluido.despati}" title="DesPat" required="true"/>
                                             </div>
                                             <div class="col-md-6">
-                                                 <h:outputLabel class="form-label" value="Valor" for="ValPat" />
+                                                 <h:outputLabel class="form-label" value="#{formInternacionalización.txtVlPqt}" for="ValPat" />
                                                  <h:inputText class="form-control" id="ValPat" value="#{paqueteTodoIncluidoController.paqueteTodoIncluido.valPati}" title="ValPat" required="true"/>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-check">
                                                   <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
                                                   <label class="form-check-label" for="invalidCheck">
-                                                    Estas de acuerdo con los terminos y condiciones!!
+                                                    #{formInternacionalización.txtTerm}
                                                   </label>
                                                   <div class="invalid-feedback mt-3">
-                                                    Debes estar de acuerdo antes de guardar.
+                                                    #{formInternacionalización.txtTermSub}
                                                   </div>
                                                 </div>
                                             </div>
                                             <div class="mt-5" style="display: inline-block">
-                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="Guardar" action="#{paqueteTodoIncluidoController.registrarPaqueteTodoIncluido()}"></h:commandButton>
-                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>Limpiar</button>   
+                                                <h:commandButton class="col-6 btn btn-raised btn-danger btn-sm" value="#{formInternacionalización.btnSave}" action="#{paqueteTodoIncluidoController.registrarPaqueteTodoIncluido()}"></h:commandButton>
+                                                <button type="reset" class="col-6 btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller mr-2"></i>#{formInternacionalización.btnClean}</button>   
                                             </div>
                                         </h:panelGrid>   
                                 </h:form>
@@ -302,6 +303,7 @@
                     </div>
               </div>
         </div>
+      </f:view>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
