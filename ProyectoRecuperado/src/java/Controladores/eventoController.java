@@ -17,6 +17,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 /**
@@ -100,7 +101,7 @@ public class eventoController implements Serializable {
             evento.setCodDee(detalleTipoEventoFacade.find(this.detalleTipoEvento.getCodDee()));
             eventoFacade.edit(this.evento);
             evento = new Evento();
-            mensajesController.setMensaje("Mensaje('Correcto','El Evento ha sido actualizado','success')");
+            mensajesController.setMensaje("Mensaje('Satisfactorio','El Evento ha sido actualizado','success')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el evento','error')");
         }
@@ -111,7 +112,7 @@ public class eventoController implements Serializable {
     public void eliminarEvento(Evento evento){
         try{
             eventoFacade.remove(evento);
-            mensajesController.setMensaje("Mensaje('Correcto','El Evento ha sido eliminado','success')");
+            mensajesController.setMensaje("Mensaje('Exitoso','El Evento ha sido eliminado','warning')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al eliminar el evento','error')");
         }
@@ -124,5 +125,12 @@ public class eventoController implements Serializable {
     
     public Evento consultarID(){
         return eventoFacade.find(this.evento.getCodEve());
+    }
+    
+    public String cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+        return "index.xhtml?faces-redirect=true";
     }
 }

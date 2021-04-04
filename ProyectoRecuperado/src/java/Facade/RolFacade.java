@@ -9,6 +9,7 @@ import Entidades.Rol;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -29,4 +30,12 @@ public class RolFacade extends AbstractFacade<Rol> {
         super(Rol.class);
     }
     
+     public String CargaDatos(String archivo, String tabla){
+        
+        Query query = em.createNativeQuery("LOAD DATA LOCAL INFILE '" + archivo + "' INTO TABLE " + tabla + " FIELDS TERMINATED BY ';' ENCLOSED BY '\"' ESCAPED BY '\\\\' LINES TERMINATED BY '\\r\\n'");
+        int resultado = query.executeUpdate();
+        String mensaje = resultado + "Filas afectadas";
+        return mensaje;
+    }
+
 }

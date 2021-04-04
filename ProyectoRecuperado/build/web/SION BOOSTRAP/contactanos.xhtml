@@ -14,11 +14,15 @@
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
             <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>
             <link href="css/contactanos.css" rel="stylesheet" type="text/css"/>
+            <link href="css/sp.css" rel="stylesheet" type="text/css"/>
             
             <title>#{formInternacionalización.txtTitulo16}</title>
     </h:head>
         <h:body style="background-image: url(img/restaurant-table-720.jpg);">
             <f:view locale="#{idiomaController.idiomaActual}">
+                <div id="spinner" class="d-flex justify-content-center">
+                    <div class="spinner-grow text-dark" role="status"></div>
+                </div>
                 <nav id="navbar" class="navbar navbar-expand-lg navbar">          
                     <div class="container">
                         <a class="navbar-brand" href="index.xhtml">
@@ -170,6 +174,14 @@
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
             
             </f:view>
+            
+            <script>
+                window.addEventListener("load", function () {
+                    const loader = document.querySelector("#spinner");
+                    loader.className += " hidden"; // class "loader hidden"
+                });
+            </script>
+            
         </h:body>
 </html>
 

@@ -13,6 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 /**
@@ -95,4 +96,11 @@ public class stockController implements Serializable {
    public Stock consultarID(){
       return stockFacade.find(this.stock.getCodSto());
    }
+   
+   public String cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+        return "index.xhtml?faces-redirect=true";
+    }
 }

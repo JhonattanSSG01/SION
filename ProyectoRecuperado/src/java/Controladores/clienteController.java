@@ -15,6 +15,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 /**
@@ -84,7 +85,7 @@ public class clienteController implements Serializable {
             cliente.setCodUsu(usuarioRolFacade.find(this.usuarioRol.getCodUsu()));
             clienteFacade.edit(this.cliente);
             cliente = new Cliente();
-            mensajesController.setMensaje("Mensaje('Correcto','El cliente ha sido actualizado','success')");
+            mensajesController.setMensaje("Mensaje('Satisfactorio','El cliente ha sido actualizado','success')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el cliente','error')");
         }
@@ -95,7 +96,7 @@ public class clienteController implements Serializable {
     public void eliminarCliente(Cliente cliente){
         try{
             clienteFacade.remove(cliente);
-            mensajesController.setMensaje("Mensaje('Correcto','El cliente ha sido eliminado','success')");
+            mensajesController.setMensaje("Mensaje('Exitoso','El cliente ha sido eliminado','warning')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al eliminar el cliente','error')");
         }
@@ -108,5 +109,12 @@ public class clienteController implements Serializable {
     
     public Cliente consultarID(){
         return clienteFacade.find(this.cliente.getCodCli());
+    }
+    
+    public String cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+        return "index.xhtml?faces-redirect=true";
     }
 }

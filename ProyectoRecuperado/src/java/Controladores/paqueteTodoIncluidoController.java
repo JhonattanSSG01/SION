@@ -13,6 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 /**
@@ -70,7 +71,7 @@ public class paqueteTodoIncluidoController implements Serializable {
         try{
             paqueteTodoIncluidoFacade.edit(this.paqueteTodoIncluido);
             paqueteTodoIncluido = new PaqueteTodoIncluido();
-            mensajesController.setMensaje("Mensaje('Correcto','El servicio sobre el paquete ha sido actualizado','success')");
+            mensajesController.setMensaje("Mensaje('Satisfactorio','El servicio sobre el paquete ha sido actualizado','success')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar el servicio','error')");
         }
@@ -81,7 +82,7 @@ public class paqueteTodoIncluidoController implements Serializable {
     public void eliminarPaqueteTodoIncluido(PaqueteTodoIncluido paqueteTodoIncluido){
         try{
             paqueteTodoIncluidoFacade.remove(paqueteTodoIncluido);
-            mensajesController.setMensaje("Mensaje('Correcto','El servicio sobre el paquete ha sido eliminado','success')");
+            mensajesController.setMensaje("Mensaje('Exitoso','El servicio sobre el paquete ha sido eliminado','warning')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al eliminar el servicio','error')");
         }
@@ -94,5 +95,12 @@ public class paqueteTodoIncluidoController implements Serializable {
      
     public PaqueteTodoIncluido consultarID(){
         return paqueteTodoIncluidoFacade.find(this.paqueteTodoIncluido.getCodPati());
+    }
+    
+    public String cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+        return "index.xhtml?faces-redirect=true";
     }
 }

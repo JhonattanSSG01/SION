@@ -6,6 +6,7 @@
 package Facade;
 
 import Entidades.Evento;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -32,10 +33,16 @@ public class EventoFacade extends AbstractFacade<Evento> {
     
     public String CargaDatos(String archivo, String tabla){
         
-        Query query = em.createNativeQuery("LOAD DATA LOCAL INFILE'" + archivo + "' REPLACE INTO TABLE" + tabla + "SIELDS TERMINATED B ';' ENCLOSED BY '\"' ESCAPED BY '\\\\' LINES TERMINATED BY '\\r\\n'");
+        Query query = em.createNativeQuery("LOAD DATA LOCAL INFILE '" + archivo + "' INTO TABLE " + tabla + " FIELDS TERMINATED BY ';' ENCLOSED BY '\"' ESCAPED BY '\\\\' LINES TERMINATED BY '\\r\\n'");
         int resultado = query.executeUpdate();
         String mensaje = resultado + "Filas afectadas";
         return mensaje;
     }
     
+    public List<Object[]>consultarEventos(){
+        List<Object[]>listaEventos;
+        Query query=em.createNativeQuery("  SELECT evento.tip_Eve, evento.inv_Eve FROM evento WHERE evento.inv_Eve <= 60;");
+        listaEventos=query.getResultList();
+        return listaEventos;
+    }
 }

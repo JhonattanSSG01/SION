@@ -6,7 +6,19 @@
 package Controladores;
 
 import Entidades.Evento;
+import Entidades.Inventario;
+import Entidades.ProductoMenaje;
+import Entidades.Proveedor;
+import Entidades.Rol;
+import Entidades.Stock;
+import Entidades.UsuarioRol;
 import Facade.EventoFacade;
+import Facade.InventarioFacade;
+import Facade.ProductoMenajeFacade;
+import Facade.ProveedorFacade;
+import Facade.RolFacade;
+import Facade.StockFacade;
+import Facade.UsuarioRolFacade;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import javax.inject.Named;
@@ -38,38 +50,109 @@ public class reporteController implements Serializable {
     public reporteController() {
     }
     
-    
     @EJB
-    EventoFacade eventoFacade;
-    private List<Evento> listaEvento;
+    ProductoMenajeFacade productoMenajeFacade;
+    @EJB
+    StockFacade stockFacade;
+    @EJB
+    UsuarioRolFacade usuarioRolFacade;
+    @EJB
+    ProveedorFacade proveedorFacade;
+    
+    private List<ProductoMenaje> listaProducto;
+    private List<Proveedor> listaProveedor;
+    private List<Stock> listaStock;
+    private List<UsuarioRol> listaUsuarios;
     private List<Object[]> listaTotal;
     
     JasperPrint jasperPrint;
 
-    public List<Evento> getListaEvento() {
-        listaEvento=eventoFacade.findAll();
-        return listaEvento;
+    public List<ProductoMenaje> getListaProducto() {
+        listaProducto=productoMenajeFacade.findAll();
+        return listaProducto;
     }
 
-    public void setListaEvento(List<Evento> listaEvento) {
-        this.listaEvento = listaEvento;
+    public void setListaProducto(List<ProductoMenaje> listaProducto) {
+        this.listaProducto = listaProducto;
+    }
+    
+    public List<Proveedor> getListaProveedor() {
+        listaProveedor=proveedorFacade.findAll();
+        return listaProveedor;
     }
 
+    public void setListaEvento(List<Proveedor> listaEvento) {
+        this.listaProveedor = listaEvento;
+    }
+    
+    public List<Stock> getListaStock() {
+        listaStock=stockFacade.findAll();
+        return listaStock;
+    }
+
+    public void setListaStock(List<Stock> listaStock) {
+        this.listaStock = listaStock;
+    }
+
+    public List<UsuarioRol> getListaUsuarios() {
+        listaUsuarios=usuarioRolFacade.findAll();
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(List<UsuarioRol> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    } 
     
     public void init() throws JRException{
     
     }
+
+    
     public void PDF(ActionEvent actionEvent) throws JRException, IOException{
-    JRBeanCollectionDataSource beanCollectionDataSource=new JRBeanCollectionDataSource(listaTotal);
+    JRBeanCollectionDataSource beanCollectionDataSource=new JRBeanCollectionDataSource(listaProveedor);
     String ruta=FacesContext.getCurrentInstance().getExternalContext().getRealPath("//Reportes//");
-    jasperPrint=JasperFillManager.fillReport(ruta+"//ReportePrueba_2.jasper", new HashMap(),beanCollectionDataSource);
+    jasperPrint=JasperFillManager.fillReport(ruta+"//ReporteProveedores.jasper", new HashMap(),beanCollectionDataSource);
     HttpServletResponse httpServletResponse=(HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
-    httpServletResponse.addHeader("Content-disposition", "attachment; filename = reporteEventos.pdf");
+    httpServletResponse.addHeader("Content-disposition", "attachment; filename = Reporte_Proveedores.pdf");
     ServletOutputStream servletOutputStream=httpServletResponse.getOutputStream();
     JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
     FacesContext.getCurrentInstance().responseComplete();
-       
-   
-   }
     
+    }
+    
+    public void PDF1(ActionEvent actionEvent) throws JRException, IOException{
+    JRBeanCollectionDataSource beanCollectionDataSource=new JRBeanCollectionDataSource(listaProducto);
+    String ruta=FacesContext.getCurrentInstance().getExternalContext().getRealPath("//Reportes//");
+    jasperPrint=JasperFillManager.fillReport(ruta+"//ReporteProductoo.jasper", new HashMap(),beanCollectionDataSource);
+    HttpServletResponse httpServletResponse=(HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
+    httpServletResponse.addHeader("Content-disposition", "attachment; filename = Reporte_Productos.pdf");
+    ServletOutputStream servletOutputStream=httpServletResponse.getOutputStream();
+    JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+    FacesContext.getCurrentInstance().responseComplete();
+    
+    }
+
+    public void PDF2(ActionEvent actionEvent) throws JRException, IOException{
+    JRBeanCollectionDataSource beanCollectionDataSource=new JRBeanCollectionDataSource(listaStock);
+    String ruta=FacesContext.getCurrentInstance().getExternalContext().getRealPath("//Reportes//");
+    jasperPrint=JasperFillManager.fillReport(ruta+"//ReporteInventario.jasper", new HashMap(),beanCollectionDataSource);
+    HttpServletResponse httpServletResponse=(HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
+    httpServletResponse.addHeader("Content-disposition", "attachment; filename = Reporte_Stock.pdf");
+    ServletOutputStream servletOutputStream=httpServletResponse.getOutputStream();
+    JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+    FacesContext.getCurrentInstance().responseComplete();
+    
+    }
+   
+    public void PDF3(ActionEvent actionEvent) throws JRException, IOException{
+    JRBeanCollectionDataSource beanCollectionDataSource=new JRBeanCollectionDataSource(listaUsuarios);
+    String ruta=FacesContext.getCurrentInstance().getExternalContext().getRealPath("//Reportes//");
+    jasperPrint=JasperFillManager.fillReport(ruta+"//ReporteUsuarios.jasper", new HashMap(),beanCollectionDataSource);
+    HttpServletResponse httpServletResponse=(HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
+    httpServletResponse.addHeader("Content-disposition", "attachment; filename = Reporte_Usuarios.pdf");
+    ServletOutputStream servletOutputStream=httpServletResponse.getOutputStream();
+    JasperExportManager.exportReportToPdfStream(jasperPrint, servletOutputStream);
+    FacesContext.getCurrentInstance().responseComplete();
+    
+    }
 }

@@ -14,11 +14,15 @@
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
             <link rel="stylesheet" type="text/css" href="css/IndividualUno.css"/>
             <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>
+            <link href="css/sp.css" rel="stylesheet" type="text/css"/>
             
             <title>#{formInternacionalización.txtTitulo17}</title>
     </h:head>
         <h:body style="background-image: url(img/restaurant-table-720.jpg);">
             <f:view locale="#{idiomaController.idiomaActual}">
+                <div id="spinner" class="d-flex justify-content-center">
+                    <div class="spinner-grow text-dark" role="status"></div>
+                </div>
                 <nav id="navbar" class="navbar navbar-expand-lg navbar">
                     <div class="container">
                         <a class="navbar-brand" href="index.html">
@@ -191,6 +195,14 @@
             <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
             <script src="js/bootstrap.min.js"></script>
         </f:view>    
+            
+            <script>
+                window.addEventListener("load", function () {
+                    const loader = document.querySelector("#spinner");
+                    loader.className += " hidden"; // class "loader hidden"
+                });
+            </script>
+            
     </h:body>
 </html>
 

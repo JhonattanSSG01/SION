@@ -9,14 +9,19 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="png" href="img/SION CASA DE BANQUETES.png"></link>
         <link rel="stylesheet" href="css/6.css"></link>
-        <link href="css/7.css" rel="stylesheet" type="text/css"></link>
+        <link href="css/77.css" rel="stylesheet" type="text/css"></link>
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/iconss.css" rel="stylesheet" type="text/css"/>
+        <link href="css/sp.css" rel="stylesheet" type="text/css"/>
         
-    <title>Dashboard | Servicios</title>
+    <title>#{usuarioRolController.logueadoUsuario.codRol.nomRol}</title>
     </h:head>
     <h:body style="color: #000;">
-        <f:view locale="#{idiomaController.idiomaActual}">
+        <script>#{mensajeController.mensaje}</script>
+       <f:view locale="#{idiomaController.idiomaActual}">
+                <div id="spinner" class="d-flex justify-content-center">
+                    <div class="spinner-grow text-dark" role="status"></div>
+                </div>
         <div id="sidemenu" class="menu-collapsed">
             
       <!--HEADER-->
@@ -24,7 +29,7 @@
         <div id="header">
             <div class="row">
                 <div class="col-9">
-                    <div id="title"><img class="mr-2" src="img/SION CASA DE BANQUETES.png" alt="Logo" width="20"/><span>GERENTE</span></div>
+                    <div id="title"><img class="mr-2" src="img/SION CASA DE BANQUETES.png" alt="Logo" width="20"/><span>#{usuarioRolController.logueadoUsuario.codRol.nomRol}</span></div>
                 </div>
                 <div class="col-3">
                     <div id="menu-btn">
@@ -39,14 +44,16 @@
       <!--PROFILE-->
 
         <div id="profile">
-            <div id="photo"><img src="img/men.jpg" alt="fotoPerfil" height="150"/></div>
+            <div id="photo"><i class="far fa-user"></i></div>
 
             <div id="name">
                 <span>
-                    <a id="a" href="dashboardAdmin.xhtml">
-                        <i class="far fa-user" style="font-size: 20px"></i>
-                        <span>Andrés Peréz Cordova</span>
-                    </a>
+                    <h:form>
+                        <i id="a" class="far fa-user" style="font-size: 20px">
+                            <h:commandLink value="#{usuarioRolController.logueadoUsuario.nomcUsu}" action="#{usuarioRolController.volver()}"></h:commandLink>
+                        </i>
+                    </h:form>
+                        
                 </span>
             </div>
         </div>
@@ -84,16 +91,16 @@
         </div>
             
                             <div class="social-container">
-                                <a  href="" class="social" >
+                                <a id="a" href="" class="social" >
                                     <i id="face" class="fab fa-facebook"></i>
                                 </a>
-                                <a  href="" class="social">
+                                <a id="a" href="" class="social">
                                     <i id="wats" class="fab fa-whatsapp"></i>    
                                 </a>
-                                <a  href="" class="social">
+                                <a id="a" href="" class="social">
                                     <i id="link" class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="" class="social">
+                                <a id="a" href="" class="social">
                                     <i id="goo" class="fab fa-google"></i>
                                 </a>
                             </div>
@@ -112,8 +119,8 @@
                         <div class="col-3">
                             <div id="column" class="navbar-nav ml-auto">
                                 <a style="color: #fff;" >
-                                    <img src="img/men.jpg" class="img-fluid rounded-circle avatar mr-2" alt="fotoPerfil"></img>
-                                  Gerente
+                                    <i class="far fa-user mr-2"></i>
+                                  #{usuarioRolController.logueadoUsuario.codRol.nomRol}
                                 </a> 
                             </div>
                         </div>
@@ -146,9 +153,9 @@
                         </div>
                         <div class="col-1">
                             <div class="navbar-nav pt-2">
-                                <a href="inicioSesion.xhtml" >
-                                    <i class="fas fa-power-off"></i>
-                                </a> 
+                                <h:form>
+                                    <h:commandButton image="https://i.imgur.com/3FKJNe4.png" action="#{usuarioRolController.cerrarSesion()}"></h:commandButton>
+                                </h:form>                       
                             </div>
                         </div>
                     </div>
@@ -263,6 +270,12 @@
 })();
     </script>
 
+            <script>
+                window.addEventListener("load", function () {
+                    const loader = document.querySelector("#spinner");
+                    loader.className += " hidden"; // class "loader hidden"
+                });
+            </script>
 
     </h:body>
 </html>

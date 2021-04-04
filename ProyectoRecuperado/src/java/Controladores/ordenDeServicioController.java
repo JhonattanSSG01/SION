@@ -15,6 +15,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 /**
@@ -83,7 +84,7 @@ public class ordenDeServicioController implements Serializable {
             ordenDeServicio.setCodEve(eventoFacade.find(this.evento.getCodEve()));
             ordenDeServicioFacade.edit(this.ordenDeServicio);
             ordenDeServicio = new OrdenDeServicio();
-            mensajesController.setMensaje("Mensaje('Correcto','La orden sobre el servicio ha sido actualizada','success')");
+            mensajesController.setMensaje("Mensaje('Satisfactorio','La orden sobre el servicio ha sido actualizada','success')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al actualizar la orden','error')");
         }
@@ -94,7 +95,7 @@ public class ordenDeServicioController implements Serializable {
     public void eliminarOrdenDeServicio(OrdenDeServicio ordenDeServicio){
         try{
             ordenDeServicioFacade.remove(ordenDeServicio);
-            mensajesController.setMensaje("Mensaje('Correcto','La orden sobre el servicio ha sido eliminada','success')");
+            mensajesController.setMensaje("Mensaje('Exitoso','La orden sobre el servicio ha sido eliminada','warning')");
         }catch(Exception e){
             mensajesController.setMensaje("Mensaje('Error','Error al eliminar la orden','error')");
         }
@@ -107,5 +108,12 @@ public class ordenDeServicioController implements Serializable {
     
     public OrdenDeServicio consultarID(){
         return ordenDeServicioFacade.find(this.ordenDeServicio.getCodOse());
+    }
+    
+    public String cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+        return "index.xhtml?faces-redirect=true";
     }
 }

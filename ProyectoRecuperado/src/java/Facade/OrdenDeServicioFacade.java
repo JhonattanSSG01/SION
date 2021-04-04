@@ -6,9 +6,11 @@
 package Facade;
 
 import Entidades.OrdenDeServicio;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,5 +30,6 @@ public class OrdenDeServicioFacade extends AbstractFacade<OrdenDeServicio> {
     public OrdenDeServicioFacade() {
         super(OrdenDeServicio.class);
     }
-    
+
+   
 }

@@ -39,13 +39,7 @@ public class usuarioRolController implements Serializable {
     public usuarioRolController() {
     }
     
-    String Nombre="";
-    int Documento;
-    int Telefono;
-    String Direccion="";
-    String Correo="";
-    String Contraseña="";
-    
+    private UsuarioRol userLogged;
     private UsuarioRol LogueadoUsuario;
     private Rol rolUsuario;
     private Cliente cliente;
@@ -69,55 +63,8 @@ public class usuarioRolController implements Serializable {
         cliente = new Cliente();
         rol = new Rol();
         usuarioRol = new UsuarioRol();
-        LogueadoUsuario = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuarioLogueado");
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public int getDocumento() {
-        return Documento;
-    }
-
-    public void setDocumento(int Documento) {
-        this.Documento = Documento;
-    }
-
-    public int getTelefono() {
-        return Telefono;
-    }
-
-    public void setTelefono(int Telefono) {
-        this.Telefono = Telefono;
-    }
-
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
-
-    public String getCorreo() {
-        return Correo;
-    }
-
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
-    }
-
-    public String getContraseña() {
-        return Contraseña;
-    }
-
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+        userLogged = new UsuarioRol();
+        LogueadoUsuario = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("userLogged");
     }
     
     public Rol getRolUsuario() {
@@ -151,19 +98,38 @@ public class usuarioRolController implements Serializable {
     public void setUsuarioRol(UsuarioRol usuarioRol) {
         this.usuarioRol = usuarioRol;
     }
+
+    public UsuarioRol getLogueadoUsuario() {
+        return LogueadoUsuario;
+    }
+
+    public void setLogueadoUsuario(UsuarioRol LogueadoUsuario) {
+        this.LogueadoUsuario = LogueadoUsuario;
+    }
+
+    public UsuarioRol getUserLogged() {
+        return userLogged;
+    }
+
+    public void setUserLogged(UsuarioRol userLogged) {
+        this.userLogged = userLogged;
+    }
+    
     
     public void registrarUsuarioRol(int rol) throws UnsupportedEncodingException, MessagingException{
+        Mailer_1.content(mensajeEstilo(), usuarioRol.getDocUsu(), cliente.getTelCli(), cliente.getDirCli(), usuarioRol.getCorUsu(), usuarioRol.getConUsu());
         try{
+            
             if (rol == 1) {
-            usuarioRol.setCodRol(rolFacade.find(5));
+                usuarioRol.setCodRol(rolFacade.find(5));
             }else {
                 usuarioRol.setCodRol(rolFacade.find(this.rol.getCodRol()));  
             }
+            
             usuarioRol.setCodUsu(1);
             usuarioRolFacade.create(this.usuarioRol);
             cliente.setCodUsu(usuarioRol);
             clienteFacade.create(cliente);
-            Mailer_1.content(mensajeEstilo(), usuarioRol.getDocUsu(), cliente.getTelCli(), cliente.getDirCli(), usuarioRol.getCorUsu(), usuarioRol.getConUsu());
             usuarioRol = new UsuarioRol();
             mensajesController.setMensaje("Mensaje('Correcto','Te has resgistrado exitosamente','success')");
         }catch(Exception e){
@@ -216,6 +182,7 @@ public class usuarioRolController implements Serializable {
     }
     
     public List<PermisoRol> consultarPermiso(){
+        LogueadoUsuario = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("userLogged");
         return permisoRolFacade.permisoRol(rolUsuario);
     }
     
@@ -223,27 +190,36 @@ public class usuarioRolController implements Serializable {
         return permisoRolFacade.permisoPadre(CodPdr);
     }
     
-    public void cerraSesion(){
-        LogueadoUsuario = (UsuarioRol) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuarioLogueado");
+    public String cerrarSesion() {
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        
+        return "index.xhtml?faces-redirect=true";
     }
-    
     public String signIn(){
         String redireccion="";
         UsuarioRol usuarioRolSignIn = new UsuarioRol();
         try{
             usuarioRolSignIn = usuarioRolFacade.signIn(this.usuarioRol.getCorUsu(), this.usuarioRol.getConUsu());
+            mensajesController.setMensaje("Mensaje('Exitoso','Ha accedido correctamente','success')");
+            userLogged = usuarioRolSignIn;
             if(usuarioRolSignIn.getCodUsu()!= null){
                 rolUsuario = usuarioRolSignIn.getCodRol();
-                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuarioLogeado", usuarioRolSignIn);
+                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", usuarioRolSignIn);
                 if (1 == usuarioRolSignIn.getCodRol().getCodRol() ) {  
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", usuarioRolSignIn);
                     redireccion="dashboardAdmin";
                 }else if (2 == usuarioRolSignIn.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", usuarioRolSignIn);
                     redireccion="gadashboard";
                 }else if (3 == usuarioRolSignIn.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", usuarioRolSignIn);
                     redireccion="secretariadashboard";
                 }else if (4 == usuarioRolSignIn.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", usuarioRolSignIn);
                     redireccion="empleadodashboard";
                 }else if (5 == usuarioRolSignIn.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", usuarioRolSignIn);
                     redireccion="dashboardCliente";
                 }else{
                     redireccion="";
@@ -261,6 +237,37 @@ public class usuarioRolController implements Serializable {
         return redireccion;
     }
     
+    public String volver(){
+        String redireccion="";
+        UsuarioRol userLoggedin = new UsuarioRol();
+        try{
+            userLoggedin = usuarioRolFacade.signIn(this.usuarioRol.getCorUsu(), this.usuarioRol.getConUsu());
+            userLogged = userLoggedin;
+                if (1 ==(userLoggedin.getCodRol().getCodRol()) ) {  
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", userLoggedin);
+                    redireccion="dashboardAdmin";
+                }else if (2 == userLoggedin.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", userLoggedin);
+                    redireccion="gadashboard";
+                }else if (3 == userLoggedin.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", userLoggedin);
+                    redireccion="secretariadashboard";
+                }else if (4 == userLoggedin.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", userLoggedin);
+                    redireccion="empleadodashboard";
+                }else if (5 == userLoggedin.getCodRol().getCodRol()) {
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged", userLoggedin);
+                    redireccion="dashboardCliente";
+                }else{
+                    redireccion="";
+                }
+            
+        }catch(Exception e){
+            System.out.println("Error: " + e);
+            mensajesController.setMensaje("Mensaje('Error','Ha habido un error, verifique los datos e intentelo de nuevo','error')");
+        }
+        return redireccion;
+    }
     
     public String mensajeEstilo(){
         return "<div style=\"max-width: 700px; padding: 20px; margin:0 auto; font-family: inherit;\">" 
@@ -271,7 +278,7 @@ public class usuarioRolController implements Serializable {
                                     +  "<a href=\"index.xhtml\">" + "<img src='https://i.imgur.com/raWGRVJ.png'/ style=\"display:block; margin: 10px 15px; float: left; width: 80px; height: 120px;\">" + "</a>"       
                                 + "</div>"
                                 + "<div class=\"col-10\">"
-                                    + "<h2 style=\"text-transform: uppercase; font-size: xx-large; display: flex; align-items: center; justify-content: center; text-align: center; text-align: center; color: #4d84c2;\">Bienvenido" + usuarioRol.getNomcUsu() + "!!</h2>"
+                                    + "<h2 style=\"text-transform: uppercase; font-size: xx-large; display: flex; align-items: center; justify-content: center; text-align: center; text-align: center; color: #4d84c2;\">Bienvenido " + usuarioRol.getNomcUsu() + "!!</h2>"
                                 + "</div>"
                             + "</div>"
                             
@@ -281,22 +288,11 @@ public class usuarioRolController implements Serializable {
                                         + "<h2 style=\"color: #4d84c2; margin: 0 0 7px; text-transform: uppercase; \">"					
                                                 + usuarioRol.getNomcUsu()
                                          + "</h2>"
-                                           + "<p style=\"margin: 2px; font-size: 15px; \"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus id, esse totam sit voluptate molestiae impedit corrupti porro ab eius praesentium et, debitis ratione quisquam! Et iusto omnis eligendi corrupti?" + "</p>"
-                                               + "<ul style=\"font-size: 15px;  margin: 10px 0; \">"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                                       +  "<li>Lorem ipsum dolor sit amet." + "</li>"
-                                               + "</ul>"
-                                               + "<div style=\"width: 100%; text-align: center; margin-top:40px;\">"
+                                           + "<p style=\"margin: 2px; font-size: 15px; \"> Gracias por tenernos presente para tu día especia, en este momento realizamos el envío de correo de confirmación del registro en nuestro sitio web Cas Banquetes y Eventos SION." + "</p>"
+                                               + "<div style=\"width: 100%; text-align: center; margin:40px 0 10px 0;\">"
                                                    + "<a style=\"text-decoration: none; border-radius: 5px; padding: 11px 23px; color: white; background-color: #3477db\" href=\"#\">Ir a la página" + "</a>"
                                                + "</div>"
-                                                + "<div class=\"row\">"
-                                                    + "<div class=\"col-12\" style=\"text-align: -webkit-center;\">"
-                                                        + "<img src='https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXB1dGVyJTIwaGFyZHdhcmV8ZW58MHwwfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'/ style=\"padding: 10px; display: block; opacity: 50%; box-shadow: 0 0 20px rgb(61, 61, 61); width: 95%; \">"
-                                                    + "</div>"
-                                                + "</div>"
+                                                
                                                 + "<div class=\"row\">"
                                                    + "<div class=\"col\" style=\"width: 100%; margin:15px 0; display: inline-block;text-align: center\">"
                                                        + "<a href=\"https://imgur.com/QHz9RXH\"><img src=\"https://i.imgur.com/QHz9RXH.png\" width=\"30\" style=\"padding: 0; margin: 5px;\">" + "</a>"
@@ -309,6 +305,11 @@ public class usuarioRolController implements Serializable {
                                     + "</div>"
                                 + "</div>"
                             + "</div>"
+                                                + "<div class=\"row\">"
+                                                    + "<div class=\"col-12\" style=\"text-align: -webkit-center;\">"
+                                                        + "<img src='https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXB1dGVyJTIwaGFyZHdhcmV8ZW58MHwwfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'/ style=\"padding: 10px; display: block; opacity: 50%; box-shadow: 0 0 20px rgb(61, 61, 61); width: 95%; \">"
+                                                    + "</div>"
+                                                + "</div>"
                        + "</div>"
                    + "</div>"
               + "</div>";

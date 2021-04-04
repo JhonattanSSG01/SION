@@ -16,6 +16,7 @@
             <link rel="shortcut icon" type="jpg" href="img/SION CASA DE BANQUETES.png"/>  
             <link href="css/ssesion.css" rel="stylesheet" type="text/css"/>
             <link href="css/efectoSesion.css" rel="stylesheet" type="text/css"/>
+            <link href="css/sp.css" rel="stylesheet" type="text/css"/>
             
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script src="js/funcionMensaje.js" type="text/javascript"></script>
@@ -25,6 +26,9 @@
         <h:body style="background-image: url(img/fondo.jpg);">       
             <script>#{mensajeController.mensaje}</script>
             <f:view locale="#{idiomaController.idiomaActual}">
+                <div id="spinner" class="d-flex justify-content-center">
+                    <div class="spinner-grow text-dark" role="status"></div>
+                </div>
                 <nav id="navbar" class="navbar navbar-expand-lg navbar">
                     <div class="container">
                             <a class="navbar-brand" href="index.xhtml">
@@ -134,8 +138,8 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                   <h:commandButton class="button mt-3" value="Registrar" action="#{usuarioRolController.registrarUsuarioRol(1)}"></h:commandButton> 
-                                   <button type="reset" value="Limpiar" class="btn btn-secondary ml-3">#{formInternacionalización.btnLimpiar}</button>
+                                    <h:commandButton class="button mt-3" value="#{formInternacionalización.btnRegista2}" action="#{usuarioRolController.registrarUsuarioRol(1)}"></h:commandButton> 
+                                   <button type="reset" class="btn btn-secondary ml-3">#{formInternacionalización.btnLimpiar}</button>
                                 </div>
                             </div>                        
                         </h:form>
@@ -274,6 +278,14 @@
 
             
         </f:view>
+            
+            <script>
+                window.addEventListener("load", function () {
+                    const loader = document.querySelector("#spinner");
+                    loader.className += " hidden"; // class "loader hidden"
+                });
+            </script>
+            
     </h:body>
 </html>
 

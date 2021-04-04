@@ -6,9 +6,11 @@
 package Facade;
 
 import Entidades.Stock;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +29,22 @@ public class StockFacade extends AbstractFacade<Stock> {
 
     public StockFacade() {
         super(Stock.class);
+    }
+    
+    public String CargaDatos(String archivo, String tabla){
+        
+        Query query = em.createNativeQuery("LOAD DATA LOCAL INFILE '" + archivo + "' REPLACE INTO TABLE " + tabla + " FIELDS TERMINATED BY ';' ENCLOSED BY '\"' ESCAPED BY '\\\\' LINES TERMINATED BY '\\r\\n'");
+        int resultado = query.executeUpdate();
+        String mensaje = resultado + "Filas afectadas";
+        return mensaje;
+    }
+    
+    public List<Object[]>consultarStock(){
+        List<Object[]>listaStock;
+        Query query=em.createNativeQuery(" SELECT stock.Tip_Sto, stock.Can_Sto FROM stock " +
+                                        " WHERE stock.Tip_Sto LIKE \"%Clasico%\"; ");
+        listaStock=query.getResultList();
+        return listaStock;
     }
     
 }

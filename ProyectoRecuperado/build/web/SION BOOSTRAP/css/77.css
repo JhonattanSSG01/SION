@@ -1,0 +1,271 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  margin-left: 50px;
+  transition: all .4s ease-out;
+}
+
+.body-expanded{
+  margin-left: 300px;
+}
+
+#main-container{
+  color: #ffffff;
+}
+
+#sidemenu{
+  background-color: rgb(52, 52, 52);
+  color: #ffffff;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all .4s ease-out;
+}
+
+#sidemenu a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#sidemenu #a:hover{
+  color: #ED213A;
+}
+
+/*
+    HEADER
+*/
+
+#sidemenu #header{
+  box-sizing: border-box;
+  border-bottom: solid 1px rgb(23, 23, 23);
+}
+
+#sidemenu #header #title{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
+
+#sidemenu #header #menu-btn{
+  display: inline-block;
+}
+
+#sidemenu #header #menu-btn{
+  cursor: pointer;
+  padding: 13px;
+  width: 50px;
+  box-sizing: border-box;
+}
+
+#sidemenu #header #menu-btn:hover{
+  background-color: rgb(23, 23, 23);
+}
+
+#sidemenu #header #menu-btn .btn-hamburger{
+  background-color: #ffffff;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+}
+
+/*
+    PROFILE
+*/
+
+#sidemenu #profile{
+  border-bottom: solid 1px rgb(23, 23, 23);
+  padding: 10px 0;
+  text-align: center;
+}
+
+#sidemenu #profile #photo{
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#sidemenu #profile #photo img{
+  width: 80%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#sidemenu #profile #photo,#sidemenu #profile #name{
+  font-size: 24px;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+/*
+  ITEM
+*/
+
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+
+#sidemenu #menu-items .item{
+  width: 300px;
+}
+
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+}
+
+#sidemenu #menu-items .item .icon,#sidemenu #menu-items .item .title{
+  pointer-events: none;
+  cursor: not-allowed;
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#sidemenu #menu-items .item a{
+  display: block;
+}
+
+#sidemenu #menu-items .item a:hover{
+  background-color: rgb(23, 23, 23);
+}
+
+#sidemenu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: 10px;
+  width: 50px;
+}
+
+#sidemenu #menu-items .item .icon img{
+  width: 100%;
+}
+
+#sidemenu #menu-items .item .title{
+  padding: 10px 0;
+}
+
+#sidemenu #menu-items .item .separator{
+  height: 1px;
+  border-bottom: solid 1px rgb(23, 23, 23);
+  margin: 15px 0;
+}
+
+.social-container .social #face:hover{
+    color: #1278F3;
+}
+
+.social-container .social #wats:hover{
+    color: #24D465;
+}
+
+.social-container .social #link:hover{
+    color: #0197D3;
+}
+
+.social-container .social #goo:hover{
+    color: #dd1818;
+}
+
+.menu-expanded{
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+  overflow-x: auto;
+}
+
+.menu-expanded::-webkit-scrollbar{
+  display: none;
+}
+
+
+.menu-expanded #header #title{
+  display: inline-block;
+  width: cacl(100% - 50px);
+  margin-right: -5px;
+  padding: 10px;
+}
+
+.menu-expanded #header #title span{
+  width: calc(300px - 50px - 5px);
+  overflow: hidden;
+}
+
+.menu-expanded #profile #photo i{
+  font-size: 100px;
+}
+
+
+.menu-expanded #profile #name{
+  width: 100%;
+}
+
+.menu-expanded #menu-btn{
+  mix-blend-mode: soft-light;
+  outline-style: inset;
+}
+
+.menu-expanded .social-container{
+    text-align-last: center;
+}
+
+.menu-expanded .social-container .social{
+    width: 20px;
+}
+
+.menu-expanded .social-container .social i{
+    font-size: 25px;
+    margin: 5px;
+}
+
+.menu-collapsed{
+  width: 50px;
+  list-style: none;
+}
+
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-collapsed #profile #name{
+  display: none;
+}
+
+.menu-collapsed #profile img{
+  height: 35px;
+  object-fit: cover;
+}
+
+.menu-collapsed .item{
+  width: 100px;
+}
+
+.menu-collapsed .item a{
+   pointer-events: none;
+  cursor: not-allowed;
+}
+
+.menu-collapsed .social-container{
+    display: inline-grid;
+}
+
+.menu-collapsed .social-container .social{
+    width: 50px;
+    text-align-last: center;
+}
+
+.menu-collapsed .social-container .social i{
+    font-size: 18px;
+    margin: 5px;
+}
+
+

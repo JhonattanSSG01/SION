@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="499126a3-9f1f-4cef-8b5a-a0efca9e13ed">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="docUsu" class="java.lang.String"/>
+	<field name="nomcUsu" class="java.lang.String"/>
+	<field name="corUsu" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="-1" width="572" height="100" backcolor="#C7C7C7" uuid="51d18624-f353-4d7c-9575-ac3aa3c6540c"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="-1" width="398" height="100" forecolor="#933B3B" uuid="f3d7618b-0057-419a-9739-0afdb73229b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="32"/>
+				</textElement>
+				<text><![CDATA[CASA DE BANQUETES Y EVENTOS SION]]></text>
+			</staticText>
+			<image hAlign="Center" isUsingCache="false">
+				<reportElement mode="Transparent" x="399" y="-1" width="174" height="100" uuid="a8769567-8e4a-4c2d-b37e-3a5bc609d1dd"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\SION CASA DE BANQUETES.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="442c4836-12f7-42fb-8eb3-6017bb5dcff7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="190" height="20" forecolor="#A59999" backcolor="#B93535" uuid="24b218f0-ec1a-4fdc-bf96-a671f3d715cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="190" y="0" width="190" height="20" forecolor="#A59999" backcolor="#B93535" uuid="59126eaa-79a7-44c9-9105-e1463eddbd5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE COMLETO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="380" y="0" width="192" height="20" forecolor="#A59999" backcolor="#B93535" uuid="3839764e-83b3-4f17-845c-47eaad5cb64a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CORREO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="190" height="20" uuid="44830973-4285-4acf-a299-893cc90a7ca2"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{docUsu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="190" height="20" uuid="be806511-032f-4912-a593-7b7ff571d02c"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomcUsu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="190" height="20" uuid="d94b593e-300e-4926-874e-83a6e8b39c11"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Calisto MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{corUsu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="135" splitType="Stretch">
+			<rectangle>
+				<reportElement x="324" y="0" width="248" height="135" backcolor="#D2D0D0" uuid="0015566e-d426-4981-b5da-c78c7a1738e9"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="510" y="20" width="25" height="22" uuid="a4f28db1-3dc3-41ce-8192-3914981bf781"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\whatsapp.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="439" y="20" width="21" height="22" uuid="f29b0dad-e10b-448c-86a1-af33c8f6e752"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\face.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="387" y="86" width="123" height="13" uuid="41b8b0ed-699b-4fa5-8ebd-341e319db534"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[3216780345 / 7689034]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="109" width="210" height="26" uuid="f7972abf-f39d-4483-a6cd-bbc3e7a23873"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<text><![CDATA[WWW.CasadeBanquentesyEventosSION.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="366" y="20" width="21" height="22" uuid="d7f4e489-8862-45ae-8b68-8843b635b7e6"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\google.png"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="324" height="135" uuid="c5107576-1971-4b31-8c2d-4ef3b09c5535"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\mat.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="44" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="44" backcolor="#D2D0D0" uuid="4fd31472-5291-4797-bbbe-9455696b4578"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="14" y="24" width="100" height="20" uuid="2742f0ac-deef-49ac-a2fd-81aeff89271b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Reportes - SION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="18" width="133" height="26" uuid="06eccca1-a40f-4a29-be11-50410bfe5260"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<text><![CDATA[SION - Copyright & 2020]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="462" y="24" width="100" height="20" uuid="93e3b6de-2577-489d-b673-df167d3158b4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calisto MT"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

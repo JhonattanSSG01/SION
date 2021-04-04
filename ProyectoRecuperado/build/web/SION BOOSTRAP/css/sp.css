@@ -1,0 +1,29 @@
+
+#spinner{
+    background-color: #fff;
+    position: absolute;
+    z-index: 1030;
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 100%;
+    align-items: center;
+}
+
+.spinner-grow{
+    width: 5rem;
+    height: 5rem;
+}
+
+#spinner.hidden {
+    animation: fadeOut;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
