@@ -116,6 +116,6 @@ public class inventarioController implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userLogged",null);
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         
-        return "index.xhtml?faces-redirect=true";
+        return "../index.xhtml?faces-redirect=true";
     }
 }
