@@ -170,7 +170,7 @@
 
 
               <div id="content">
-                  
+              
               <section class="py-4">
 
               <div class="container">
@@ -178,10 +178,13 @@
               <div  class="row">
 
               <div class="col-lg-9">
-                <h1 class="font-weight-bold mb-0">Gerente</h1>
-               <h1 class="font-weight-bold mb-0">Bienvenido Miguel Castañeda</h1>
+                <h1 class="font-weight-bold mb-0">#{usuarioRolController.logueadoUsuario.codRol.nomRol}</h1>
+                <h1 class="font-weight-bold mb-0">#{formInternacionalización.txtWelcom} #{usuarioRolController.logueadoUsuario.nomcUsu}</h1>
                
               
+              </div>
+              <div class="col-lg-3 d-flex">
+                  <button id="button" class="btn primary w-100 align-self-center"><i class="fas fa-download m-2"></i>#{formInternacionalización.btnPDF}</button>
               </div>
 
               </div>
@@ -284,12 +287,12 @@
                                                  <h:outputLabel class="form-label" value="#{formInternacionalización.txtProdVal}" for="ValPto" />
                                                  <h:inputText class="form-control" id="ValPto" value="#{productoMenajeController.productoMenaje.valProd}" title="ValPto" required="true"/>
                                             </div>
-                                            <h:outputLabel class="form-label" value="#{formInternacionalización.txtProdProv}" for="ProPto" />
-                                            <h:selectOneMenu class="form-control" id="ProPto" value="#{productoMenajeController.productoMenaje.codPro}" title="ProPto" >
-                                                <!-- TODO: update below reference to list of available items-->
-                                                <f:selectItems value="#{productoMenajeController.consultarProductoMenaje()}" var="producto" itemValue="#{producto.codPro}" itemLabel="#{producto.codPro.nomPro}"/>
-                                            </h:selectOneMenu>
-                                            <div class="col-12">
+                                                <h:outputLabel class="form-label" value="#{formInternacionalización.txtProdProv}" for="ProPto" />
+                                                <h:selectOneMenu class="form-control" id="ProPto" value="#{productoMenajeController.productoMenaje.codPro}" title="ProPto" >
+                                                    <!-- TODO: update below reference to list of available items-->
+                                                    <f:selectItems value="#{productoMenajeController.consultarProductoMenaje()}" var="producto" itemValue="#{producto.codPro}" itemLabel="#{producto.codPro.nomPro}"/>
+                                                </h:selectOneMenu>
+                                             <div class="col-12">
                                                 <div class="form-check">
                                                   <input class="form-check-input" type="checkbox" id="invalidCheck" required=""/>
                                                   <label class="form-check-label" for="invalidCheck">

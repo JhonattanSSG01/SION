@@ -169,7 +169,7 @@
               <!--Nombre de usuario -->
 
 
-              <div id="content">
+             <div id="content">
               
               <section class="py-4">
 
@@ -178,10 +178,13 @@
               <div  class="row">
 
               <div class="col-lg-9">
-                <h1 class="font-weight-bold mb-0">Gerente</h1>
-               <h1 class="font-weight-bold mb-0">Bienvenido Miguel Castañeda</h1>
+                <h1 class="font-weight-bold mb-0">#{usuarioRolController.logueadoUsuario.codRol.nomRol}</h1>
+                <h1 class="font-weight-bold mb-0">#{formInternacionalización.txtWelcom} #{usuarioRolController.logueadoUsuario.nomcUsu}</h1>
                
               
+              </div>
+              <div class="col-lg-3 d-flex">
+                  <button id="button" class="btn primary w-100 align-self-center"><i class="fas fa-download m-2"></i>#{formInternacionalización.btnPDF}</button>
               </div>
 
               </div>
