@@ -3,13 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/index.xhtml</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Controladores/proveedorController.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Properties/internacionalizacion.properties</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/producto-edit.xhtml</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Properties/internacionalizacion_en.properties</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/inicioSesion.xhtml</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/cliente.xhtml</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/inventario.xhtml</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Controladores/productoMenajeController.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/dashboardAdmin.xhtml</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/proveedor-edit.xhtml</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Controladores/proveedorController.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Controladores/usuarioRolController.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Entidades/PermisoRol.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/src/java/Controladores/idiomaController.java</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/producto.xhtml</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/producto-list.xhtml</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/producto-edit.xhtml</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/ProyectoRecuperado/web/SION%20BOOSTRAP/producto-search.xhtml</file>
         </group>
     </open-files>

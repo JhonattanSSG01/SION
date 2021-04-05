@@ -61,12 +61,9 @@ public class idiomaController implements Serializable {
         this.ingles = ingles;
     }
     
-    public String CambiarIdioma(String idiomas){
+    public void CambiarIdioma(String idiomas){
         Locale idioma = new Locale (idiomas);
-        if (idioma != null) {
             this.idiomaActual = idioma;
             FacesContext.getCurrentInstance().getViewRoot().setLocale(idiomaActual);
-        }
-        return"";
     }
 }
