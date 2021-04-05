@@ -17,23 +17,25 @@
 					<pen lineWidth="0.0" lineStyle="Double"/>
 				</graphicElement>
 			</rectangle>
-			<image hAlign="Center" isUsingCache="false">
-				<reportElement mode="Transparent" x="399" y="0" width="174" height="100" uuid="515dd3a8-2978-4eaf-8079-d3b55cd1bb96"/>
-				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\SION CASA DE BANQUETES.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="13" y="0" width="398" height="100" forecolor="#933B3B" uuid="52476488-9985-4d06-a875-4b13de1531d5"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT" size="32"/>
+					<font fontName="DejaVu Serif" size="32"/>
 				</textElement>
 				<text><![CDATA[CASA DE BANQUETES Y EVENTOS SION]]></text>
 			</staticText>
+			<image>
+				<reportElement x="474" y="43" width="100" height="50" uuid="81989862-f64f-4705-a1bf-58f1ea314f2b"/>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="27" splitType="Stretch">
 			<textField pattern="EEEEE dd MMMMM yyyy">
 				<reportElement x="0" y="0" width="100" height="20" uuid="b39fb1e9-82c4-4611-8a8a-ce58a4bc0b0a"/>
+				<textElement>
+					<font fontName="DejaVu Serif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
@@ -43,21 +45,21 @@
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="0" width="190" height="20" forecolor="#A59999" backcolor="#B52626" uuid="498751d7-d75b-47fb-ae52-8724e0bd19b4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT" size="13" isItalic="true"/>
+					<font fontName="DejaVu Serif" size="13" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[TIPO REFERTENTE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="190" y="0" width="190" height="20" forecolor="#A59999" backcolor="#B52626" uuid="b5b4de44-9dc8-43d7-ba8c-49e40359f1dc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT" size="13" isItalic="true"/>
+					<font fontName="DejaVu Serif" size="13" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[CATEGORIA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="380" y="0" width="192" height="20" forecolor="#A59999" backcolor="#B52626" uuid="c0546787-6d80-4e3c-a732-df740b60aa42"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT" size="13" isItalic="true"/>
+					<font fontName="DejaVu Serif" size="13" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[CANTIDAD]]></text>
 			</staticText>
@@ -68,21 +70,21 @@
 			<textField>
 				<reportElement x="0" y="0" width="190" height="20" uuid="16b3a4d0-8076-45d7-bf26-8209abf11477"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Calisto MT" size="12"/>
+					<font fontName="DejaVu Serif" size="12" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tipSto}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="190" y="0" width="190" height="20" uuid="1f9cd3ef-37ae-4239-966a-c61fa4c877db"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Calisto MT" size="12"/>
+					<font fontName="DejaVu Serif" size="12" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{catpSto}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="380" y="0" width="190" height="20" uuid="c7b2d107-b9ff-4571-9ab1-6a9cef1587be"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Calisto MT" size="12"/>
+					<font fontName="DejaVu Serif" size="12" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{canSto}]]></textFieldExpression>
 			</textField>
@@ -96,35 +98,35 @@
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
-			<image>
-				<reportElement x="366" y="20" width="21" height="22" uuid="dc66a0c1-7fde-46f5-b364-7621764e6bef"/>
-				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\google.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="344" y="109" width="210" height="26" uuid="8a6ecac3-8136-4730-bec1-b70d1241cbb2"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT"/>
+					<font fontName="DejaVu Serif"/>
 				</textElement>
 				<text><![CDATA[WWW.CasadeBanquentesyEventosSION.com]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="387" y="86" width="123" height="13" uuid="78760cea-fb9b-4e6d-b884-1ba4b57240ec"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT" isStrikeThrough="false"/>
+					<font fontName="DejaVu Serif" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[3216780345 / 7689034]]></text>
 			</staticText>
 			<image scaleImage="FillFrame">
-				<reportElement x="0" y="0" width="324" height="135" uuid="08d7d5a2-f452-4f02-8e72-fa821fedc990"/>
-				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\mat.jpg"]]></imageExpression>
+				<reportElement x="0" y="0" width="324" height="135" uuid="ef1e893b-f1ba-45d8-9506-b20373695c22"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\Reportes\\mat.jpg"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="510" y="20" width="25" height="22" uuid="712b1b2e-4129-4c5a-ada9-385859388c34"/>
-				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\whatsapp.png"]]></imageExpression>
+				<reportElement x="368" y="24" width="28" height="26" uuid="38de0f06-c561-4fac-8b8b-adfc00d0c2b8"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\Reportes\\face.png.jpg"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="439" y="20" width="21" height="22" uuid="2ffeecc6-ba44-4586-b623-7cdddda09ff3"/>
-				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\SION BOOSTRAP\\img\\face.png"]]></imageExpression>
+				<reportElement x="434" y="24" width="28" height="25" uuid="86e9f6e4-8a2a-4d71-a992-efe38faafac3"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\Reportes\\google.png.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="499" y="24" width="28" height="25" uuid="bec06f27-0e33-46d9-b2c8-81629b5f632d"/>
+				<imageExpression><![CDATA["C:\\Users\\USUARIO\\Documents\\NetBeansProjects\\ProyectoRecuperado\\web\\Reportes\\whatsapp.png.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</columnFooter>
@@ -139,21 +141,21 @@
 			<staticText>
 				<reportElement x="235" y="19" width="133" height="26" uuid="2d558529-07d7-41cf-bc86-efb37c668687"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calisto MT"/>
+					<font fontName="DejaVu Serif"/>
 				</textElement>
 				<text><![CDATA[SION - Copyright & 2020]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="14" y="24" width="100" height="20" uuid="43f48086-a72d-4fcf-a448-20d80027ac43"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Calisto MT" size="9" isStrikeThrough="false"/>
+					<font fontName="DejaVu Serif" size="9" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Reportes - SION]]></text>
 			</staticText>
 			<textField evaluationTime="Report">
 				<reportElement x="462" y="24" width="100" height="20" uuid="074194e8-4840-4227-9e70-dbe94c09ea81"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Calisto MT"/>
+					<font fontName="DejaVu Serif"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>

@@ -140,9 +140,20 @@ public class usuarioRolController implements Serializable {
     }
     
     public String preActualizarUsuarioRol(UsuarioRol usuarioRol){
-        cliente = clienteFacade.consultarClienteID(usuarioRol.getCodUsu());
-        this.usuarioRol = usuarioRol;
-        return "usuario-edit";
+        try {
+            cliente = clienteFacade.consultarClienteID(usuarioRol.getCodUsu());
+            this.usuarioRol = usuarioRol;
+            return "usuario-edit";
+        } catch (Exception e) {
+            mensajesController.setMensaje("Mensaje('Error','Ha habido un error al actualizar','error')");
+        }
+        if (usuarioRol.getCodUsu() == 1 || usuarioRol.getCodUsu() == 2 || usuarioRol.getCodUsu() == 3 || usuarioRol.getCodUsu() == 4) {
+                return "usuario-list";
+            }else{
+                return "usuario-edit";
+            }
+        
+        
     }
     
     public String actualizarUsuarioRol(){
